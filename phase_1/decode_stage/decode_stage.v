@@ -20,6 +20,10 @@ module decode_stage(
     );
 
     wire RegWrite;
+    wire [2:0] write_address;
+    wire [15:0] write_data;
+    wire [2:0] read_address1,read_address2
+    wire [15:0] read_data1,read_data12
 
     reg_file
     #(
