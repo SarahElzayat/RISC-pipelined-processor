@@ -1,0 +1,52 @@
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.alu -voptargs=+acc
+# vsim work.alu -voptargs="+acc" 
+# Start time: 20:29:31 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.alu(fast)
+add wave -position insertpoint sim:/alu/*
+force -freeze sim:/alu/Op1 16'hAAAA 0
+force -freeze sim:/alu/Op2 16'hBBBB 0
+force -freeze sim:/alu/AlUmode 2'h0 0
+run
+force -freeze sim:/alu/AlUmode 2'h1 0
+run
+force -freeze sim:/alu/AlUmode 2'h2 0
+run
+force -freeze sim:/alu/AlUmode 2'h3 0
+run
+# Causality operation skipped due to absence of debug database file
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.alu(fast)
+add wave -position insertpoint sim:/alu/*
+force -freeze sim:/alu/Op1 16'hAAAA 0
+force -freeze sim:/alu/Op2 16'hBBBB 0
+force -freeze sim:/alu/AlUmode 2'h0 0
+run
+force -freeze sim:/alu/AlUmode 2'h1 0
+run
+force -freeze sim:/alu/AlUmode 2'h2 0
+run
+force -freeze sim:/alu/AlUmode 2'h3 0
+run

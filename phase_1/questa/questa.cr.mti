@@ -1,0 +1,22 @@
+D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/sign_extend.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/sign_extend.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module sign_extend
+
+Top level modules:
+	sign_extend
+
+} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/reg_file.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/reg_file.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module reg_file
+
+Top level modules:
+	reg_file
+
+} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module name
+
+Top level modules:
+	name
+
+} {} {}}
