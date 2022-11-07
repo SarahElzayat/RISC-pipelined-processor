@@ -1,8 +1,9 @@
 module decode_stage(
     input clk,
-    input rst
+    input rst,
+    input [15:0] instruction,
+
 );
-    wire [15:0] inst;
 
     ControlUnit
     ControlUnit_dut (
@@ -15,7 +16,7 @@ module decode_stage(
     );
 
     wire RegWrite;
-    
+
     reg_file
     #(
     .WIDTH(16 ),
