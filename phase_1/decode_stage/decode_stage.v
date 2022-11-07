@@ -2,6 +2,7 @@ module decode_stage(
     input clk,
     input rst
 );
+    wire [15:0] inst;
 
     ControlUnit
     ControlUnit_dut (
@@ -13,7 +14,8 @@ module decode_stage(
         .MemWrite  ( MemWrite)
     );
 
-
+    wire RegWrite;
+    
     reg_file
     #(
     .WIDTH(16 ),
