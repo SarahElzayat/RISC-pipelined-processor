@@ -2,11 +2,12 @@ module decode_stage(
     input clk,
     input rst,
     input [15:0] instruction,
+    output[1:0] ALUOp,
+    output ALUtoReg, RegWrite, MemRead, MemWrite,
 
 );
 
     wire [15:0] inst;
-    wire ALUOp, ALUtoReg, RegWrite, MemRead, MemWrite;
 
     ControlUnit
     ControlUnit_dut (
