@@ -5,6 +5,9 @@ module decode_stage(
 
 );
 
+    wire [15:0] inst;
+    wire ALUOp, ALUtoReg, RegWrite, MemRead, MemWrite;
+
     ControlUnit
     ControlUnit_dut (
         .inst (inst ),
