@@ -18,7 +18,7 @@ reg [15:0] data_memory [0: (2 ** 11) -1]; //data memory of 4KB
 
 
 assign data = (memory_read == 1) ? data_memory[address]:
-               (memory_pop == 1) ? data_memory[SP[10:0]]:  16'bz;
+              (memory_pop == 1) ? data_memory[SP[10:0]]:  16'bz;
 
 
 always @(posedge clk) begin
