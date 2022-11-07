@@ -1,6 +1,6 @@
-module name(
+module processor(
     input clk,
     input rst
 );
-    
-endmodule : name
+
+endmodule 
