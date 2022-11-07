@@ -4,13 +4,15 @@ module fetch_stage (
     output [15:0] instruction
 );
 
+
+
 reg [31:0] PC = 2**5; //program counter(initally 2^5) 
 
 //  word width                memory entries 
 reg [15:0] instruction_memory [0: (2 ** 20) -1 ]; //instruction memeory of 2MB size, the first 2^5 entries are reserved for interrupts,
                                                  // the rest is reserved of the instructions.
 
-reg [2:0]clk_counter = 0; //counts 5 cycles of the clock to fetch the next instruction
+reg [2:0]clk_counter; //counts 5 cycles of the clock to fetch the next instruction
 
 assign instruction = {instruction_memory[PC]}; //the instruction memory is word-addressable, thus 2 bytes are concatenated to form a word
 
@@ -42,3 +44,10 @@ end
 
     
 endmodule
+
+
+
+
+
+
+
