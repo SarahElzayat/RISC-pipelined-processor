@@ -2,28 +2,26 @@ module decode_stage(
     input clk,
     input rst,
     input [15:0] instruction,
+    //from write back
+    input [15:0] regFile_write_data,
+
     output[1:0] ALUOp,
-    output ALUtoReg, RegWrite, MemRead, MemWrite,
+    output WB_ALUtoReg, RegWrite, MemRead, MemWrite,
+    output [15:0] reg_file_read_data1,reg_file_read_data2,
+    output [15:0] sign_extend_output
 
 );
 
-    wire [15:0] inst;
 
     ControlUnit
     ControlUnit_dut (
-        .inst (inst ),
+        .inst (instruction ),
         .ALUOp (ALUOp ),
-        .ALUtoReg (ALUtoReg ),
+        .WB_ALUtoReg (WB_ALUtoReg ),
         .RegWrite (RegWrite ),
         .MemRead (MemRead ),
         .MemWrite  ( MemWrite)
     );
-
-    wire RegWrite;
-    wire [2:0] write_address;
-    wire [15:0] write_data;
-    wire [2:0] read_address1,read_address2
-    wire [15:0] read_data1,read_data12
 
     reg_file
     #(
@@ -35,19 +33,18 @@ module decode_stage(
         .clk (clk ),
         .rst (rst ),
         .RegWrite (RegWrite ),
-        .write_address (write_address ),
-        .write_data (write_data ),
-        .read_address1 (read_address1 ),
-        .read_address2 (read_address2 ),
-        .read_data1 (read_data1 ),
-        .read_data2  ( read_data2)
+        .write_address (regFile_write_address ),
+        .write_data (regFile_write_data ),
+        .read_address1 (instruction[15:13] ),
+        .read_address2 (instruction[12:10] ),
+        .read_data1 (reg_file_read_data1 ),
+        .read_data2  ( reg_file_read_data2)
     );
-
 
     sign_extend
     sign_extend_dut (
-        .in (in ),
-        .out  ( out)
+        .in (instruction[9:0]),
+        .out  ( sign_extend_output)
     );
 
 
