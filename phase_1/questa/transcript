@@ -50,3 +50,1139 @@ force -freeze sim:/alu/AlUmode 2'h2 0
 run
 force -freeze sim:/alu/AlUmode 2'h3 0
 run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 21:51:58 on Nov 07,2022, Elapsed time: 1:22:27
+# Errors: 0, Warnings: 7
+# vsim work.processor 
+# Start time: 21:51:58 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(19): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 21:51:58 on Nov 07,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 21:52:42 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/write back/write_back_stage.v(12): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 21:52:43 on Nov 07,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 21:53:10 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v(32): (vopt-2241) Connection width does not match width of port 'write_address'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/reg_file.v(6).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v(36): (vopt-2958) Implicit wire 'regFile_write_address' does not have any driver.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Loading work.processor(fast)
+add wave -position insertpoint  \
+sim:/processor/clk \
+sim:/processor/rst
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 21:55:41 on Nov 07,2022, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 7
+# vsim work.processor 
+# Start time: 21:55:41 on Nov 07,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading work.processor(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading work.processor(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+vsim work.processor -voptargs=+acc
+# End time: 21:57:31 on Nov 07,2022, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 1
+# vsim work.processor -voptargs="+acc" 
+# Start time: 21:57:31 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+add wave -position insertpoint  \
+sim:/processor/ALU_out \
+sim:/processor/ALUOp \
+sim:/processor/clk \
+sim:/processor/instruction \
+sim:/processor/mem_out \
+sim:/processor/MemRead \
+sim:/processor/MemWrite \
+sim:/processor/reg_file_read_data1 \
+sim:/processor/reg_file_read_data2 \
+sim:/processor/RegWrite \
+sim:/processor/rst \
+sim:/processor/sign_extend_output \
+sim:/processor/WB_ALUtoReg \
+sim:/processor/write_back_data
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+force -freeze sim:/processor/rst 1'h1 0
+run
+run
+run
+run
+add wave -position end  sim:/processor/fetch_stage_dut/clk_counter
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h1 1
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 8400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+force -freeze sim:/processor/rst 1'h1 1
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 8400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2802 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2C04 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata A000 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 6880 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/alu_dut/result
+run
+run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.alu -voptargs=+acc
+# End time: 22:38:11 on Nov 07,2022, Elapsed time: 0:40:40
+# Errors: 0, Warnings: 1
+# vsim work.alu -voptargs="+acc" 
+# Start time: 22:38:11 on Nov 07,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.alu(fast)
+# vsim work.alu -voptargs="+acc" 
+# Start time: 20:29:31 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.alu(fast)
+add wave -position insertpoint sim:/alu/*
+force -freeze sim:/alu/Op1 16'hAAAA 0
+force -freeze sim:/alu/Op2 16'hBBBB 0
+force -freeze sim:/alu/AlUmode 2'h0 0
+run
+force -freeze sim:/alu/AlUmode 2'h1 0
+run
+force -freeze sim:/alu/AlUmode 2'h2 0
+run
+force -freeze sim:/alu/AlUmode 2'h3 0
+run
+# Causality operation skipped due to absence of debug database file
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.alu(fast)
+add wave -position insertpoint sim:/alu/*
+force -freeze sim:/alu/Op1 16'hAAAA 0
+force -freeze sim:/alu/Op2 16'hBBBB 0
+force -freeze sim:/alu/AlUmode 2'h0 0
+run
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.alu(fast)
+force -freeze sim:/alu/AlUmode 2'h1 0
+run
+force -freeze sim:/alu/AlUmode 2'h2 0
+run
+force -freeze sim:/alu/AlUmode 2'h3 0
+run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# 4 compiles, 0 failed with no errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 22:38:18 on Nov 07,2022, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 1
+# vsim work.processor 
+# Start time: 22:38:18 on Nov 07,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+# End time: 21:51:58 on Nov 07,2022, Elapsed time: 1:22:27
+# Errors: 0, Warnings: 7
+# vsim work.processor 
+# Start time: 21:51:58 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(19): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 21:51:58 on Nov 07,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 22:38:21 on Nov 07,2022, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+# vsim work.processor 
+# Start time: 22:38:21 on Nov 07,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor(fast)
+# vsim work.processor 
+# Start time: 21:52:42 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/write back/write_back_stage.v(12): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 21:52:43 on Nov 07,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 22:38:23 on Nov 07,2022, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim work.processor 
+# Start time: 22:38:23 on Nov 07,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor(fast)
+# vsim work.processor 
+# Start time: 21:53:10 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v(32): (vopt-2241) Connection width does not match width of port 'write_address'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/reg_file.v(6).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v(36): (vopt-2958) Implicit wire 'regFile_write_address' does not have any driver.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# Loading work.processor(fast)
+add wave -position insertpoint  \
+sim:/processor/clk \
+sim:/processor/rst
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.processor
+# End time: 22:38:26 on Nov 07,2022, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+# vsim work.processor 
+# Start time: 22:38:26 on Nov 07,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor(fast)
+# End time: 21:55:41 on Nov 07,2022, Elapsed time: 0:02:31
+# Errors: 0, Warnings: 7
+# vsim work.processor 
+# Start time: 21:55:41 on Nov 07,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading work.processor(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_push'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(7).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v(50): (vopt-2241) Connection width does not match width of port 'memory_pop'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/memory/memory_stage.v(8).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading work.processor(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor(fast)
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor(fast)
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+vsim work.processor -voptargs=+acc
+# End time: 22:38:32 on Nov 07,2022, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 1
+# vsim work.processor -voptargs="+acc" 
+# Start time: 22:38:32 on Nov 07,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+# End time: 21:57:31 on Nov 07,2022, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 1
+# vsim work.processor -voptargs="+acc" 
+# Start time: 21:57:31 on Nov 07,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+add wave -position insertpoint  \
+sim:/processor/ALU_out \
+sim:/processor/ALUOp \
+sim:/processor/clk \
+sim:/processor/instruction \
+sim:/processor/mem_out \
+sim:/processor/MemRead \
+sim:/processor/MemWrite \
+sim:/processor/reg_file_read_data1 \
+sim:/processor/reg_file_read_data2 \
+sim:/processor/RegWrite \
+sim:/processor/rst \
+sim:/processor/sign_extend_output \
+sim:/processor/WB_ALUtoReg \
+sim:/processor/write_back_data
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+force -freeze sim:/processor/rst 1'h1 0
+run
+run
+run
+run
+add wave -position end  sim:/processor/fetch_stage_dut/clk_counter
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h1 1
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 8400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+force -freeze sim:/processor/rst 1'h1 1
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h0 1
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 8400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 240E -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2802 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2C04 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata A000 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 6880 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/alu_dut/result
+run
+run
+
+run
+run
+run
+run
+add wave -position end  sim:/processor/alu_dut/result
+add wave -position end  sim:/processor/alu_dut/result
+add wave -position end  sim:/processor/alu_dut/result
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/rst 1'h1 0 -cancel 200
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2802 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+
+run
+run
+run
+run
+run
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# 9 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.decode_stage(fast)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+force -freeze sim:/processor/rst 1'h1 0 -cancel 200
+force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100
+mem load -skip 0 -filltype value -filldata 2400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2802 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 2C04 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+
+mem load -skip 0 -filltype value -filldata A000 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 6900 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 6500 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 8400 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+mem load -skip 0 -filltype value -filldata 4500 -fillradix hexadecimal /processor/fetch_stage_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

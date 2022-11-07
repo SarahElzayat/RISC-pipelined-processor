@@ -51,10 +51,10 @@ module processor(
         .clk (clk ),
         . memory_read ( MemRead ),
         . memory_write ( MemWrite ),
-        . memory_push ( 0 ),
-        . memory_pop ( 0 ),
+        . memory_push ( 1'b0 ),
+        . memory_pop ( 1'b0 ),
         .address (ALU_out ),
-        . write_data ( reg_file_read_data1 ),
+        . write_data (reg_file_read_data2),
         .data  ( mem_out)
     );
 

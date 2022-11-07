@@ -11,7 +11,7 @@ module memory_stage (
 
     input clk, memory_read, memory_write, memory_push, memory_pop;
     input [15:0] address, write_data;
-    output reg [15:0] data;
+    output  [15:0] data;
 
     reg [31:0] SP = (2**11) - 1; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
     reg [15:0] data_memory [0: (2 ** 11) -1]; //data memory of 4KB 

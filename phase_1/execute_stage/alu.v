@@ -4,7 +4,7 @@ module alu(
     input [1:0]  AlUmode,
     output reg [15:0] result
 );
-
+    // we stick to dest being the first operand
     always @* begin
         case (AlUmode)
             //Add
@@ -12,7 +12,7 @@ module alu(
             //NOT
             2'b01 : result =  ~Op1;
             //PASS dest Register
-            2'b10 : result = Op2;
+            2'b10 : result = Op1;
             //NOP
             2'b11 : result = 16'b0;
             default : result = 16'b0;

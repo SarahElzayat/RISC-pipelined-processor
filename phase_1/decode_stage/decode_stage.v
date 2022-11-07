@@ -33,10 +33,11 @@ module decode_stage(
         .clk (clk ),
         .rst (rst ),
         .RegWrite (RegWrite ),
-        .write_address (regFile_write_address ),
+        .write_address (instruction[12:10] ),
         .write_data (regFile_write_data ),
-        .read_address1 (instruction[15:13] ),
-        .read_address2 (instruction[12:10] ),
+        // 12 11 10 9 8 7 6 5 4 3 2 1 0
+        .read_address1 (instruction[12:10] ),
+        .read_address2 (instruction[9:7] ),
         .read_data1 (reg_file_read_data1 ),
         .read_data2  ( reg_file_read_data2)
     );
