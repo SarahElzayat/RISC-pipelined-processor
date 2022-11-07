@@ -16,9 +16,9 @@ module memory_stage (
     reg [31:0] SP = (2**11) - 1; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
     reg [15:0] data_memory [0: (2 ** 11) -1]; //data memory of 4KB 
 
-
     assign data = (memory_read == 1) ? data_memory[address]:
     (memory_pop == 1) ? data_memory[SP[10:0]]:  16'bz;
+
 
 
     always @(posedge clk) begin
