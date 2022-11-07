@@ -2,6 +2,7 @@ module decode_stage(
     input clk,
     input rst
 );
+    wire [15:0] inst;
 
     wire [15:0] inst;
     wire ALUOp, ALUtoReg, RegWrite, MemRead, MemWrite;
@@ -16,7 +17,8 @@ module decode_stage(
         .MemWrite  ( MemWrite)
     );
 
-
+    wire RegWrite;
+    
     reg_file
     #(
     .WIDTH(16 ),
