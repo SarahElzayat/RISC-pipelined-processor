@@ -26,7 +26,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 		// 1000 0100 00000000
 		// 8400
 		// STD R2,R1
-		// 010 0 01 01 0 000 0000
+		// 010 001 010 000 0000
 		// 4500
 
 		3'b001:begin

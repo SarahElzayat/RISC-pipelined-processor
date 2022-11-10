@@ -10,7 +10,20 @@ module execute_stage (
     input RegWrite,
     output RegWrite_r,
     input[2:0] reg_write_address_from_decode,
-    output[2:0] reg_write_address_to_memory
+    output[2:0] reg_write_address_to_memory,
+    input [15:0] sign_extend_from_decode,
+    output [15:0] sign_extend_to_memory,
+    input write_back_select_from_decode,
+    output write_back_select_to_memory,
+
+    input  [15:0] reg_file_read_data1_from_decode,
+    input  [15:0] reg_file_read_data2_from_decode,
+    output [15:0] reg_file_read_data1_to_mem,
+    output [15:0] reg_file_read_data2_to_mem,
+    input memRead_from_decode   ,
+    output memRead_to_mem       ,
+    input memWrite_from_decode,
+    output memWrite_to_mem
 
 );
 
@@ -38,6 +51,52 @@ module execute_stage (
         .D (reg_write_address_from_decode ),
         .Q  ( reg_write_address_to_memory)
     );
+
+    var_reg  #(.size(16))
+    pip_EX_MEM_regs3 (
+        .clk (clk ),
+        .rst(reset),
+        .D (sign_extend_from_decode ),
+        .Q  ( sign_extend_to_memory)
+    );
+
+    var_reg  #(.size(1))
+    pip_EX_MEM_regs4 (
+        .clk (clk ),
+        .rst(reset),
+        .D (write_back_select_from_decode ),
+        .Q  ( write_back_select_to_memory)
+    );
+
+    var_reg  #(.size(16*2))
+    pip_EX_MEM_regs45 (
+        .clk (clk ),
+        .rst(reset),
+        .D ({
+        reg_file_read_data1_from_decode,
+        reg_file_read_data2_from_decode
+
+        } ),
+        .Q  ( {
+        reg_file_read_data1_to_mem,
+        reg_file_read_data2_to_mem
+        })
+    );
+
+    var_reg  #(.size(2))
+    pip_EX_MEM_regs5 (
+        .clk (clk ),
+        .rst(reset),
+        .D ({memRead_from_decode,
+        memWrite_from_decode
+        } ),
+        .Q  ( {
+        memRead_to_mem,
+        memWrite_to_mem
+        })
+    );
+
+
 
     alu
     alu_dut (
