@@ -427,3 +427,432 @@ run -all
 #    Time: 540 ns  Iteration: 0  Instance: /processor_tb
 # 1
 # Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+add wave -position end  sim:/processor_tb/processor_dut/fetch_stage_dut/var_reg_dut/D
+add wave -position end  sim:/processor_tb/processor_dut/fetch_stage_dut/var_reg_dut/Q
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=8.
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/RegWrite
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/RegWrite_r
+run
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/WB_ALUtoReg
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/WB_ALUtoReg_r
+add wave -position end  sim:/processor_tb/processor_dut/execute_stage_dut/result_r
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/reg_file_dut/reg_file
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/wave.do
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.write_back_stage(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'regFile_write_from_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v(7).
+#    Time: 0 ns  Iteration: 0  Instance: /processor_tb/processor_dut/decode_stage_dut File: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor.v Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (5) for port 'RegWrite'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/reg_file.v(5).
+#    Time: 0 ns  Iteration: 0  Instance: /processor_tb/processor_dut/decode_stage_dut/reg_file_dut File: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage/decode_stage.v Line: 55
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.write_back_stage(fast)
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__4)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+add wave -position end  sim:/processor_tb/processor_dut/memory_stage_dut/write_data
+add wave -position end  sim:/processor_tb/processor_dut/memory_stage_dut/reg_write_address_r_to_wb
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__4)
+# Loading work.write_back_stage(fast)
+add wave -position end  sim:/processor_tb/processor_dut/memory_stage_dut/reg_write_address_from_ex
+add wave -position end  sim:/processor_tb/processor_dut/memory_stage_dut/reg_write_address_r_to_wb
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22

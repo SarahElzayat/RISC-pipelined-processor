@@ -19,12 +19,15 @@ module processor(
     wire  [15:0] reg_file_read_data1,reg_file_read_data2;
     wire  [15:0] sign_extend_output;
 
+    wire RegWrite_from_mem;
+    wire [2:0] write_address_from_wb;
+    wire [2:0] write_address_from_decode;
     decode_stage
     decode_stage_dut (
         .clk (clk ),
         .rst (rst ),
         .instruction (instruction ),
-        .regFile_write_data (write_back_data ),
+        .regFile_write_data (write_back_data),
         .ALUOp_r (ALUOp ),
         .WB_ALUtoReg_r (WB_ALUtoReg ),
         .RegWrite_r (RegWrite ),
@@ -32,12 +35,19 @@ module processor(
         .MemWrite_r (MemWrite ),
         .reg_file_read_data1_r (reg_file_read_data1 ),
         .reg_file_read_data2_r (reg_file_read_data2 ),
-        .sign_extend_output_r  ( sign_extend_output)
+        .sign_extend_output_r  ( sign_extend_output),
+        .regFile_write_from_wb(RegWrite_from_mem),
+        .reg_write_address_from_wb(write_address_from_wb),
+        .reg_write_address_r(write_address_from_decode)
+
     );
+
+
+    wire RegWrite_from_ex;
 
     wire  [15:0] ALU_out;
 
-
+    wire [2:0] write_address_to_mem;
     execute_stage
     execute_stage_dut (
         .clk (clk ),
@@ -45,7 +55,12 @@ module processor(
         .Op1 (reg_file_read_data1 ),
         .Op2 (reg_file_read_data2 ),
         .AlUmode (ALUOp ),
-        .result_r  ( ALU_out)
+        .result_r  ( ALU_out),
+        .RegWrite_r (RegWrite_from_ex ),
+        .RegWrite(RegWrite),
+        .reg_write_address_to_memory(write_address_to_mem),
+        .reg_write_address_from_decode(write_address_from_decode)
+
     );
 
 
@@ -60,7 +75,11 @@ module processor(
         . memory_pop ( 1'b0 ),
         .address (ALU_out ),
         . write_data (reg_file_read_data2),
-        .data_r  ( mem_out)
+        .data_r  ( mem_out),
+        .RegWrite(RegWrite_from_ex),
+        .RegWrite_r(RegWrite_from_mem),
+        .reg_write_address_r_to_wb(write_address_from_wb),
+        .reg_write_address_from_ex(write_address_to_mem)
     );
 
 

@@ -22,13 +22,15 @@ module mem_fetch (
         end
 
         else begin
-            clk_counter = clk_counter + 1;
 
-            if(clk_counter == 6) //in case it's been 5 clock cycles, increment the PC to fetch the next instruction
-            begin
-                PC = PC + 1; //TODO change into pc-incrementing module in the next phase to deal with branching
-                clk_counter = 0;
-            end
+            if(clk_counter == 4) //in case it's been 5 clock cycles, increment the PC to fetch the next instruction
+                begin
+                    PC = PC + 1; //TODO change into pc-incrementing module in the next phase to deal with branching
+                    clk_counter = 0;
+                end
+            else
+                clk_counter = clk_counter + 1;
+
         end
 
     end

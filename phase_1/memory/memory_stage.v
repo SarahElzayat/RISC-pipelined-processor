@@ -1,23 +1,36 @@
 module memory_stage (
     input clk, reset,memory_read, memory_write, memory_push, memory_pop,
     input [15:0] address, write_data,
-    output  [15:0] data_r
+    output  [15:0] data_r,
+    // inputs to ust pass
+    input RegWrite,
+    output RegWrite_r,
+    input[2:0] reg_write_address_from_ex,
+    output[2:0] reg_write_address_r_to_wb
+
 );
 
     wire  [15:0] data;
 
     // Stage REG
     var_reg
-    #(.size(16))
+    #(.size(17))
     var_reg_dut (
-        .D (data ),
+        .D ({data ,RegWrite } ),
         .clk (clk ),
-        .Q  ( data_r),
+        .Q  ( {data_r,RegWrite_r}),
         .rst (reset )
     );
 
 
-
+    var_reg #(
+    .size(3)
+    ) var_reg_instance(
+        .D(reg_write_address_from_ex),
+        .clk(clk),
+        .rst(rst),
+        .Q(reg_write_address_r_to_wb)
+    );
 
     reg [31:0] SP = (2**11) - 1; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
     reg [15:0] data_memory [0: (2 ** 11) -1]; //data memory of 4KB 
