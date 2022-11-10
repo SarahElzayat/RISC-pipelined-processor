@@ -3,13 +3,13 @@ module processor(
     input rst
 );
 
-    wire [15:0]instruction;
+    wire [15:0] instruction;
 
     fetch_stage
     fetch_stage_dut (
         .clk (clk ),
         .reset (rst ),
-        .instruction  ( instruction)
+        .instruction_r  ( instruction)
     );
 
     wire[15:0] write_back_data;
@@ -25,23 +25,27 @@ module processor(
         .rst (rst ),
         .instruction (instruction ),
         .regFile_write_data (write_back_data ),
-        .ALUOp (ALUOp ),
-        .WB_ALUtoReg (WB_ALUtoReg ),
-        .RegWrite (RegWrite ),
-        .MemRead (MemRead ),
-        .MemWrite (MemWrite ),
-        .reg_file_read_data1 (reg_file_read_data1 ),
-        .reg_file_read_data2 (reg_file_read_data2 ),
-        .sign_extend_output  ( sign_extend_output)
+        .ALUOp_r (ALUOp ),
+        .WB_ALUtoReg_r (WB_ALUtoReg ),
+        .RegWrite_r (RegWrite ),
+        .MemRead_r (MemRead ),
+        .MemWrite_r (MemWrite ),
+        .reg_file_read_data1_r (reg_file_read_data1 ),
+        .reg_file_read_data2_r (reg_file_read_data2 ),
+        .sign_extend_output_r  ( sign_extend_output)
     );
 
     wire  [15:0] ALU_out;
-    alu
-    alu_dut (
+
+
+    execute_stage
+    execute_stage_dut (
+        .clk (clk ),
+        .reset (reset ),
         .Op1 (reg_file_read_data1 ),
         .Op2 (reg_file_read_data2 ),
         .AlUmode (ALUOp ),
-        .result  ( ALU_out)
+        .result_r  ( ALU_out)
     );
 
 
@@ -49,13 +53,14 @@ module processor(
     memory_stage
     memory_stage_dut (
         .clk (clk ),
+        .reset (reset ),
         . memory_read ( MemRead ),
         . memory_write ( MemWrite ),
         . memory_push ( 1'b0 ),
         . memory_pop ( 1'b0 ),
         .address (ALU_out ),
         . write_data (reg_file_read_data2),
-        .data  ( mem_out)
+        .data_r  ( mem_out)
     );
 
 

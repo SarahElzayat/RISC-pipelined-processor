@@ -5,12 +5,34 @@ module decode_stage(
     //from write back
     input [15:0] regFile_write_data,
 
-    output[1:0] ALUOp,
-    output WB_ALUtoReg, RegWrite, MemRead, MemWrite,
-    output [15:0] reg_file_read_data1,reg_file_read_data2,
-    output [15:0] sign_extend_output
+    output[1:0] ALUOp_r,
+    output        WB_ALUtoReg_r, RegWrite_r, MemRead_r, MemWrite_r,
+    output [15:0] reg_file_read_data1_r,reg_file_read_data2_r,
+    output [15:0] sign_extend_output_r
 
 );
+
+
+    wire[1:0] ALUOp;
+    wire WB_ALUtoReg, RegWrite, MemRead, MemWrite;
+    wire [15:0] reg_file_read_data1,reg_file_read_data2;
+    wire [15:0] sign_extend_output;
+
+
+
+    var_reg
+    #(.size(54))
+    var_reg_dut (
+        .D ({ALUOp,WB_ALUtoReg, RegWrite, MemRead, MemWrite,
+        reg_file_read_data1,reg_file_read_data2,
+        sign_extend_output} ),
+        .clk (clk ),
+        .Q  ( {ALUOp_r, WB_ALUtoReg_r, RegWrite_r, MemRead_r, MemWrite_r,
+        reg_file_read_data1_r,reg_file_read_data2_r,
+        sign_extend_output_r}),
+        .rst (rst)
+    );
+
 
 
     ControlUnit
