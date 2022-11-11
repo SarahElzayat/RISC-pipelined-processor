@@ -4,7 +4,7 @@ module mem_fetch (
     output [15:0] instruction
 );
 
-    reg [31:0] PC ; // = 2**5; //program counter(initally 2^5) 
+    reg [31:0] PC; // = 2**5; //program counter(initally 2^5) 
 
     //  word width                memory entries 
     reg [15:0] instruction_memory [0: (2 ** 20) -1 ]; //instruction memeory of 2MB size, the first 2^5 entries are reserved for interrupts,

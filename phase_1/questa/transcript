@@ -14,7 +14,7 @@
 # 13 compiles, 0 failed with no errors.
 vsim work.processor_tb -voptargs=+acc
 # vsim work.processor_tb -voptargs="+acc" 
-# Start time: 21:35:20 on Nov 10,2022
+# Start time: 14:44:38 on Nov 11,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.processor_tb(fast)
 # Loading work.processor(fast)
@@ -35,12 +35,10 @@ vsim work.processor_tb -voptargs=+acc
 # Loading work.memory_stage(fast)
 # Loading work.var_reg(fast__6)
 # Loading work.write_back_stage(fast)
-mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
 do wave.do
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
 run -all
 # ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
 #    Time: 540 ns  Iteration: 0  Instance: /processor_tb
 # 1
 # Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
-# End time: 21:36:29 on Nov 10,2022, Elapsed time: 0:01:09
-# Errors: 0, Warnings: 2
