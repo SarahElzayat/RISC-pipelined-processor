@@ -29,26 +29,32 @@ module execute_stage_tb;
   initial begin
     Op1 = 15;
     Op2 = 24;
-    ALUmode = 2'b00;
+    ALUmode = 2'b00; // Add
     carrySelect = 2'b10;
 
     #T;
-    Op1 = 15;
-    Op2 = 24;
-    ALUmode = 2'b00;
+    Op1 = 2;
+    Op2 = 5;
+    ALUmode = 2'b00; // Add
     carrySelect = 2'b10;
 
     #T;
-    Op1 = 15;
-    Op2 = 24;
-    ALUmode = 2'b00;
-    carrySelect = 2'b10;
+    Op1 = 42;
+    Op2 = 7;
+    ALUmode = 2'b01; // NOT
+    carrySelect = 2'b00;
 
     #T;
-    Op1 = 15;
-    Op2 = 24;
-    ALUmode = 2'b00;
-    carrySelect = 2'b10;
+    Op1 = 10;
+    Op2 = 6;
+    ALUmode = 2'b10; // Pass
+    carrySelect = 2'b00;
+
+    #T;
+    Op1 = 25;
+    Op2 = 20;
+    ALUmode = 2'b11; // NOP
+    carrySelect = 2'b00;
 
     #T;
     $finish;
