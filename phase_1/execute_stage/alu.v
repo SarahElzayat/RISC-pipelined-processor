@@ -41,7 +41,7 @@ module alu(
             2'b01: carry = 1;
             // ALU
             2'b10:
-                if ((Op1 & Op2) | (0 & (Op1 ^ Op2))) carry = 1;
+                if ((AlUmode == 2'b00) & ((Op1 & Op2) | (0 & (Op1 ^ Op2)))) carry = 1;
                 else carry = 0;
 
             default : carry = 0;
@@ -49,5 +49,5 @@ module alu(
     end
 
     assign conditionCodeRegister = {carry, negative, zero};
-    
+
 endmodule 
