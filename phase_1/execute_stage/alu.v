@@ -19,7 +19,7 @@ module alu(
             //NOP
             2'b11: result = 16'b0;
 
-            default : result = 16'b0;
+            default: result = 16'b0;
         endcase
     end
 

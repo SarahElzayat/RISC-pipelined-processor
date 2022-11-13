@@ -116,7 +116,7 @@ module execute_stage (
         .Op2 (Op2),
         .AlUmode (AlUmode),
         .carrySelect (carrySelect),
-        .conditionCodeRegister (conditionCodeRegister)
+        .conditionCodeRegister (conditionCodeRegister),
         .result (result)
     );
 
