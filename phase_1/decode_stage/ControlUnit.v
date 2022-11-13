@@ -2,6 +2,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 	input [15:0] inst;
 	wire [2:0] Opcode;
 	output reg [1:0] ALUOp;
+	output reg [1:0] carrySelect;
 	output reg WB_ALUtoReg,RegWrite,MemRead,MemWrite;
 	assign Opcode = inst[15:13];
 	always @*
@@ -35,6 +36,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 'b0;
 			MemWrite = 'b0;
 			ALUOp = 'bxx;
+			carrySelect = 'bxx;
 		end
 
 		//Store instruction STD R1,R2
@@ -44,6 +46,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 'b0;
 			MemWrite = 'b1;
 			ALUOp = 'b10;
+			carrySelect = 'b00;
 		end
 
 		//Add instruction ADD,NOT
@@ -53,6 +56,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 'b0;
 			MemWrite = 'b0;
 			ALUOp = 'b00;
+			carrySelect = 'b10;
 		end
 
 		//not instruction
@@ -64,6 +68,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 'b0;
 			MemWrite = 'b0;
 			ALUOp = 'b01;
+			carrySelect = 'b00;
 		end
 
 		//no operation
@@ -73,6 +78,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 'b0;
 			MemWrite = 'b0;
 			ALUOp = 'b11;
+			carrySelect = 'b00;
 		end
 
 		default : begin
@@ -81,6 +87,7 @@ module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
 			MemRead = 1'b0;
 			MemWrite= 1'b0;
 			ALUOp = 'bxx;
+			carrySelect = 'bxx;
 		end
 
 	endcase
