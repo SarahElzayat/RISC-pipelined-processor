@@ -5,8 +5,8 @@ module execute_stage (
     input [15:0] Op2, // Second operand
     input [1:0] AlUmode, // ALU Operation
     output [15:0] result_r, // ALU Result
+    output [2:0] conditionCodeRegister_r, // Carry, negative, zero
     input [1:0] carrySelect, // Set, reset, ALU
-    output [2:0] conditionCodeRegister, // Carry, negative, zero
 
     // inputs to just pass to the next stage
     input RegWrite,
@@ -42,6 +42,16 @@ module execute_stage (
         .rst(reset),
         .D (result),
         .Q (result_r)
+    );
+
+    // Condition Code Register
+    wire [2:0] conditionCodeRegister
+    var_reg  #(.size(3))
+    pip_EX_MEM (
+        .clk (clk),
+        .rst(reset),
+        .D (conditionCodeRegister),
+        .Q (conditionCodeRegister_r)
     );
 
     // RegWrite signal
