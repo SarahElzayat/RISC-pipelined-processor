@@ -5,13 +5,15 @@ module execute_stage (
     input [15:0] Op2, // Second operand
     input [1:0] AlUmode, // ALU Operation
     output [15:0] result_r, // ALU Result
+    input [1:0] carrySelect, // Set, reset, ALU
+    output [2:0] conditionCodeRegister, // Carry, negative, zero
 
     // inputs to just pass to the next stage
     input RegWrite,
     output RegWrite_r,
 
-    input[2:0] reg_write_address_from_decode,
-    output[2:0] reg_write_address_to_memory,
+    input [2:0] reg_write_address_from_decode,
+    output [2:0] reg_write_address_to_memory,
 
     input [15:0] sign_extend_from_decode,
     output [15:0] sign_extend_to_memory,
@@ -19,8 +21,8 @@ module execute_stage (
     input write_back_select_from_decode,
     output write_back_select_to_memory,
 
-    input  [15:0] reg_file_read_data1_from_decode,
-    input  [15:0] reg_file_read_data2_from_decode,
+    input [15:0] reg_file_read_data1_from_decode,
+    input [15:0] reg_file_read_data2_from_decode,
 
     output [15:0] reg_file_read_data1_to_mem,
     output [15:0] reg_file_read_data2_to_mem,
@@ -113,6 +115,8 @@ module execute_stage (
         .Op1 (Op1),
         .Op2 (Op2),
         .AlUmode (AlUmode),
+        .carrySelect (carrySelect),
+        .conditionCodeRegister (conditionCodeRegister)
         .result (result)
     );
 
