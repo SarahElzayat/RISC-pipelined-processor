@@ -20,10 +20,10 @@ module execute_stage_tb;
     .reset (reset),
     .Op1 (Op1),
     .Op2 (Op2),
-    .ALUmode (ALUmode),
+    .AlUmode (ALUmode),
     .carrySelect (carrySelect),
     .result_r (result),
-    .conditionCodeRegister_r (conditionCodeRegister),
+    .conditionCodeRegister_r (conditionCodeRegister)
   );
 
   initial begin

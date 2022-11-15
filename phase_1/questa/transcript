@@ -1,0 +1,119 @@
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful with warnings.
+# Compile of ControlUnit.v failed with 1 errors.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v failed with 1 errors.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 2 failed with 2 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful with warnings.
+# Compile of ControlUnit.v failed with 1 errors.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful with warnings.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+vsim work.processor_tb -voptargs=+acc
+# vsim work.processor_tb -voptargs="+acc" 
+# Start time: 19:30:01 on Nov 15,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/alu.v(35): (vopt-2182) 'result' might be read before written in always_comb or always @* block.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+do wave.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 14980
+#           Attempting to use alternate WLF file "./wlft1t26rs".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1t26rs
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22
+add wave -position insertpoint  \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/AlUmode \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/carry \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/carrySelect \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/conditionCodeRegister \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/negative \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/Op1 \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/Op2 \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/result \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/sum \
+sim:/processor_tb/processor_dut/execute_stage_dut/alu_dut/zero
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# ** Note: $finish    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(22)
+#    Time: 540 ns  Iteration: 0  Instance: /processor_tb
+# 1
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 22

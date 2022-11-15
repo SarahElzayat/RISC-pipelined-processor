@@ -1,4 +1,4 @@
-module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,MemWrite,ALUOp);
+module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,carrySelect,MemWrite,ALUOp);
 	input [15:0] inst;
 	wire [2:0] Opcode;
 	output reg [1:0] ALUOp;

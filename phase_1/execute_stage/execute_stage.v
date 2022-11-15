@@ -45,9 +45,9 @@ module execute_stage (
     );
 
     // Condition Code Register
-    wire [2:0] conditionCodeRegister
+    wire [2:0] conditionCodeRegister;
     var_reg  #(.size(3))
-    pip_EX_MEM (
+    pip_EX_MEMM (
         .clk (clk),
         .rst(reset),
         .D (conditionCodeRegister),

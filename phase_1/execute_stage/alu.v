@@ -11,7 +11,7 @@ module alu(
     always @* begin
         case (AlUmode)
             //Add
-            2'b00: result = Op1 + Op2;
+            2'b00:  result = Op1 + Op2;
             //NOT
             2'b01: result =  ~Op1;
             //PASS dest Register
@@ -25,7 +25,7 @@ module alu(
 
     reg carry, zero, negative;
     reg [16:0] sum;
-    
+
     always @* begin
         // Negative
         if (result[15]) negative = 1;
@@ -43,14 +43,14 @@ module alu(
             2'b01: carry = 1;
             // ALU
             2'b10:
-                if (AlUmode == 2'b00) begin
-                    sum = Op1 + Op2;
-                    result = sum[15:0];
-                    carry = sum[16];
-                end
-                else begin
-                    carry = 0;
-                end
+            if (AlUmode == 2'b00) begin
+                sum = Op1 + Op2;
+                result = sum[15:0];
+                carry = sum[16];
+            end
+            else begin
+                carry = 0;
+            end
 
             default: carry = 0;
         endcase
