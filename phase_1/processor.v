@@ -15,6 +15,7 @@ module processor(
     wire[15:0] write_back_data;
 
     wire [1:0] ALUOp;
+    wire [1:0] carrySelect;
     wire  write_back_sel, RegWrite, MemRead, MemWrite;
     wire  [15:0] reg_file_read_data1,reg_file_read_data2;
     wire  [15:0] sign_extend_output_from_decode;
@@ -31,6 +32,7 @@ module processor(
         .instruction (instruction ),
         .regFile_write_data (write_back_data),
         .ALUOp_r (ALUOp ),
+        .carrySelect_r (carrySelect),
         .WB_ALUtoReg_r (write_back_sel ),
         .RegWrite_r (RegWrite ),
 
@@ -50,6 +52,7 @@ module processor(
     wire RegWrite_from_ex;
 
     wire  [15:0] ALU_out;
+    wire  [2:0] conditionCodeRegister;
     wire  [15:0] reg_file_read_data1_to_mem ;
     wire  [15:0] reg_file_read_data2_to_mem ;
     wire MemRead_to_mem ,MemWrite_to_mem;
@@ -63,7 +66,9 @@ module processor(
         .Op1 (reg_file_read_data1 ),
         .Op2 (reg_file_read_data2 ),
         .AlUmode (ALUOp ),
+        .carrySelect (carrySelect),
         .result_r  ( ALU_out),
+        .conditionCodeRegister_r (conditionCodeRegister),
         .RegWrite_r (RegWrite_from_ex ),
         .RegWrite(RegWrite),
         .reg_write_address_to_memory(write_address_to_mem),

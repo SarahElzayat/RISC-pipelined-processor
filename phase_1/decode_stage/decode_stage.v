@@ -3,6 +3,7 @@ module decode_stage(
     input rst,
     input [15:0] instruction,
     output[1:0] ALUOp_r,
+    output[1:0] carrySelect_r,
     output        WB_ALUtoReg_r, RegWrite_r, MemRead_r, MemWrite_r,
     output [15:0] reg_file_read_data1_r,reg_file_read_data2_r,
     output [15:0] sign_extend_output_r,
@@ -17,6 +18,7 @@ module decode_stage(
 
 
     wire[1:0] ALUOp;
+    wire[1:0] carrySelect;
     wire WB_ALUtoReg, RegWrite, MemRead, MemWrite;
     wire [15:0] reg_file_read_data1,reg_file_read_data2;
     wire [15:0] sign_extend_output;
@@ -24,13 +26,13 @@ module decode_stage(
 
 
     var_reg
-    #(.size(54))
+    #(.size(56))
     var_reg_dut (
-        .D ({ALUOp,WB_ALUtoReg, RegWrite, MemRead, MemWrite,
+        .D ({ALUOp, carrySelect, WB_ALUtoReg, RegWrite, MemRead, MemWrite,
         reg_file_read_data1,reg_file_read_data2,
         sign_extend_output} ),
         .clk (clk ),
-        .Q  ( {ALUOp_r, WB_ALUtoReg_r, RegWrite_r, MemRead_r, MemWrite_r,
+        .Q  ( {ALUOp_r, carrySelect_r, WB_ALUtoReg_r, RegWrite_r, MemRead_r, MemWrite_r,
         reg_file_read_data1_r,reg_file_read_data2_r,
         sign_extend_output_r}),
         .rst (rst)
@@ -51,6 +53,7 @@ module decode_stage(
     ControlUnit_dut (
         .inst (instruction ),
         .ALUOp (ALUOp ),
+        .carrySelect (carrySelect),
         .WB_ALUtoReg (WB_ALUtoReg ),
         .RegWrite (RegWrite ),
         .MemRead (MemRead ),
