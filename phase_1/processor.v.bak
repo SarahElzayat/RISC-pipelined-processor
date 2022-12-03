@@ -3,8 +3,6 @@ module processor(
     input rst,
     output [2:0] conditionCodeRegister
 );
-    wire [15:0] instruction;
-
     fetch_stage
     fetch_stage_dut (
         .clk (clk ),
