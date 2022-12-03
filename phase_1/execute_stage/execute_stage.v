@@ -48,7 +48,7 @@ module execute_stage (
     wire [2:0] conditionCodeRegister;
     var_reg  #(.size(3))
     pip_EX_MEMM (
-        .clk (clk),
+        .clk (clk && AlUmode!=2'b11),
         .rst(reset),
         .D (conditionCodeRegister),
         .Q (conditionCodeRegister_r)

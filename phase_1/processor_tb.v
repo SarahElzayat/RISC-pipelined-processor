@@ -26,37 +26,49 @@ module processor_tb;
 
     initial begin
         begin
-            $monitor("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
 			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
             #CLK_PERIOD rst = 1;
             #CLK_PERIOD rst = 0;
-
+            #CLK_PERIOD;
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b001 && R[1] == 1'd0) expected = 1; // LDM R1, 0
-
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b001 && R[2] == 16'b0000000000000010) expected = 1; // LDM R2, 2
-
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b001) expected = 1; // NOP
-
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b000 && R[1] == 16'b0000000000000010) expected = 1; // ADD R1, R2
-
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b010 && R[1] == 16'b1111111111111101) expected = 1; // NOT R1
-
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
             #(CLK_PERIOD * 5)
             expected = 1'bx;
             if (conditionCodeRegister == 3'b010 && processor_dut.memory_stage_dut.data_memory[2045] == 16'b0000000000000010) expected = 1; // STD R2, R1
-
-            //#(CLK_PERIOD)
-            //$finish;
+            $display("Time = %t | R1 = %b | R2 = %b | Memory at R1 = %b | Carry = %b | Negative = %b | Zero = %b | Expected = %b", $time, 
+			R[1], R[2], processor_dut.memory_stage_dut.data_memory[2045], conditionCodeRegister[2], conditionCodeRegister[1], conditionCodeRegister[0], expected);
+           
+            #(CLK_PERIOD)
+            $stop;
         end
     end
 
