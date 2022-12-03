@@ -774,3 +774,67 @@ run -all
 #    Time: 680 ns  Iteration: 0  Instance: /processor_tb
 # Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
 # A time value could not be extracted from the current line
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v failed with 1 errors.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__7)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# number of tests passed =           6
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(80)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 80
