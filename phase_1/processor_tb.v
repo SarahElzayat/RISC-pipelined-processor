@@ -33,27 +33,27 @@ module processor_tb;
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b001 && R[1] == 1'd0) expected = 1;
+            if (conditionCodeRegister == 3'b001 && R[1] == 1'd0) expected = 1; // LDM R1, 0
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b001 && R[2] == 16'b0000000000000010) expected = 1;
+            if (conditionCodeRegister == 3'b001 && R[2] == 16'b0000000000000010) expected = 1; // LDM R2, 2
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b001) expected = 1;
+            if (conditionCodeRegister == 3'b001) expected = 1; // NOP
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b000 && R[1] == 16'b0000000000000010) expected = 1;
+            if (conditionCodeRegister == 3'b000 && R[1] == 16'b0000000000000010) expected = 1; // ADD R1, R2
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b010 && R[1] == 16'b1111111111111101) expected = 1;
+            if (conditionCodeRegister == 3'b010 && R[1] == 16'b1111111111111101) expected = 1; // NOT R1
 
             #(CLK_PERIOD * 5)
             expected = 1'bx;
-            if (conditionCodeRegister == 3'b010 && processor_dut.memory_stage_dut.data_memory[2045] == 16'b0000000000000010) expected = 1;
+            if (conditionCodeRegister == 3'b010 && processor_dut.memory_stage_dut.data_memory[2045] == 16'b0000000000000010) expected = 1; // STD R2, R1
 
             //#(CLK_PERIOD)
             //$finish;
