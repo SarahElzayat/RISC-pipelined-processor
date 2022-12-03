@@ -11,9 +11,8 @@ module mem_fetch (
     // the rest is reserved of the instructions.
 
     reg [2:0]clk_counter; //counts 5 cycles of the clock to fetch the next instruction
-	
-    assign instruction = instruction_memory[PC];
-    //assign instruction = clk_counter == 0? instruction_memory[PC]: 'hA000;
+
+    assign instruction = clk_counter == 0? instruction_memory[PC]: 'hA000;
 
     always @(posedge clk) begin
 
