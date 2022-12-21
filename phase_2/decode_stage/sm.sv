@@ -19,6 +19,7 @@ module sm (
 			IDLE :
 			begin
 				//NOTE - NORMAL EXECUTION
+				// TODO- FADY HERE
 				case (opcode[15:14])
 					2'b00:
 					begin
