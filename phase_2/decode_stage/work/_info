@@ -1,6 +1,9 @@
 m255
 K4
 z2
+Z0 !s99 nomlopt
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -8,117 +11,139 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
+Z1 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
+T_opt
+!s110 1671985875
+VOj:M0=H4lZa9?bce=KLO]3
+Z2 04 2 4 work sm fast 0
+=1-020cf0a1cd70-63a87ad2-3e5-828c
+Z3 !s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1671987230
+VoA<zJc=^CfH:7WM2Ug1YC2
+R2
+=2-020cf0a1cd70-63a8801e-2e1-7ae0
+R3
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+R1
 vControlUnit
-Z1 !s110 1668083041
+Z6 !s110 1668083041
 !i10b 1
 !s100 ;c_QgT=YXGYjnOCL``GhX1
 IN2GE;Qm9VeY<J00C`bAXg0
-R0
+R1
 w1667854542
 8ControlUnit.v
 FControlUnit.v
 !i122 2
 L0 1 86
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 OL;L;2021.2;73
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z4 !s108 1668083041.000000
-Z5 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
-Z6 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
+Z9 !s108 1668083041.000000
+Z10 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
+Z11 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z8 tCvgOpt 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
 n@control@unit
 vdecode_stage
-R1
+R6
 !i10b 1
 !s100 z6GNCAmj;kYfDP`1?PT8a2
 I_`PImEzm6=PaGUO<=jBVG3
-R0
+R1
 w1668083004
 8decode_stage.v
 Fdecode_stage.v
 !i122 2
 L0 1 73
-R2
-R3
+R7
+R8
 r1
 !s85 0
 31
-R4
-R5
-R6
+R9
+R10
+R11
 !i113 0
-R7
-R8
+R12
+R4
 vreg_file
-R1
+R6
 !i10b 1
 !s100 DlcAKmP]f6SCd98`;RAKR2
 IRgPe[VC9hiiikY3S@TDFh3
-R0
+R1
 w1667844530
 8reg_file.v
 Freg_file.v
 !i122 2
 L0 1 57
-R2
-R3
+R7
+R8
 r1
 !s85 0
 31
-R4
-R5
-R6
+R9
+R10
+R11
 !i113 0
-R7
-R8
+R12
+R4
 vsign_extend
-R1
+R6
 !i10b 1
 !s100 ^zWB86i>6z602Sa=5FCPS0
 Ia9E5`cD4cgN6^I7m]>mf81
-R0
+R1
 w1667842638
 8sign_extend.v
 Fsign_extend.v
 !i122 2
 L0 1 11
-R2
-R3
-r1
-!s85 0
-31
-R4
-R5
-R6
-!i113 0
 R7
 R8
-vsm
-DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1671658011
-!i10b 1
-!s100 C98PKoEFNLB_:YfV]b2RE1
-IHfeH]Jz6ZT6A8SDR>OBgh0
-S1
-dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage
-w1671658010
-8sm.sv
-Fsm.sv
-!i122 3
-L0 1 229
-R2
-R3
 r1
 !s85 0
 31
-!s108 1671658011.000000
+R9
+R10
+R11
+!i113 0
+R12
+R4
+vsm
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1671995764
+!i10b 1
+!s100 2;hNOT?K[gMRA1DD9c?_F0
+I@7aBnmO3Gd<a1OU:ljhhZ2
+S1
+dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage
+w1671995762
+8sm.sv
+Fsm.sv
+!i122 6
+L0 1 254
+R7
+R8
+r1
+!s85 0
+31
+!s108 1671995764.000000
 !s107 sm.sv|
 !s90 sm.sv|
 !i113 0
-R7
-R8
+R12
+R4

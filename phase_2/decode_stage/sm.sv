@@ -3,13 +3,13 @@ module sm (
 	input interrupt_signal,
 	input [15:0] opcode,
 	input [32-1:0]PC,
-	output reg reg_write, mem_read, mem_write, mem_pop,mem_push,carry_select, clear_instruction,flag_reg_select,
+	output reg reg_write, mem_read, mem_write, mem_pop,mem_push,carry_select, clear_instruction,flag_reg_select,pc_choose_memory,
 	output reg[2 :0] jump_selector,
 	output reg [1:0] mem_src_select
 );
 	typedef enum int unsigned { IDLE ,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 	State current_state;
-
+	logic [4:0] counter;
 
 
 	// output logic
@@ -45,6 +45,7 @@ module sm (
 								// push pc_1 --> upper part first 
 								mem_src_select <= 2'b01;
 								mem_push <= 1'b1;
+								// jmp-no-condition in execute stage
 								jump_selector <= 3'B111;
 
 							end
@@ -69,6 +70,9 @@ module sm (
 			PIPE_WAIT:
 			begin
 				// TODO - insert the NOPS here in the pipeline
+				if(counter > 0)
+					clear_instruction <= 1'b1;
+
 			end
 
 			JUMP_1:
@@ -102,9 +106,16 @@ module sm (
 			end
 			POP_PC2:
 			begin
-				mem_pop <= 1'b1;
-				// TODO - make it work with POP in same cycle
-				// choose PC correctly 
+				// leach pop at the first cycle 
+				if(counter == 0)
+					mem_pop <= 1'b1;
+					// It will take pass the first cycle (EXECUTE) and gget the PC in the second cycle (MEMORY) 
+					// Change the PC HERE 
+				if(counter  == 2)
+				begin
+					pc_choose_memory <= 1'b1;
+				end
+
 			end
 			POP_FLAGS:
 			begin
@@ -118,7 +129,6 @@ module sm (
 		endcase
 	end
 
-	logic [4:0] counter;
 	// state ff and transition 
 	always_ff@(posedge clk or negedge reset)
 	begin
@@ -131,9 +141,12 @@ module sm (
 				counter <= 0;
 				case (current_state)
 					IDLE:
-					begin
-						//NOTE - NORMAL EXECUTION
+					if(interrupt_signal == 1)
+						begin
+							current_state <= PIPE_WAIT;
+						end else begin
 						case (opcode[15:14])
+							//NOTE - NORMAL EXECUTION
 							2'b00:
 							begin
 							end
@@ -162,7 +175,7 @@ module sm (
 									end
 									3'b110: // reti
 									begin
-										current_state <= POP_PC1;
+										current_state <= POP_FLAGS;
 									end
 									default : ;
 								endcase
@@ -179,44 +192,54 @@ module sm (
 					PIPE_WAIT:
 					begin
 						counter <= counter +1;
+						// wait 5 cycles 
 						if(counter  == 4)
 						begin
-							current_state <= PUSH_FLAGS;
+							current_state <= PUSH_PC1;
 							counter <= 0;
 						end
 					end
 
+
+
+					//-----------------------------------------------------CALL
 					JUMP_1:
 					begin
 						current_state <= IDLE;
 					end
 
-
-					PUSH_FLAGS :
-					begin
-						current_state <= PUSH_PC1;
-					end
+					//-----------------------------------------------------INTERRUPT
 					PUSH_PC1:
 					begin
 						current_state <= PUSH_PC2;
 					end
 					PUSH_PC2:
 					begin
+						current_state <= PUSH_FLAGS;
+					end
+					PUSH_FLAGS :
+					begin
 						current_state <= IDLE;
 					end
 
+					//-----------------------------------------------------RET 
+					POP_FLAGS:
+					begin
+						current_state <= POP_PC1;
+
+					end
 					POP_PC1:
 					begin
 						current_state = POP_PC2;
 					end
 					POP_PC2:
 					begin
-						current_state = POP_FLAGS;
-					end
-					POP_FLAGS:
-					begin
-						current_state <= IDLE;
-
+						counter <= counter +1;
+						if(counter  == 2)
+						begin
+							current_state <= IDLE;
+							counter <= 0;
+						end
 					end
 
 					default :
