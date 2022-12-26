@@ -12,7 +12,7 @@ module mem_fetch (
   reg [31:0] pc; // = 2**5; //program counter(initally 2^5)
 
   //  word width                memory entries  //TODO check this ya sarsora
-  reg [15:0] instruction_memory [0: (2 ** 10) -1 ]; //instruction memeory of 2MB size, the first 2^5 entries are reserved for interrupts,
+  reg [15:0] instruction_memory [0: (2 ** 19) -1 ]; //instruction memeory of 2MB size, the first 2^5 entries are reserved for interrupts,
                                                     // the rest is reserved of the instructions.
 
   assign instruction =

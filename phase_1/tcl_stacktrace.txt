@@ -1,0 +1,23 @@
+Mon Dec 26 14:14:55 CAT 2022
+Trace back: can't read "vsimMem(dataRadix:/memory_stage_without_buffers_tb/memory_stage_without_buffers_dut/data_memory)": no such element in array
+    while executing
+"lappend cmd "-fillradix" $vsimMem(dataRadix:$memHeadName)"
+    (procedure "Memtool::DoMemoryLoad" line 20)
+    invoked from within
+"Memtool::DoMemoryLoad .main_pane.memory.interior.cs.body "
+    invoked from within
+".memloaddialog.bb.ok invoke"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 [list $w invoke]"
+    (procedure "::tk::ButtonInvoke" line 9)
+    invoked from within
+"::tk::ButtonInvoke $ok"
+    (procedure "MtiDialog::privHandleEnter" line 24)
+    invoked from within
+"MtiDialog::privHandleEnter .memloaddialog.bb.ok"
+    invoked from within
+"if { [MtiDialog::privHandleEnter .memloaddialog.bb.ok] == 0 } {break}"
+    (command bound to event)
+  <2:C:/intelFPGA/20.1/modelsim_ase/win32aloem/tk8.6/bgerror.tcl:106: ::tkerror {can't read "vsimMem(dataRadix:/memory_stage_without_buffers_tb/memory_stage_without_buffers_dut/data_memory)": no such element in array}
+  <1:eval:1: ::tk::dialog::error::bgerror {can't read "vsimMem(dataRadix:/memory_stage_without_buffers_tb/memory_stage_without_buffers_dut/data_memory)": no such element in array}

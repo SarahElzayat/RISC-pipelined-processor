@@ -1,29 +1,8 @@
-D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv
+D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mem_fetch
+-- Compiling module memory_stage_without_buffers_tb
 
 Top level modules:
-	mem_fetch
-
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module var_reg
-
-Top level modules:
-	var_reg
-
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module mem_fetch_tb
-
-Top level modules:
-	mem_fetch_tb
-
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module fetch_stage_tb
-
-Top level modules:
-	fetch_stage_tb
+	memory_stage_without_buffers_tb
 
 } {} {}}

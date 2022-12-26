@@ -1,136 +1,110 @@
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
+# Loading project phase_2
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project vlsi
+# Compile of booth_multiplier.v was successful.
+# Compile of booth_multiplier_tb.v was successful.
 # 2 compiles, 0 failed with no errors.
-vsim -gui work.mem_fetch_tb
-# vsim -gui work.mem_fetch_tb 
-# Start time: 18:27:13 on Dec 21,2022
-# Loading sv_std.std
-# Loading work.mem_fetch_tb
-# Loading work.mem_fetch
-mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /mem_fetch_tb/mem_fetch_dut/instruction_memory
-add wave -position insertpoint  \
-sim:/mem_fetch_tb/T \
-sim:/mem_fetch_tb/reset \
-sim:/mem_fetch_tb/pc_write_back_value \
-sim:/mem_fetch_tb/pc_write \
-sim:/mem_fetch_tb/pc_plus_one \
-sim:/mem_fetch_tb/pc_enable \
-sim:/mem_fetch_tb/instruction \
-sim:/mem_fetch_tb/clk \
-sim:/mem_fetch_tb/clear_instruction
-run
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.mem_fetch_tb
-# Loading work.mem_fetch
-run
-# GetModuleFileName: The specified module could not be found.
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:01:35 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multiplier.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:01:36 on Dec 23,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:01:46 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier 
+# ** Error: (vlog-2054) File "booth_multiplier" is a directory.
+# End time: 18:01:46 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:27 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier 
+# ** Error: (vlog-2054) File "booth_multiplier" is a directory.
+# End time: 18:02:27 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:28 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# -- Compiling module booth_multiplier
 # 
+# Top level modules:
+# 	booth_multiplier
+# End time: 18:02:28 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:38 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:02:38 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+vlog booth_multiplier_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:57 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier_tb.v 
+# -- Compiling module booth_multiplier_tb
 # 
-run
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.mem_fetch_tb
-# Loading work.mem_fetch
-run
-# GetModuleFileName: The specified module could not be found.
+# Top level modules:
+# 	booth_multiplier_tb
+# End time: 18:02:57 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:03:21 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:03:21 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:03:54 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:03:54 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+vlog booth_multiplier_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:11 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier_tb.v 
+# -- Compiling module booth_multiplier_tb
 # 
+# Top level modules:
+# 	booth_multiplier_tb
+# End time: 18:04:11 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:19 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# -- Compiling module booth_multiplier
 # 
-run
-run
-run
-mem load -filltype inc -filldata 0 -fillradix binary -skip 0 /mem_fetch_tb/mem_fetch_dut/instruction_memory
-restart
-mem load -filltype inc -filldata 0 -fillradix binary -skip 0 /mem_fetch_tb/mem_fetch_dut/instruction_memory
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.mem_fetch_tb
-# Loading work.mem_fetch
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# Compile of fetch_stage.sv failed with 1 errors.
-# Compile of fetch_stage_tb.sv was successful.
-# 4 compiles, 1 failed with 1 error.
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# Compile of fetch_stage.sv failed with 1 errors.
-# Compile of fetch_stage_tb.sv was successful.
-# Compile of var_reg.v was successful.
-# 5 compiles, 1 failed with 1 error.
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# Compile of fetch_stage.sv failed with 1 errors.
-# Compile of fetch_stage_tb.sv was successful.
-# Compile of var_reg.sv was successful.
-# 5 compiles, 1 failed with 1 error.
-# Compile of mem_fetch.sv was successful.
-# Compile of mem_fetch_tb.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of fetch_stage_tb.sv was successful.
-# Compile of var_reg.sv was successful.
-# 5 compiles, 0 failed with no errors.
-vsim -gui work.fetch_stage_tb
-# End time: 19:17:23 on Dec 21,2022, Elapsed time: 0:50:10
-# Errors: 0, Warnings: 9
-# vsim -gui work.fetch_stage_tb 
-# Start time: 19:17:23 on Dec 21,2022
-# Loading sv_std.std
-# Loading work.fetch_stage_tb
-# Loading work.fetch_stage
-# Loading work.var_reg
-# Loading work.mem_fetch
-add wave -position insertpoint  \
-sim:/fetch_stage_tb/T \
-sim:/fetch_stage_tb/reset \
-sim:/fetch_stage_tb/pc_write_back_value \
-sim:/fetch_stage_tb/pc_write \
-sim:/fetch_stage_tb/pc_plus_one_r \
-sim:/fetch_stage_tb/pc_enable \
-sim:/fetch_stage_tb/instruction_r \
-sim:/fetch_stage_tb/clk \
-sim:/fetch_stage_tb/clear_instruction
-run
-run
-run
-add wave -position insertpoint  \
-sim:/fetch_stage_tb/fetch_stage_dut/mem_fetch_dut/instruction
-restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-restart
-mem load -filltype inc -filldata 0 -fillradix symbolic -skip 0 /fetch_stage_tb/fetch_stage_dut/mem_fetch_dut/instruction_memory
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
+# Top level modules:
+# 	booth_multiplier
+# End time: 18:04:19 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
