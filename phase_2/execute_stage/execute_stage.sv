@@ -87,10 +87,11 @@ buffer1 (
     .Q (result_out)
 );
 
-var_reg #(.size(3))
+var_reg_with_enable #(.size(3))
 buffer2 (
-    .clk (clk && (ALU_Op != 4'b1111)),
+    .clk (clk),
     .rst(reset),
+    .en (flagreg_enable),
     .D (flag_register),
     .Q (flag_register_out)
 );
@@ -170,6 +171,7 @@ buffer11 (
 // ALU
 alu
 alu_dut (
+    .clk (clk),
     .carry_sel (carry_sel),
     .alu_src2_select (alu_src2_select),
     .read_data1 (read_data1),

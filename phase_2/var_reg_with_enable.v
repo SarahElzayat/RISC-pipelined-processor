@@ -1,4 +1,4 @@
-module var_reg #(parameter size = 8)(
+module var_reg_with_enable #(parameter size = 8)(
     input [size-1:0] D,
     input clk,
     input en,

@@ -1,4 +1,5 @@
 module alu (
+    input clk,
     input [1:0] carry_sel,
     input [1:0] alu_src2_select,
     input [15:0] read_data1,
@@ -13,7 +14,7 @@ module alu (
     input flagreg_enable,
     input [2:0] conditions_from_memory_pop,
 
-    output [2:0] flag_register,
+    output reg [2:0] flag_register,
     output reg [15:0] result
 );
 
@@ -69,11 +70,10 @@ assign carry =
 
 assign alu_flags = {carry, negative, zero};
 
-assign flag_register =
-(flagreg_enable == 1'b1) ? (
+always @(posedge clk) begin
+    flag_register =
     (flag_regsel == 1'b0) ? alu_flags :
-    (flag_regsel == 1'b1) ? conditions_from_memory_pop :
-    'bz) :
-(flagreg_enable == 1'b0) ? 'bx : 'bz;
+    (flag_regsel == 1'b1) ? conditions_from_memory_pop : 'bz;
+end
 
 endmodule
