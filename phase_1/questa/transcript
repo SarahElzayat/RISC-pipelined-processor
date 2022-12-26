@@ -1,0 +1,519 @@
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# 9 compiles, 4 failed with no errors.
+# Compile of decode_stage.sv failed with 2 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv failed with 1 errors.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# 12 compiles, 2 failed with 3 errors.
+# Compile of decode_stage.sv failed with 2 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv failed with 2 errors.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# 12 compiles, 2 failed with 4 errors.
+# Compile of decode_stage.sv failed with 1 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# 12 compiles, 1 failed with 1 error.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# 12 compiles, 0 failed with no errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 3 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 1 failed with 3 errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 3 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 1 failed with 3 errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 2 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 1 failed with 2 errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 1 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 1 failed with 1 error.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:33:35 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(196): (vopt-2241) Connection width does not match width of port 'sel'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v(3).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(196): (vopt-2241) Connection width does not match width of port 'immediate_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(196): (vopt-2241) Connection width does not match width of port 'alu_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v(5).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(40).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel_out'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(41).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'ALUOp_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(10).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=11.
+# Error loading design
+# End time: 01:33:36 on Dec 27,2022, Elapsed time: 0:00:01
+# Errors: 19, Warnings: 31
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:43:55 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(197): (vopt-2241) Connection width does not match width of port 'sel'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v(3).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(162): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(40).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel_out'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(41).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'ALUOp_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(10).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=9.
+# Error loading design
+# End time: 01:43:56 on Dec 27,2022, Elapsed time: 0:00:01
+# Errors: 19, Warnings: 11
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:45:13 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(161): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(40).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(98): (vopt-2241) Connection width does not match width of port 'wb_sel_out'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(41).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'ALUOp_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(10).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(55): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=8.
+# Error loading design
+# End time: 01:45:14 on Dec 27,2022, Elapsed time: 0:00:01
+# Errors: 19, Warnings: 10
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:48:20 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'ALUOp_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(10).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(15): (vopt-2958) Implicit wire 'pc_write' does not have any driver.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(16): (vopt-2958) Implicit wire 'pc_write_back_value' does not have any driver.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(17): (vopt-2958) Implicit wire 'clear_instruction' does not have any driver.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(58): (vopt-2958) Implicit wire 'reset' does not have any driver.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.reg_file(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.var_reg(fast__8)
+# Loading work.write_back_stage(fast)
+exit
+# Break key hit
+quit -sim
+# End time: 01:49:04 on Dec 27,2022, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 13
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:50:03 on Dec 27,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(164): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'ALUOp_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(10).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(56): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Warning: (vopt-31) Unable to unlink file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/work/@_opt3/_lib3_0.qpg".
+# ** Warning: (vopt-31) Unable to unlink file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/work/@_opt3/_lib3_0.qtl".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-133) Unable to remove directory "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/work/@_opt3".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=9.
+# Error loading design
+# End time: 01:50:03 on Dec 27,2022, Elapsed time: 0:00:00
+# Errors: 19, Warnings: 11
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:53:14 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(68): (vopt-2241) Connection width does not match width of port 'wb_sel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(68): (vopt-2241) Connection width does not match width of port 'mem_addsel_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(13).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(68): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=5.
+# Error loading design
+# End time: 01:53:14 on Dec 27,2022, Elapsed time: 0:00:00
+# Errors: 19, Warnings: 7
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim work.processor
+# vsim work.processor 
+# Start time: 01:57:50 on Dec 27,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'std_address' not found in module 'memory_stage' (7th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'ldd_address' not found in module 'memory_stage' (8th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'memory_address_select' not found in module 'memory_stage' (9th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'memory_write_src_select' not found in module 'memory_stage' (10th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'pc' not found in module 'memory_stage' (11th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'flags' not found in module 'memory_stage' (12th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'shift_reg' not found in module 'memory_stage' (14th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'alu_value' not found in module 'memory_stage' (15th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'alu_value_out' not found in module 'memory_stage' (16th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'LDM_value' not found in module 'memory_stage' (17th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'LDM_value_out' not found in module 'memory_stage' (18th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write' not found in module 'memory_stage' (19th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_out' not found in module 'memory_stage' (20th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'wb_sel' not found in module 'memory_stage' (21st connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'wb_sel_out' not found in module 'memory_stage' (22nd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'outport_enable' not found in module 'memory_stage' (23rd connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'outport_enable_out' not found in module 'memory_stage' (24th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_address' not found in module 'memory_stage' (25th connection).
+# ** Error (suppressible): D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(176): (vopt-2912) Port 'reg_write_address_out' not found in module 'memory_stage' (26th connection).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(112): (vopt-2241) Connection width does not match width of port 'ALU_Op'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(11).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(68): (vopt-2241) Connection width does not match width of port 'reg_write_wb'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv(20).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'pc_write_back_value'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(5).
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv(12): (vopt-2241) Connection width does not match width of port 'instruction_r'. The port definition is at: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv(8).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=19, Warnings=4.
+# Error loading design
+# End time: 01:57:51 on Dec 27,2022, Elapsed time: 0:00:01
+# Errors: 19, Warnings: 6

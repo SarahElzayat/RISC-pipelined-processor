@@ -5,7 +5,8 @@ module alu (
     input [15:0] read_data1,
     input [15:0] read_data2,
     input [1:0] alu_src1_select,
-    input [4:0] shamt,
+    input alu_src_select,
+    input [3:0] shamt,
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
     input [15:0] reg_data1_from_mem,
@@ -22,18 +23,21 @@ reg alu_carry;
 wire carry, zero, negative;
 wire [2:0] alu_flags;
 
-wire [15:0] Op1, Op2;
+wire [15:0] Op1, Op2, src1;
 
 assign Op1 =
 (alu_src1_select == 2'b00) ? write_back_data :
 (alu_src1_select == 2'b01) ? reg_data1_from_mem :
 (alu_src1_select == 2'b10) ? read_data1 : 'bz;
 
+assign src1 =
+(alu_src_select == 1'b1) ? read_data2 :
+(alu_src_select == 1'b0) ? shamt : 'bz;
+
 assign Op2 =
-(alu_src2_select == 2'b00) ? read_data2 :
-(alu_src2_select == 2'b01) ? write_back_data :
-(alu_src2_select == 2'b10) ? reg_data2_from_mem : 
-(alu_src2_select == 2'b11) ? shamt : 'bz;
+(alu_src2_select == 2'b00) ? write_back_data :
+(alu_src2_select == 2'b01) ? reg_data2_from_mem :
+(alu_src2_select == 2'b10) ? src1 : 'bz;
 
 always @* begin
     alu_carry = 0;

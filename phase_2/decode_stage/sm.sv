@@ -11,7 +11,6 @@ module sm (
 	output logic  [1:0] wb_sel,
 	output logic  pc_write,
 	output logic  [1:0] mem_addsel,
-	output logic  [1:0] mem_srcsel,
 	output logic  [1:0] carry_sel,
 	output logic  alu_srcsel,
 	output logic  outport_enable,
@@ -49,7 +48,7 @@ module sm (
 		mem_pop = 1'b0;
 		mem_push = 1'b0;
 		mem_addsel = 2'b00;
-		mem_srcsel = 2'b00;
+		mem_src_select = 2'b00;
 		// write back stage signals
 		reg_write = 1'b0;
 		wb_sel = 2'b01;
@@ -146,7 +145,7 @@ module sm (
 								mem_write = 1'b1;
 								mem_push = 1'b1;
 								mem_addsel = 2'b10;
-								mem_srcsel = 2'b11;
+								mem_src_select = 2'b11;
 							end
 							// POP Rdst
 							3'b110:begin
@@ -154,7 +153,7 @@ module sm (
 								mem_read = 1'b1;
 								mem_pop = 1'b1;
 								mem_addsel = 2'b10;
-								mem_srcsel = 2'b11;
+								mem_src_select = 2'b11;
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b01;

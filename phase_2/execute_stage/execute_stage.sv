@@ -4,11 +4,10 @@ module execute_stage (
 
     // Inputs to ALU
     input [1:0] carry_sel,
-    input [1:0] alu_src2_select, // Select src
     input [15:0] read_data1, // Rdest
     input [15:0] read_data2, // Rsrc
-    input [1:0] alu_src1_select, // Select dest
-    input [4:0] shamt,
+    input alu_src_select, // Select dest
+    input [3:0] shamt,
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
     input [15:0] reg_data1_from_mem,
@@ -47,14 +46,23 @@ module execute_stage (
     input mem_write,
     output mem_write_out,
 
-    input pc_enable,
-    output pc_enable_out,
+    input outport_enable,
+    output outport_enable_out,
 
     input [1:0] memory_address_select,
     output [1:0] memory_address_select_out,
 
     input [1:0] memory_write_src_select,
     output [1:0] memory_write_src_select_out,
+
+    input [31:0] pc_plus_one,
+    output [31:0] pc_plus_one_out,
+
+    input pc_choose_memory,
+    output pc_choose_memory_out,
+
+    input [2:0] reg_write_address,
+    output [2:0] reg_write_address_out,
 
     output [15:0] read_data1_out,
     output [15:0] read_data2_out
@@ -64,9 +72,11 @@ wire [15:0] result;
 wire [31:0] new_PC;
 wire [2:0] flag_register;
 wire branch_result = 0;
+wire [1:0] alu_src1_select = 2'b10;
+wire [1:0] alu_src2_select = 2'b10;
 
-// TODO 
-// Insert Forwarding Unit here
+
+// TODO: FORWARDING UNIT
 
 // BRANCHING
 
@@ -99,40 +109,56 @@ buffer2 (
     .Q (flag_register_out)
 );
 
-var_reg #(.size(2))
+var_reg #(.size(1))
 buffer3 (
     .clk (clk),
     .rst(reset),
-    .D ({reg_write, pc_enable}),
-    .Q ({reg_write_out, pc_enable_out})
+    .D (reg_write),
+    .Q (reg_write_out)
+);
+
+var_reg #(.size(1))
+buffer4 (
+    .clk (clk),
+    .rst(reset),
+    .D (outport_enable),
+    .Q (outport_enable_out)
 );
 
 var_reg #(.size(4))
-buffer4 (
+buffer5 (
     .clk (clk),
     .rst(reset),
     .D ({memory_address_select, memory_write_src_select}),
     .Q ({memory_address_select_out, memory_write_src_select_out})
 );
 
-var_reg #(.size(2))
-buffer5 (
+var_reg #(.size(5))
+buffer6 (
     .clk (clk),
     .rst(reset),
-    .D (wb_sel),
-    .Q (wb_sel_out)
+    .D ({wb_sel, reg_write_address}),
+    .Q ({wb_sel_out, reg_write_address_out})
 );
 
 var_reg #(.size(32))
-buffer6 (
+buffer7 (
     .clk (clk),
     .rst(reset),
     .D (PC),
     .Q (PC_out)
 );
 
+var_reg #(.size(33))
+buffer8 (
+    .clk (clk),
+    .rst(reset),
+    .D ({pc_plus_one, pc_choose_memory}),
+    .Q ({pc_plus_one_out, pc_choose_memory_out})
+);
+
 var_reg #(.size(32))
-buffer7 (
+buffer9 (
     .clk (clk),
     .rst(reset),
     .D (new_PC),
@@ -140,7 +166,7 @@ buffer7 (
 );
 
 var_reg #(.size(16))
-buffer8 (
+buffer10 (
     .clk (clk),
     .rst(reset),
     .D (LDM_value),
@@ -148,7 +174,7 @@ buffer8 (
 );
 
 var_reg #(.size(32))
-buffer9 (
+buffer11 (
     .clk (clk),
     .rst(reset),
     .D ({read_data1, read_data2}),
@@ -156,7 +182,7 @@ buffer9 (
 );
 
 var_reg #(.size(2))
-buffer10 (
+buffer12 (
     .clk (clk),
     .rst (reset),
     .D ({mem_pop, mem_push}),
@@ -164,7 +190,7 @@ buffer10 (
 );
 
 var_reg #(.size(2))
-buffer11 (
+buffer13 (
     .clk (clk),
     .rst (reset),
     .D ({mem_read, mem_write}),
@@ -180,6 +206,7 @@ alu_dut (
     .read_data1 (read_data1),
     .read_data2 (read_data2),
     .alu_src1_select (alu_src1_select),
+    .alu_src_select (alu_src_select),
     .shamt (shamt),
     .ALU_Op (ALU_Op),
     .write_back_data (write_back_data),
