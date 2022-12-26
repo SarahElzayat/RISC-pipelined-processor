@@ -65,6 +65,8 @@ wire branch_result = 0;
 // TODO 
 // Insert Forwarding Unit here
 
+// BRANCHING
+
 branch_controller branching (
     .jump_selector (jump_selector),
     .condition_signals (flag_register),
@@ -87,7 +89,7 @@ buffer1 (
 
 var_reg #(.size(3))
 buffer2 (
-    .clk (clk && ALU_Op!=4'b1111),
+    .clk (clk && (ALU_Op != 4'b1111)),
     .rst(reset),
     .D (flag_register),
     .Q (flag_register_out)
@@ -141,7 +143,7 @@ buffer8 (
     .Q (LDM_value_out)
 );
 
-var_reg  #(.size(32))
+var_reg #(.size(32))
 buffer9 (
     .clk (clk),
     .rst(reset),
@@ -149,7 +151,7 @@ buffer9 (
     .Q ({read_data1_out, read_data2_out})
 );
 
-var_reg  #(.size(2))
+var_reg #(.size(2))
 buffer10 (
     .clk (clk),
     .rst (reset),
@@ -157,7 +159,7 @@ buffer10 (
     .Q ({mem_pop_out, mem_push_out})
 );
 
-var_reg  #(.size(2))
+var_reg #(.size(2))
 buffer11 (
     .clk (clk),
     .rst (reset),
