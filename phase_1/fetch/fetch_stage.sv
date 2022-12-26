@@ -1,7 +1,6 @@
 module fetch_stage (
     input clk,
     input reset, //the reset signal resets the pc to 2^5 (first address of the instructions memory)
-    input pc_enable,
     input pc_write,
     input [15:0] pc_write_back_value,
     input clear_instruction, //overrides the current instruction with NOP (selector of the output mux)

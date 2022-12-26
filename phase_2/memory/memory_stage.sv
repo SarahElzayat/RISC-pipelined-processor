@@ -55,17 +55,17 @@ data_reg (
   .rst (reset)
 );
 
-wire [15:0] data;
-var_reg #(.size(16))
-data_reg (
-  .D (data ),
-  .clk (clk ),
-  .Q  (data_r),
-  .rst (reset)
-);
+  wire [15:0] data;
+  var_reg #(.size(16))
+  data_reg (
+    .D (data ),
+    .clk (clk ),
+    .Q  (data_r),
+    .rst (reset)
+  );
 
-memory_stage_without_buffers
-memory_stage_without_buffers_dut (
+  memory_stage_without_buffers
+  memory_stage_without_buffers_dut (
     .clk (clk ),
     .reset (reset ),
     .memory_read (memory_read ),
