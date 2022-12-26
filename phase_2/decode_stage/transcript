@@ -12,6 +12,7 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+<<<<<<< HEAD
 # vsim sm 
 # Start time: 18:31:14 on Dec 25,2022
 # ** Note: (vsim-3812) Design is being optimized...
@@ -120,3 +121,26 @@ run 500
 force -freeze sim:/sm/opcode 16'b1111000000000000 0
 run 500
 run 500
+=======
+# vsim decode_stage 
+# Start time: 14:24:21 on Nov 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: decode_stage.v(25): Module 'var_reg' is not defined.
+#  For instance 'var_reg_dut' at path 'decode_stage'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 14:24:22 on Nov 10,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+vsim work.decode_stage
+# vsim work.decode_stage 
+# Start time: 14:25:36 on Nov 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: decode_stage.v(25): Module 'var_reg' is not defined.
+#  For instance 'var_reg_dut' at path 'decode_stage'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 14:25:37 on Nov 10,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+>>>>>>> origin/Hamdy

@@ -1,9 +1,12 @@
 m255
 K4
 z2
+<<<<<<< HEAD
 Z0 !s99 nomlopt
 R0
 R0
+=======
+>>>>>>> origin/Hamdy
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -11,6 +14,7 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
+<<<<<<< HEAD
 Z1 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
 T_opt
 !s110 1671985875
@@ -40,11 +44,21 @@ Z6 !s110 1668083041
 !s100 ;c_QgT=YXGYjnOCL``GhX1
 IN2GE;Qm9VeY<J00C`bAXg0
 R1
+=======
+Z0 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
+vControlUnit
+Z1 !s110 1668083041
+!i10b 1
+!s100 ;c_QgT=YXGYjnOCL``GhX1
+IN2GE;Qm9VeY<J00C`bAXg0
+R0
+>>>>>>> origin/Hamdy
 w1667854542
 8ControlUnit.v
 FControlUnit.v
 !i122 2
 L0 1 86
+<<<<<<< HEAD
 Z7 VDg1SIo80bB@j0V0VzS_@n1
 Z8 OL;L;2021.2;73
 r1
@@ -63,11 +77,32 @@ R6
 !s100 z6GNCAmj;kYfDP`1?PT8a2
 I_`PImEzm6=PaGUO<=jBVG3
 R1
+=======
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z4 !s108 1668083041.000000
+!s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
+Z5 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
+!i113 0
+Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+n@control@unit
+vdecode_stage
+R1
+!i10b 1
+!s100 z6GNCAmj;kYfDP`1?PT8a2
+I_`PImEzm6=PaGUO<=jBVG3
+R0
+>>>>>>> origin/Hamdy
 w1668083004
 8decode_stage.v
 Fdecode_stage.v
 !i122 2
 L0 1 73
+<<<<<<< HEAD
 R7
 R8
 r1
@@ -85,11 +120,31 @@ R6
 !s100 DlcAKmP]f6SCd98`;RAKR2
 IRgPe[VC9hiiikY3S@TDFh3
 R1
+=======
+R2
+R3
+r1
+!s85 0
+31
+R4
+Z8 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
+R5
+!i113 0
+R6
+R7
+vreg_file
+R1
+!i10b 1
+!s100 DlcAKmP]f6SCd98`;RAKR2
+IRgPe[VC9hiiikY3S@TDFh3
+R0
+>>>>>>> origin/Hamdy
 w1667844530
 8reg_file.v
 Freg_file.v
 !i122 2
 L0 1 57
+<<<<<<< HEAD
 R7
 R8
 r1
@@ -107,11 +162,31 @@ R6
 !s100 ^zWB86i>6z602Sa=5FCPS0
 Ia9E5`cD4cgN6^I7m]>mf81
 R1
+=======
+R2
+R3
+r1
+!s85 0
+31
+R4
+R8
+R5
+!i113 0
+R6
+R7
+vsign_extend
+R1
+!i10b 1
+!s100 ^zWB86i>6z602Sa=5FCPS0
+Ia9E5`cD4cgN6^I7m]>mf81
+R0
+>>>>>>> origin/Hamdy
 w1667842638
 8sign_extend.v
 Fsign_extend.v
 !i122 2
 L0 1 11
+<<<<<<< HEAD
 R7
 R8
 r1
@@ -147,3 +222,16 @@ r1
 !i113 0
 R12
 R4
+=======
+R2
+R3
+r1
+!s85 0
+31
+R4
+R8
+R5
+!i113 0
+R6
+R7
+>>>>>>> origin/Hamdy
