@@ -15,16 +15,16 @@ module ControlUnit(
 	output reg [1:0] carry_sel,
 	output reg [1:0] alu_src1sel,
 	output reg [1:0] alu_src2sel,
-	output reg outport_enable
-	output reg inport_sel
+	output reg outport_enable,
+	output reg inport_sel,
 	output reg flagreg_enable
-	);
+);
 	wire [4:0] Opcode;
 	assign Opcode = inst[15:11];
 	always @*
 	// type of the instruction j-type || r-type || i-type
 	case (Opcode[4:3])
-	// R-type instructions (00)
+		// R-type instructions (00)
 		2'b00:begin
 			case(Opcode[2:0])
 				// NOT Rdst => 000
@@ -35,7 +35,7 @@ module ControlUnit(
 					// execution stage signals
 					ALUOp = 4'b0000;
 					alu_src1sel = 2'b10;
-					alu_src2sel = 2'b00;	//useless
+					alu_src2sel = 2'b00; //useless
 					jump_sel = 3'b000;
 					carry_sel = 2'b00;
 					flag_regsel = 1'b0;
@@ -56,7 +56,7 @@ module ControlUnit(
 				// INC & DEC instructions => 001
 				3'b001:begin
 					case(inst[10])
-					// INC Rdst
+						// INC Rdst
 						1'b0:begin
 							//fetch stage signals
 							pc_enable = 1'b1;
@@ -64,7 +64,7 @@ module ControlUnit(
 							// execution stage signals
 							ALUOp = 4'b0001;
 							alu_src1sel = 2'b10;
-							alu_src2sel = 2'b00;	//useless
+							alu_src2sel = 2'b00; //useless
 							jump_sel = 3'b000;
 							carry_sel = 2'b00;
 							flag_regsel = 1'b0;
@@ -81,7 +81,7 @@ module ControlUnit(
 							wb_sel = 2'b10;
 							outport_enable = 1'b0;
 						end
-					// DEC Rdst 
+						// DEC Rdst 
 						1'b1:begin
 							//fetch stage signals
 							pc_enable = 1'b1;
@@ -89,7 +89,7 @@ module ControlUnit(
 							// execution stage signals
 							ALUOp = 4'b0010;
 							alu_src1sel = 2'b10;
-							alu_src2sel = 2'b00;	//useless
+							alu_src2sel = 2'b00; //useless
 							jump_sel = 3'b000;
 							carry_sel = 2'b00;
 							flag_regsel = 1'b0;
@@ -134,7 +134,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-				
+
 				// SUB Rdst,Rscr
 				3'b011:begin
 					//fetch stage signals
@@ -266,11 +266,11 @@ module ControlUnit(
 				end
 			endcase
 		end
-		
-	//I-type instructions with one operand (01)
+
+		//I-type instructions with one operand (01)
 		2'b01:begin
 			case(Opcode[2:0])
-			// NOP
+				// NOP
 				3'b000:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -295,7 +295,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// SETC
+				// SETC
 				3'b001:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -320,7 +320,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// CLRC
+				// CLRC
 				3'b010:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -345,7 +345,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// OUT Rdst
+				// OUT Rdst
 				3'b011:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -370,7 +370,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b1;
 				end
-			// IN Rdst
+				// IN Rdst
 				3'b100:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -395,7 +395,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// PUSH Rdst
+				// PUSH Rdst
 				3'b101:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -420,7 +420,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// POP Rdst
+				// POP Rdst
 				3'b110:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -447,10 +447,10 @@ module ControlUnit(
 				end
 			endcase
 		end
-	//I-type instructions with two operands (10)
+		//I-type instructions with two operands (10)
 		2'b10:begin
 			case(Opcode[2:0])
-			// MOV Rdst,Rscr
+				// MOV Rdst,Rscr
 				3'b000:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -475,7 +475,7 @@ module ControlUnit(
 					wb_sel = 2'b10;
 					outport_enable = 1'b0;
 				end
-			// LDM Rdst,imm
+				// LDM Rdst,imm
 				3'b001:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -501,7 +501,7 @@ module ControlUnit(
 					outport_enable = 1'b0;
 
 				end
-			// LDD Rdst,Rscr
+				// LDD Rdst,Rscr
 				3'b010:begin
 					//fetch stage signals
 					pc_enable = 1'b1;
@@ -526,11 +526,12 @@ module ControlUnit(
 					wb_sel = 2'b01;
 					outport_enable = 1'b0;
 				end
-			// STD Rdst,Rscr
+				// STD Rdst,Rscr
 				3'b011:begin
-					
+
 				end
 			endcase
 		end
+	
 	endcase
 endmodule

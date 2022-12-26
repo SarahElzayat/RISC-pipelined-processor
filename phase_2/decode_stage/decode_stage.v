@@ -46,9 +46,6 @@ module decode_stage(
         .Q(reg_write_address_r)
     );
 
-
-
-
     ControlUnit
     ControlUnit_dut (
         .inst (instruction ),
@@ -85,6 +82,4 @@ module decode_stage(
         .in (instruction[9:0]),
         .out  ( sign_extend_output)
     );
-
-
 endmodule
