@@ -1,0 +1,840 @@
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful with warnings.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful with warnings.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+vsim work.processor_tb -voptargs=+acc
+# vsim work.processor_tb -voptargs="+acc" 
+# Start time: 15:38:51 on Dec 03,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/alu.v(35): (vopt-2182) 'result' might be read before written in always_comb or always @* block.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/alu.v(33): Register is illegal in left-hand side of continuous assignment
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/alu.v(34): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+vsim work.processor_tb -voptargs=+acc
+# vsim work.processor_tb -voptargs="+acc" 
+# Start time: 15:38:51 on Dec 03,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+add wave -position insertpoint  \
+sim:/processor_tb/processor_dut/ALU_out \
+sim:/processor_tb/processor_dut/ALU_out_to_wb \
+sim:/processor_tb/processor_dut/ALUOp \
+sim:/processor_tb/processor_dut/carrySelect \
+sim:/processor_tb/processor_dut/clk \
+sim:/processor_tb/processor_dut/conditionCodeRegister \
+sim:/processor_tb/processor_dut/instruction \
+sim:/processor_tb/processor_dut/mem_out \
+sim:/processor_tb/processor_dut/MemRead \
+sim:/processor_tb/processor_dut/MemRead_to_mem \
+sim:/processor_tb/processor_dut/MemWrite \
+sim:/processor_tb/processor_dut/MemWrite_to_mem \
+sim:/processor_tb/processor_dut/reg_file_read_data1 \
+sim:/processor_tb/processor_dut/reg_file_read_data1_to_mem \
+sim:/processor_tb/processor_dut/reg_file_read_data2 \
+sim:/processor_tb/processor_dut/reg_file_read_data2_to_mem \
+sim:/processor_tb/processor_dut/RegWrite \
+sim:/processor_tb/processor_dut/RegWrite_from_ex \
+sim:/processor_tb/processor_dut/RegWrite_from_mem \
+sim:/processor_tb/processor_dut/reset \
+sim:/processor_tb/processor_dut/rst \
+sim:/processor_tb/processor_dut/sign_extend_output_from_decode \
+sim:/processor_tb/processor_dut/sign_extend_output_from_ex \
+sim:/processor_tb/processor_dut/sign_extend_output_to_wb \
+sim:/processor_tb/processor_dut/write_address_from_decode \
+sim:/processor_tb/processor_dut/write_address_from_wb \
+sim:/processor_tb/processor_dut/write_address_to_mem \
+sim:/processor_tb/processor_dut/write_back_data \
+sim:/processor_tb/processor_dut/write_back_sel \
+sim:/processor_tb/processor_dut/write_back_sel_to_mem \
+sim:/processor_tb/processor_dut/write_back_sel_to_wb
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 14980
+#           Attempting to use alternate WLF file "./wlft7qmqth".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft7qmqth
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   90 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  140 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  230 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  390 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  430 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  490 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  510 | R1 = 0000000000000100 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  530 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  570 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  590 | R1 = 1111111111111011 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  610 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  650 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 660 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+add wave -position end  sim:/processor_tb/processor_dut/decode_stage_dut/reg_file_dut/reg_file
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   90 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  140 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  230 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  390 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  430 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  490 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  510 | R1 = 0000000000000100 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  530 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  570 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  590 | R1 = 1111111111111011 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  610 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  650 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 660 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   90 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  140 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  230 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  390 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  410 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  430 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  440 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  490 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = x
+# Time =                  510 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  530 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  590 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = x
+# Time =                  610 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 660 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  110 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  110 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   20 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                   90 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  230 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  390 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  410 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  430 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  490 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = x
+# Time =                  510 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  530 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  590 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = x
+# Time =                  610 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(59)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 59
+# A time value could not be extracted from the current line
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v failed with 7 errors.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 1 failed with 7 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v failed with 7 errors.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 1 failed with 7 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(71)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(71)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
+# A time value could not be extracted from the current line
+# Paste insertion failed: $display("Time: ** UI-Msg: (vish-4014) No objects found matching '$display("Time'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %t: ** UI-Msg: (vish-4014) No objects found matching '%t'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: R1: ** UI-Msg: (vish-4014) No objects found matching 'R1'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: R2: ** UI-Msg: (vish-4014) No objects found matching 'R2'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: Memory: ** UI-Msg: (vish-4014) No objects found matching 'Memory'.
+# Paste insertion failed: at: ** UI-Msg: (vish-4014) No objects found matching 'at'.
+# Paste insertion failed: R1: ** UI-Msg: (vish-4014) No objects found matching 'R1'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: Carry: ** UI-Msg: (vish-4014) No objects found matching 'Carry'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: Negative: ** UI-Msg: (vish-4014) No objects found matching 'Negative'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: Zero: ** UI-Msg: (vish-4014) No objects found matching 'Zero'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b: ** UI-Msg: (vish-4014) No objects found matching '%b'.
+# Paste insertion failed: |: ** UI-Msg: (vish-4014) No objects found matching '|'.
+# Paste insertion failed: Expected: (vish-4014) No objects found matching 'Expected'.
+# Paste insertion failed: =: ** UI-Msg: (vish-4014) No objects found matching '='.
+# Paste insertion failed: %b",: ** UI-Msg: (vish-4014) No objects found matching '%b",'.
+# Paste insertion failed: $time,: ** UI-Msg: (vish-4014) No objects found matching '$time,'.
+# Paste insertion failed: R[1],: (vish-4014) No objects found matching 'R[1],'.
+# Paste insertion failed: R[2],: (vish-4014) No objects found matching 'R[2],'.
+# Paste insertion failed: processor_dut.memory_stage_dut.data_memory[2045],: (vish-4014) No objects found matching 'processor_dut.memory_stage_dut.data_memory[2045],'.
+# Paste insertion failed: conditionCodeRegister[2],: (vish-4014) No objects found matching 'conditionCodeRegister[2],'.
+# Paste insertion failed: conditionCodeRegister[1],: (vish-4014) No objects found matching 'conditionCodeRegister[1],'.
+# Paste insertion failed: conditionCodeRegister[0],: (vish-4014) No objects found matching 'conditionCodeRegister[0],'.
+# Paste insertion failed: expected);: (vish-4014) No objects found matching 'expected);'.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/execute_stage.v(124): (vopt-2685) [TFMPC] - Too few port connections for 'alu_dut'.  Expected 8, found 6.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/execute_stage.v(124): (vopt-2718) [TFMPC] - Missing connection for port 'rst'.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/execute_stage/execute_stage.v(124): (vopt-2718) [TFMPC] - Missing connection for port 'clk'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = x | Negative = x | Zero = x | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(71)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 0 | Zero = 1 | Expected = x
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(71)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__7)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(71)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 71
+# A time value could not be extracted from the current line
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v failed with 1 errors.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of processor.v was successful.
+# Compile of alu.v was successful.
+# Compile of ControlUnit.v was successful.
+# Compile of decode_stage.v was successful.
+# Compile of fetch_stage.v was successful.
+# Compile of memory_stage.v was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of var_reg.v was successful.
+# Compile of execute_stage.v was successful.
+# Compile of processor_tb.v was successful.
+# Compile of mem_fetch.v was successful.
+# 13 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.processor_tb(fast)
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg(fast__2)
+# Loading work.ControlUnit(fast)
+# Loading work.reg_file(fast)
+# Loading work.sign_extend(fast)
+# Loading work.execute_stage(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.var_reg(fast__7)
+# Loading work.write_back_stage(fast)
+mem load -i aa.mem /processor_tb/processor_dut/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run -all
+# Time =                    0 | R1 = xxxxxxxxxxxxxxxx | R2 = xxxxxxxxxxxxxxxx | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = x | Negative = x | Zero = x | Expected = x
+# Time =                  160 | R1 = 0000000000000000 | R2 = 0000000000000000 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  260 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  360 | R1 = 0000000000000000 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 1 | Expected = 1
+# Time =                  460 | R1 = 0000000000000010 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 0 | Zero = 0 | Expected = 1
+# Time =                  560 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = xxxxxxxxxxxxxxxx | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# Time =                  660 | R1 = 1111111111111101 | R2 = 0000000000000010 | Memory at R1 = 0000000000000010 | Carry = 0 | Negative = 1 | Zero = 0 | Expected = 1
+# number of tests passed =           6
+# ** Note: $stop    : D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v(80)
+#    Time: 680 ns  Iteration: 0  Instance: /processor_tb
+# Break in Module processor_tb at D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/processor_tb.v line 80

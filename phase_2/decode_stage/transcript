@@ -1,0 +1,122 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim sm 
+# Start time: 18:31:14 on Dec 25,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.sm(fast)
+add wave -position insertpoint  \
+sim:/sm/carry_select \
+sim:/sm/clear_instruction \
+sim:/sm/clk \
+sim:/sm/flag_reg_select \
+sim:/sm/interrupt_signal \
+sim:/sm/jump_selector \
+sim:/sm/mem_pop \
+sim:/sm/mem_push \
+sim:/sm/mem_read \
+sim:/sm/mem_src_select \
+sim:/sm/mem_write \
+sim:/sm/opcode \
+sim:/sm/PC \
+sim:/sm/reg_write \
+sim:/sm/reset
+run
+run
+run
+force -freeze sim:/sm/clk 1 0, 0 {50 ns} -r 100
+force -freeze sim:/sm/reset 1'h1 0 -cancel 10
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/sm/reset 1'h1 0 -cancel 200
+run
+run
+run
+run
+run
+vsim work.sm -voptargs=+acc
+# End time: 18:33:23 on Dec 25,2022, Elapsed time: 0:02:09
+# Errors: 0, Warnings: 0
+# vsim work.sm -voptargs="+acc" 
+# Start time: 18:33:23 on Dec 25,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.sm(fast)
+add wave -position insertpoint  \
+sim:/sm/carry_select \
+sim:/sm/clear_instruction \
+sim:/sm/clk \
+sim:/sm/counter \
+sim:/sm/current_state \
+sim:/sm/flag_reg_select \
+sim:/sm/interrupt_signal \
+sim:/sm/jump_selector \
+sim:/sm/mem_pop \
+sim:/sm/mem_push \
+sim:/sm/mem_read \
+sim:/sm/mem_src_select \
+sim:/sm/mem_write \
+sim:/sm/opcode \
+sim:/sm/PC \
+sim:/sm/reg_write \
+sim:/sm/reset
+run
+run
+run
+force reset 1 -cancel 200
+run
+run
+run
+run
+run
+run
+run
+run
+run 500
+force interrupt_signal 1 -cancel 200
+run 500
+run 500
+run 500
+run 500
+run 500
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.sm(fast)
+force -freeze sim:/sm/reset 1'h1 0 -cancel 200
+force -freeze sim:/sm/clk 1 0, 0 {50 ns} -r 100
+run 500
+force interrupt_signal 1 -cancel 200
+run 500
+run 500
+run 500
+run 500
+run 500
+run 500
+run 500
+run 500
+run 500
+force -freeze sim:/sm/opcode 16'b1111000000000000 0
+run 500
+run 500
