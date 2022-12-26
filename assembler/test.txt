@@ -1,0 +1,5 @@
+// fady
+loop:add r1//,r2
+add r1,r2        //lol
+add r1,r2 
+//sub r2,r3,11111

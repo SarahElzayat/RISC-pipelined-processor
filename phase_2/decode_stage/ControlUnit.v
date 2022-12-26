@@ -1,94 +1,536 @@
-module ControlUnit(inst,WB_ALUtoReg,RegWrite,MemRead,carrySelect,MemWrite,ALUOp);
-	input [15:0] inst;
-	wire [2:0] Opcode;
-	output reg [1:0] ALUOp;
-	output reg [1:0] carrySelect;
-	output reg WB_ALUtoReg,RegWrite,MemRead,MemWrite;
-	assign Opcode = inst[15:13];
+module ControlUnit(
+	input [15:0] inst,
+	output reg [3:0] ALUOp,
+	output reg mem_pop,
+	output reg mem_push,
+	output reg reg_write,
+	output reg [1:0] wb_sel,
+	output reg mem_read,
+	output reg mem_write,
+	output reg [2:0] jump_sel,
+	output reg pc_enable,
+	output reg [1:0] mem_addsel,
+	output reg [1:0] mem_srcsel,
+	output reg flag_regsel,
+	output reg [1:0] carry_sel,
+	output reg [1:0] alu_src1sel,
+	output reg [1:0] alu_src2sel,
+	output reg outport_enable
+	output reg inport_sel
+	output reg flagreg_enable
+	);
+	wire [4:0] Opcode;
+	assign Opcode = inst[15:11];
 	always @*
-	case (Opcode)
-		//Load instruction LDM R1,0h
-		// 0010_0100_0000_0000
-		// 2400
-		// LDM R2,2h
-		// 0010_1000_0000_0010
-		// 2802
-		//// LDM R3,4h
-		//// 0010_1100_0000_0100
-		//// 2C04
-		//NOP 
-		// 1010_0000_0000_0000
-		// A000
-		// Add R2,R1
-		// 011 _0 01_010 _000_0000
-		// 6500
-		// R1 = 2 now
-		// NOT R1
-		// 1000 0100 00000000
-		// 8400
-		// STD R2,R1
-		// 010 001 010 000 0000
-		// 4500
+	// type of the instruction j-type || r-type || i-type
+	case (Opcode[4:3])
+	// R-type instructions (00)
+		2'b00:begin
+			case(Opcode[2:0])
+				// NOT Rdst => 000
+				3'b000:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0000;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;	//useless
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
 
-		3'b001:begin
-			WB_ALUtoReg = 'b0;
-			RegWrite = 'b1;
-			MemRead = 'b0;
-			MemWrite = 'b0;
-			ALUOp = 'bxx;
-			carrySelect = 'bxx;
+				// INC & DEC instructions => 001
+				3'b001:begin
+					case(inst[10])
+					// INC Rdst
+						1'b0:begin
+							//fetch stage signals
+							pc_enable = 1'b1;
+							inport_sel = 1'b0;
+							// execution stage signals
+							ALUOp = 4'b0001;
+							alu_src1sel = 2'b10;
+							alu_src2sel = 2'b00;	//useless
+							jump_sel = 3'b000;
+							carry_sel = 2'b00;
+							flag_regsel = 1'b0;
+							flagreg_enable = 1'b1;
+							// memory stage signals (useless)
+							mem_read = 1'b0;
+							mem_write = 1'b0;
+							mem_pop = 1'b0;
+							mem_push = 1'b0;
+							mem_addsel = 2'b00;
+							mem_srcsel = 2'b00;
+							// write back stage signals
+							reg_write = 1'b1;
+							wb_sel = 2'b10;
+							outport_enable = 1'b0;
+						end
+					// DEC Rdst 
+						1'b1:begin
+							//fetch stage signals
+							pc_enable = 1'b1;
+							inport_sel = 1'b0;
+							// execution stage signals
+							ALUOp = 4'b0010;
+							alu_src1sel = 2'b10;
+							alu_src2sel = 2'b00;	//useless
+							jump_sel = 3'b000;
+							carry_sel = 2'b00;
+							flag_regsel = 1'b0;
+							flagreg_enable = 1'b1;
+							// memory stage signals (useless)
+							mem_read = 1'b0;
+							mem_write = 1'b0;
+							mem_pop = 1'b0;
+							mem_push = 1'b0;
+							mem_addsel = 2'b00;
+							mem_srcsel = 2'b00;
+							// write back stage signals
+							reg_write = 1'b1;
+							wb_sel = 2'b10;
+							outport_enable = 1'b0;
+						end
+					endcase
+				end
+
+				// ADD Rds,Rscr
+				3'b010:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0011;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+				
+				// SUB Rdst,Rscr
+				3'b011:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0100;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+
+				// AND Rdst,Rscr
+				3'b100:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0101;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+
+				// OR Rdst,Rscr
+				4'b101:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0110;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+
+				// SHL Rdst,Rscr
+				4'b110:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b0111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+
+				// SHR Rdst,Rscr
+				4'b111:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1000;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			endcase
 		end
-
-		//Store instruction STD R1,R2
-		3'b010:begin
-			WB_ALUtoReg = 'bx;
-			RegWrite = 'b0;
-			MemRead = 'b0;
-			MemWrite = 'b1;
-			ALUOp = 'b10;
-			carrySelect = 'b00;
+		
+	//I-type instructions with one operand (01)
+		2'b01:begin
+			case(Opcode[2:0])
+			// NOP
+				3'b000:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b00;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b0;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// SETC
+				3'b001:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b0;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// CLRC
+				3'b010:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b10;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b1;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b0;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// OUT Rdst
+				3'b011:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b0;
+					wb_sel = 2'b10;
+					outport_enable = 1'b1;
+				end
+			// IN Rdst
+				3'b100:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b1;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals (useless)
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// PUSH Rdst
+				3'b101:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b0;
+					mem_write = 1'b1;
+					mem_pop = 1'b0;
+					mem_push = 1'b1;
+					mem_addsel = 2'b10;
+					mem_srcsel = 2'b11;
+					// write back stage signals
+					reg_write = 1'b0;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// POP Rdst
+				3'b110:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b1;
+					mem_write = 1'b0;
+					mem_pop = 1'b1;
+					mem_push = 1'b0;
+					mem_addsel = 2'b10;
+					mem_srcsel = 2'b11;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b01;
+					outport_enable = 1'b0;
+				end
+			endcase
 		end
+	//I-type instructions with two operands (10)
+		2'b10:begin
+			case(Opcode[2:0])
+			// MOV Rdst,Rscr
+				3'b000:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b10;
+					mem_srcsel = 2'b11;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b10;
+					outport_enable = 1'b0;
+				end
+			// LDM Rdst,imm
+				3'b001:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b0;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b00;
+					mem_srcsel = 2'b00;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b00;
+					outport_enable = 1'b0;
 
-		//Add instruction ADD,NOT
-		3'b011: begin
-			WB_ALUtoReg = 'b1;
-			RegWrite = 'b1;
-			MemRead = 'b0;
-			MemWrite = 'b0;
-			ALUOp = 'b00;
-			carrySelect = 'b10;
+				end
+			// LDD Rdst,Rscr
+				3'b010:begin
+					//fetch stage signals
+					pc_enable = 1'b1;
+					inport_sel = 1'b0;
+					// execution stage signals
+					ALUOp = 4'b1111;
+					alu_src1sel = 2'b10;
+					alu_src2sel = 2'b00;
+					jump_sel = 3'b000;
+					carry_sel = 2'b01;
+					flag_regsel = 1'b0;
+					flagreg_enable = 1'b0;
+					// memory stage signals
+					mem_read = 1'b1;
+					mem_write = 1'b0;
+					mem_pop = 1'b0;
+					mem_push = 1'b0;
+					mem_addsel = 2'b01;
+					mem_srcsel = 2'b11;
+					// write back stage signals
+					reg_write = 1'b1;
+					wb_sel = 2'b01;
+					outport_enable = 1'b0;
+				end
+			// STD Rdst,Rscr
+				3'b011:begin
+					
+				end
+			endcase
 		end
-
-		//not instruction
-		// 1000 0100 00000000
-		// 8400
-		3'b100: begin
-			WB_ALUtoReg = 'b1;
-			RegWrite = 'b1;
-			MemRead = 'b0;
-			MemWrite = 'b0;
-			ALUOp = 'b01;
-			carrySelect = 'b00;
-		end
-
-		//no operation
-		3'b101:begin
-			WB_ALUtoReg = 'bx;
-			RegWrite = 'b0;
-			MemRead = 'b0;
-			MemWrite = 'b0;
-			ALUOp = 'b11;
-			carrySelect = 'b00;
-		end
-
-		default : begin
-			WB_ALUtoReg= 1'b0;
-			RegWrite= 1'b0;
-			MemRead = 1'b0;
-			MemWrite= 1'b0;
-			ALUOp = 'bxx;
-			carrySelect = 'bxx;
-		end
-
 	endcase
 endmodule
