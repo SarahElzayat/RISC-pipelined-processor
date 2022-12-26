@@ -3,7 +3,8 @@ module sm (
 	input interrupt_signal,
 	input [15:0] instruction,
 	input [32-1:0]PC,
-	output reg reg_write, mem_read, mem_write, mem_pop,mem_push,carry_select, clear_instruction,flag_reg_select,pc_choose_memory,
+	output reg reg_write, mem_read, mem_write, mem_pop,mem_push,
+	output reg carry_select, clear_instruction,flag_reg_select,pc_choose_memory,
 	output reg[2 :0] jump_selector,
 	output reg [1:0] mem_src_select,
 	output reg [3:0] ALUOp,
@@ -29,6 +30,8 @@ module sm (
 	// output logic
 	always_comb
 	begin
+		// default values
+
 		case (current_state)
 			IDLE :
 			begin

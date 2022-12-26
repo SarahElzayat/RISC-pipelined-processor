@@ -77,7 +77,7 @@ assign new_PC =
 (branch_result == 0) ? PC :
 (branch_result == 1) ? {{16{read_data1[31]}}, read_data1} : PC;
 
-// BUFFERS
+// BUFFERS  
 
 var_reg #(.size(16))
 buffer1 (
