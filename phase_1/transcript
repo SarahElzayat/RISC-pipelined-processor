@@ -1,0 +1,110 @@
+# Loading project phase_2
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project vlsi
+# Compile of booth_multiplier.v was successful.
+# Compile of booth_multiplier_tb.v was successful.
+# 2 compiles, 0 failed with no errors.
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:01:35 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multiplier.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:01:36 on Dec 23,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:01:46 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier 
+# ** Error: (vlog-2054) File "booth_multiplier" is a directory.
+# End time: 18:01:46 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:27 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier 
+# ** Error: (vlog-2054) File "booth_multiplier" is a directory.
+# End time: 18:02:27 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:28 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# -- Compiling module booth_multiplier
+# 
+# Top level modules:
+# 	booth_multiplier
+# End time: 18:02:28 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:38 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:02:38 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+vlog booth_multiplier_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:02:57 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier_tb.v 
+# -- Compiling module booth_multiplier_tb
+# 
+# Top level modules:
+# 	booth_multiplier_tb
+# End time: 18:02:57 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:03:21 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:03:21 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+do booth.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:03:54 on Dec 23,2022
+# vlog -reportprogress 300 booth_multilpier_tb.v 
+# ** Error: (vlog-7) Failed to open design unit file "booth_multilpier_tb.v" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 18:03:54 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./booth.do line 1
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog booth_multilpier_tb.v "
+vlog booth_multiplier_tb.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:11 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier_tb.v 
+# -- Compiling module booth_multiplier_tb
+# 
+# Top level modules:
+# 	booth_multiplier_tb
+# End time: 18:04:11 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog booth_multiplier.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:19 on Dec 23,2022
+# vlog -reportprogress 300 booth_multiplier.v 
+# -- Compiling module booth_multiplier
+# 
+# Top level modules:
+# 	booth_multiplier
+# End time: 18:04:19 on Dec 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

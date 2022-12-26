@@ -1,0 +1,22 @@
+D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage_without_buffers_tb
+
+Top level modules:
+	memory_stage_without_buffers_tb
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage
+
+Top level modules:
+	memory_stage
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage_without_buffers
+
+Top level modules:
+	memory_stage_without_buffers
+
+} {} {}}
