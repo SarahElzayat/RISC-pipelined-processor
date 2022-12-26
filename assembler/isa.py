@@ -12,9 +12,11 @@ instruction_table = {
     'ldd':['10010','Rdst','Rscr'],
     'std':['10011','Rdst','Rscr'],
 
-    # special instruction because the second operand is immediate value
+    # special instructions because the second operand is immediate value
     # 8 bits at least and need to be to 16 bits
     'ldm':['10001','Rdst','imm'],
+    'shl':['10100','Rscr','imm'],
+    'shl':['10101','Rscr','imm'],
     
     # 1 operand instructions
     # 8 bits and need to extended with 8 bits

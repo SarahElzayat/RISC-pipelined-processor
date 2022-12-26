@@ -17,6 +17,7 @@ module sm (
 	output reg outport_enable,
 	output reg inport_sel,
 	output reg flagreg_enable
+	output reg clear_intruction;
 );
 	typedef enum int unsigned { IDLE ,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 	State current_state;
@@ -29,6 +30,30 @@ module sm (
 	// output logic
 	always_comb
 	begin
+		//----------------default values-------------------
+		//fetch stage signals
+		pc_write = 1'b1;
+		inport_sel = 1'b0;
+		clear_intruction = 1'b0;
+		// execution stage signals
+		ALUOp = 4'b1111;
+		alu_src1sel = 2'b10;
+		alu_src2sel = 2'b00;
+		jump_selector = 3'b000;
+		carry_sel = 2'b00;
+		flag_reg_select = 1'b0;
+		flagreg_enable = 1'b0;
+		// memory stage signals (useless)
+		mem_read = 1'b0;
+		mem_write = 1'b0;
+		mem_pop = 1'b0;
+		mem_push = 1'b0;
+		mem_addsel = 2'b00;
+		mem_srcsel = 2'b00;
+		// write back stage signals
+		reg_write = 1'b0;
+		wb_sel = 2'b10;
+		outport_enable = 1'b0;
 		case (current_state)
 			IDLE :
 			begin
@@ -43,6 +68,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0000;
 								alu_src1sel = 2'b10;
@@ -72,6 +98,7 @@ module sm (
 										//fetch stage signals
 										pc_enable = 1'b1;
 										inport_sel = 1'b0;
+										clear_intruction = 1'b0;
 										// execution stage signals
 										ALUOp = 4'b0001;
 										alu_src1sel = 2'b10;
@@ -97,6 +124,7 @@ module sm (
 										//fetch stage signals
 										pc_enable = 1'b1;
 										inport_sel = 1'b0;
+										clear_intruction = 1'b0;
 										// execution stage signals
 										ALUOp = 4'b0010;
 										alu_src1sel = 2'b10;
@@ -126,6 +154,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0011;
 								alu_src1sel = 2'b10;
@@ -152,6 +181,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0100;
 								alu_src1sel = 2'b10;
@@ -178,6 +208,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0101;
 								alu_src1sel = 2'b10;
@@ -204,6 +235,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0110;
 								alu_src1sel = 2'b10;
@@ -230,6 +262,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b0111;
 								alu_src1sel = 2'b10;
@@ -256,6 +289,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1000;
 								alu_src1sel = 2'b10;
@@ -288,6 +322,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -313,6 +348,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -338,6 +374,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -363,6 +400,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -388,6 +426,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b1;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -413,6 +452,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -438,6 +478,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -469,6 +510,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -494,6 +536,7 @@ module sm (
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b1;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -513,13 +556,13 @@ module sm (
 								reg_write = 1'b1;
 								wb_sel = 2'b00;
 								outport_enable = 1'b0;
-
 							end
 							// LDD Rdst,Rscr
 							3'b010:begin
 								//fetch stage signals
 								pc_enable = 1'b1;
 								inport_sel = 1'b0;
+								clear_intruction = 1'b0;
 								// execution stage signals
 								ALUOp = 4'b1111;
 								alu_src1sel = 2'b10;
@@ -541,8 +584,13 @@ module sm (
 								outport_enable = 1'b0;
 							end
 							// STD Rdst,Rscr
-							3'b011:
-							begin
+							3'b011:begin
+							end
+							// SHL Rdst,Rscr
+							3'b100:begin
+							end
+							// SHR Rdst,Rscr
+							3'b101:begin
 							end
 							default :;
 						endcase

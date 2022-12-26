@@ -45,8 +45,7 @@ def parse(commands,arguments):
 
 def machine_code (command,arguments):
     sudo_line = instruction_table[command]
-    # 2 argument instructions except ldm
-    if len(arguments)==2 and command!='ldm':
+    if len(arguments)==2 and sudo_line[2]!='imm':
         i = 0
         while i in range(2):
             sudo_line[i+1] = reg_table[arguments[i]]
@@ -65,7 +64,7 @@ def machine_code (command,arguments):
         # extend to be 16bits
         return sudo_line[0]+'0'*11
 
-    # ldm command
+    # ldm,shr,shl command
     else:
         sudo_line[0] = reg_table[arguments[0]]
         # extend to be 16bits
