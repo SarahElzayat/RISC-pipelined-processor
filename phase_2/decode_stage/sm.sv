@@ -20,7 +20,7 @@ module sm (
 );
 	typedef enum int unsigned { IDLE ,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 	State current_state;
-	
+
 	logic [4:0] counter;
 	wire [4:0] opcode;
 
@@ -458,6 +458,7 @@ module sm (
 								wb_sel = 2'b01;
 								outport_enable = 1'b0;
 							end
+							default:;
 						endcase
 					end
 					//I-type instructions with two operands (10)
