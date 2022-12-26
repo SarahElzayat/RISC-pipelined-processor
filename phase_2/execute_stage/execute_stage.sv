@@ -126,7 +126,7 @@ buffer6 (
 );
 
 var_reg #(.size(32))
-buffer6 (
+buffer7 (
     .clk (clk),
     .rst(reset),
     .D (new_PC),
@@ -134,7 +134,7 @@ buffer6 (
 );
 
 var_reg #(.size(16))
-buffer7 (
+buffer8 (
     .clk (clk),
     .rst(reset),
     .D (LDM_value),
@@ -142,7 +142,7 @@ buffer7 (
 );
 
 var_reg  #(.size(32))
-buffer8 (
+buffer9 (
     .clk (clk),
     .rst(reset),
     .D ({read_data1, read_data2}),
@@ -150,7 +150,7 @@ buffer8 (
 );
 
 var_reg  #(.size(2))
-buffer9 (
+buffer10 (
     .clk (clk),
     .rst (reset),
     .D ({mem_pop, mem_push}),
@@ -158,7 +158,7 @@ buffer9 (
 );
 
 var_reg  #(.size(2))
-buffer10 (
+buffer11 (
     .clk (clk),
     .rst (reset),
     .D ({mem_read, mem_write}),
