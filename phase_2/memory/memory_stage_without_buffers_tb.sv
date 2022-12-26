@@ -16,7 +16,7 @@ module memory_stage_without_buffers_tb;
   reg [31:0] pc =0;
   reg [2:0] flags =0;
   wire [15:0] data;// = 0;
-
+wire [31:0] shift_reg;
   memory_stage_without_buffers 
   memory_stage_without_buffers_dut (
     .clk (clk ),
@@ -31,7 +31,8 @@ module memory_stage_without_buffers_tb;
     .memory_write_src_select (memory_write_src_select ),
     .pc (pc ),
     .flags (flags ),
-    .data  ( data)
+    .data  ( data),
+    .shift_reg(shift_reg)
   );
 
   initial begin

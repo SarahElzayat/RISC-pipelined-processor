@@ -155,26 +155,76 @@ R11
 !i113 1
 R12
 R8
-vmemory_stage_without_buffers
+vmemory_stage
 R9
-Z14 !s110 1672061030
+Z14 !s110 1672064673
 !i10b 1
-!s100 Nlm;517YkfgH]PB1^3El52
+!s100 54@H2BD9@M6:MT9AnzW392
 R1
-I;GoVC84EHN7_W[KAegC4;3
+If?;?S[:RZmENFa`6;94151
 R2
 S1
 R3
-w1672061022
-8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-!i122 96
-L0 1 101
+w1672064193
+8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
+!i122 129
+L0 1 38
 R5
 r1
 !s85 0
 31
-Z15 !s108 1672061030.000000
+Z15 !s108 1672064673.000000
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
+!i113 1
+R12
+R8
+vmemory_stage_tb
+R9
+R14
+!i10b 1
+!s100 _4enhF`k<:@d_ah;dUN6A0
+R1
+IJn[YVCW`>j^30cfUNa[h83
+R2
+S1
+R3
+w1672064666
+8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
+!i122 130
+Z16 L0 1 74
+R5
+r1
+!s85 0
+31
+R15
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv|
+!i113 1
+R12
+R8
+vmemory_stage_without_buffers
+R9
+R14
+!i10b 1
+!s100 6iH5gNGn:Gg3FQ207b`LH0
+R1
+IP7hgG^8SED_0FJJ<L;ndI3
+R2
+S1
+R3
+w1672063934
+8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
+!i122 127
+L0 1 88
+R5
+r1
+!s85 0
+31
+R15
 !s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
 !i113 1
@@ -184,17 +234,17 @@ vmemory_stage_without_buffers_tb
 R9
 R14
 !i10b 1
-!s100 oMU3`fmYf_;RBJI3A3ff^3
+!s100 X<4amMYUdHgLkEKXNmK?K3
 R1
-IzBIgQ57I348JTHdCAP`I12
+I70Hk7cj]BZHWI:BXM94i=1
 R2
 S1
 R3
-w1672060843
+w1672064601
 8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
 FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
-!i122 97
-L0 1 73
+!i122 128
+R16
 R5
 r1
 !s85 0

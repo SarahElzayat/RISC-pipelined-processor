@@ -47,7 +47,7 @@ module memory_stage_without_buffers (
     if(reset)
     begin
       sp = (2**9)-1;
-      temp_shift_reg = 0;
+      shift_reg = 0;
     end
 
     else
@@ -76,11 +76,9 @@ module memory_stage_without_buffers (
         data_memory[final_address] = write_data;
       end
 
-      if(memory_read)
-      begin
+  
       temp_shift_reg = temp_shift_reg>>16;
-      temp_shift_reg = {data, temp_shift_reg[15:0]};
-      end
+      temp_shift_reg = data<<16 + temp_shift_reg;
     end
 
   end
