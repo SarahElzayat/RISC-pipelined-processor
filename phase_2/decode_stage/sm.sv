@@ -8,7 +8,7 @@ module sm (
 	output reg [1:0] mem_src_select,
 	output reg [3:0] ALUOp,
 	output reg [1:0] wb_sel,
-	output reg pc_enable,
+	output reg pc_write,
 	output reg [1:0] mem_addsel,
 	output reg [1:0] mem_srcsel,
 	output reg [1:0] carry_sel,
@@ -66,7 +66,7 @@ module sm (
 							// NOT Rdst => 000
 							3'b000:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -96,7 +96,7 @@ module sm (
 									// INC Rdst
 									1'b0:begin
 										//fetch stage signals
-										pc_enable = 1'b1;
+										pc_write = 1'b1;
 										inport_sel = 1'b0;
 										clear_intruction = 1'b0;
 										// execution stage signals
@@ -122,7 +122,7 @@ module sm (
 									// DEC Rdst 
 									1'b1:begin
 										//fetch stage signals
-										pc_enable = 1'b1;
+										pc_write = 1'b1;
 										inport_sel = 1'b0;
 										clear_intruction = 1'b0;
 										// execution stage signals
@@ -152,7 +152,7 @@ module sm (
 							// ADD Rds,Rscr
 							3'b010:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -179,7 +179,7 @@ module sm (
 							// SUB Rdst,Rscr
 							3'b011:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -206,7 +206,7 @@ module sm (
 							// AND Rdst,Rscr
 							3'b100:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -233,7 +233,7 @@ module sm (
 							// OR Rdst,Rscr
 							4'b101:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -260,7 +260,7 @@ module sm (
 							// SHL Rdst,Rscr
 							4'b110:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -287,7 +287,7 @@ module sm (
 							// SHR Rdst,Rscr
 							4'b111:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -320,7 +320,7 @@ module sm (
 							// NOP
 							3'b000:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -346,7 +346,7 @@ module sm (
 							// SETC
 							3'b001:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -372,7 +372,7 @@ module sm (
 							// CLRC
 							3'b010:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -398,7 +398,7 @@ module sm (
 							// OUT Rdst
 							3'b011:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -424,7 +424,7 @@ module sm (
 							// IN Rdst
 							3'b100:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b1;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -450,7 +450,7 @@ module sm (
 							// PUSH Rdst
 							3'b101:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -476,7 +476,7 @@ module sm (
 							// POP Rdst
 							3'b110:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -508,7 +508,7 @@ module sm (
 							// MOV Rdst,Rscr
 							3'b000:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
@@ -534,7 +534,7 @@ module sm (
 							// LDM Rdst,imm
 							3'b001:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b1;
 								// execution stage signals
@@ -560,7 +560,7 @@ module sm (
 							// LDD Rdst,Rscr
 							3'b010:begin
 								//fetch stage signals
-								pc_enable = 1'b1;
+								pc_write = 1'b1;
 								inport_sel = 1'b0;
 								clear_intruction = 1'b0;
 								// execution stage signals
