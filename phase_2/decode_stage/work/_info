@@ -1,11 +1,88 @@
 m255
 K4
 z2
+!s11f MIXED_VERSIONS
 <<<<<<< HEAD
-Z0 !s99 nomlopt
+Z0 tCvgOpt 0
+Z1 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
+r1
+!s85 0
+31
+Z2 !s108 1668083041.000000
+R1
+Z3 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
+!i113 0
+Z4 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+<<<<<<< HEAD
 R0
+R1
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R2
+<<<<<<< HEAD
 R0
-=======
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R2
+<<<<<<< HEAD
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+R5
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R0
+Z7 n@control@unit
+<<<<<<< HEAD
+Z8 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
+<<<<<<< HEAD
+Z9 !s99 nomlopt
+R9
+R9
+Z10 =======
+>>>>>>> origin/Hamdy
+>>>>>>> origin/Hamdy
+w1667842638
+8sign_extend.v
+Fsign_extend.v
+!i122 2
+L0 1 11
+>>>>>>> origin/Hamdy
+w1667844530
+8reg_file.v
+Freg_file.v
+!i122 2
+L0 1 57
+>>>>>>> origin/Hamdy
+w1668083004
+8decode_stage.v
+Fdecode_stage.v
+!i122 2
+L0 1 73
+>>>>>>> origin/Hamdy
+w1667854542
+8ControlUnit.v
+FControlUnit.v
+!i122 2
+L0 1 86
 >>>>>>> origin/Hamdy
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
@@ -14,224 +91,154 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-<<<<<<< HEAD
-Z1 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
 T_opt
 !s110 1671985875
 VOj:M0=H4lZa9?bce=KLO]3
-Z2 04 2 4 work sm fast 0
+Z11 04 2 4 work sm fast 0
 =1-020cf0a1cd70-63a87ad2-3e5-828c
-Z3 !s124 OEM10U1 
+Z12 !s124 OEM10U1 
 o-quiet -auto_acc_if_foreign -work work
-Z4 tCvgOpt 0
+R0
 n@_opt
-Z5 OL;O;2021.2;73
-R1
+Z13 OL;O;2021.2;73
+R8
 T_opt1
 !s110 1671987230
 VoA<zJc=^CfH:7WM2Ug1YC2
-R2
+R11
 =2-020cf0a1cd70-63a8801e-2e1-7ae0
-R3
+R12
 o-quiet -auto_acc_if_foreign -work work +acc
-R4
+R0
 n@_opt1
-R5
-R1
+R13
+R8
 vControlUnit
-Z6 !s110 1668083041
+Z14 !s110 1668083041
 !i10b 1
-!s100 ;c_QgT=YXGYjnOCL``GhX1
-IN2GE;Qm9VeY<J00C`bAXg0
-R1
-=======
-Z0 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/decode_stage
+Z15 !s100 ;c_QgT=YXGYjnOCL``GhX1
+Z16 IN2GE;Qm9VeY<J00C`bAXg0
+R8
 vControlUnit
-Z1 !s110 1668083041
+R14
 !i10b 1
-!s100 ;c_QgT=YXGYjnOCL``GhX1
-IN2GE;Qm9VeY<J00C`bAXg0
-R0
->>>>>>> origin/Hamdy
-w1667854542
-8ControlUnit.v
-FControlUnit.v
-!i122 2
-L0 1 86
-<<<<<<< HEAD
-Z7 VDg1SIo80bB@j0V0VzS_@n1
-Z8 OL;L;2021.2;73
-r1
-!s85 0
-31
-Z9 !s108 1668083041.000000
-Z10 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
-Z11 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
-!i113 0
-Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
-n@control@unit
+R15
+R16
+R8
+R10
+R8
 vdecode_stage
-R6
+Z17 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z18 !s110 1672090667
 !i10b 1
-!s100 z6GNCAmj;kYfDP`1?PT8a2
-I_`PImEzm6=PaGUO<=jBVG3
-R1
-=======
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 OL;L;2021.2;73
-r1
-!s85 0
-31
-Z4 !s108 1668083041.000000
-!s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
-Z5 !s90 ControlUnit.v|decode_stage.v|reg_file.v|sign_extend.v|
-!i113 0
-Z6 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z7 tCvgOpt 0
-n@control@unit
-vdecode_stage
-R1
-!i10b 1
-!s100 z6GNCAmj;kYfDP`1?PT8a2
-I_`PImEzm6=PaGUO<=jBVG3
-R0
->>>>>>> origin/Hamdy
-w1668083004
-8decode_stage.v
-Fdecode_stage.v
-!i122 2
-L0 1 73
-<<<<<<< HEAD
-R7
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 0
-R12
-R4
-vreg_file
-R6
-!i10b 1
-!s100 DlcAKmP]f6SCd98`;RAKR2
-IRgPe[VC9hiiikY3S@TDFh3
-R1
-=======
-R2
-R3
-r1
-!s85 0
-31
-R4
-Z8 !s107 sign_extend.v|reg_file.v|decode_stage.v|ControlUnit.v|
-R5
-!i113 0
-R6
-R7
-vreg_file
-R1
-!i10b 1
-!s100 DlcAKmP]f6SCd98`;RAKR2
-IRgPe[VC9hiiikY3S@TDFh3
-R0
->>>>>>> origin/Hamdy
-w1667844530
-8reg_file.v
-Freg_file.v
-!i122 2
-L0 1 57
-<<<<<<< HEAD
-R7
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 0
-R12
-R4
-vsign_extend
-R6
-!i10b 1
-!s100 ^zWB86i>6z602Sa=5FCPS0
-Ia9E5`cD4cgN6^I7m]>mf81
-R1
-=======
-R2
-R3
-r1
-!s85 0
-31
-R4
-R8
-R5
-!i113 0
-R6
-R7
-vsign_extend
-R1
-!i10b 1
-!s100 ^zWB86i>6z602Sa=5FCPS0
-Ia9E5`cD4cgN6^I7m]>mf81
-R0
->>>>>>> origin/Hamdy
-w1667842638
-8sign_extend.v
-Fsign_extend.v
-!i122 2
-L0 1 11
-<<<<<<< HEAD
-R7
-R8
-r1
-!s85 0
-31
-R9
-R10
-R11
-!i113 0
-R12
-R4
-vsm
-DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1672082921
-!i10b 1
-!s100 ?`59TWXCzZco_[i;NDe2U2
-IQ?N1NkaTAEnKa:HlLCe4Y3
+!s100 T3HS8M[]f<lIPVj@YYXhI2
+IfLgSDgOhaUnB<lDkYc?e93
 S1
-dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage
-w1672082890
+Z19 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage
+w1672090647
+8decode_stage.sv
+Fdecode_stage.sv
+!i122 9
+L0 1 89
+R6
+R5
+r1
+!s85 0
+31
+Z20 !s108 1672090666.000000
+!s107 sm.sv|decode_stage.sv|
+Z21 !s90 decode_stage.sv|sm.sv|
+!i113 0
+R4
+R0
+vdecode_stage
+R14
+!i10b 1
+!s100 z6GNCAmj;kYfDP`1?PT8a2
+I_`PImEzm6=PaGUO<=jBVG3
+R14
+R10
+R6
+R5
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R0
+R7
+vreg_file
+R14
+!i10b 1
+Z22 !s100 DlcAKmP]f6SCd98`;RAKR2
+Z23 IRgPe[VC9hiiikY3S@TDFh3
+R8
+vreg_file
+R4
+!i10b 1
+R22
+R23
+R14
+R10
+R6
+R5
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R0
+vsign_extend
+R14
+!i10b 1
+Z24 !s100 ^zWB86i>6z602Sa=5FCPS0
+Z25 Ia9E5`cD4cgN6^I7m]>mf81
+R8
+vsign_extend
+R4
+!i10b 1
+R24
+R25
+R14
+R10
+R6
+R5
+r1
+!s85 0
+31
+R2
+R1
+R3
+!i113 0
+R4
+R0
+vsm
+R17
+R18
+!i10b 1
+!s100 JRA[ZI@bZ0EaHCK:b3zWn0
+I5Xg<`NO?Ge4JbFjd5=_<a2
+S1
+R19
+w1672090621
 8sm.sv
 Fsm.sv
-!i122 8
-L0 1 769
-R7
-R8
-r1
-!s85 0
-31
-!s108 1672082921.000000
-!s107 sm.sv|
-!s90 sm.sv|
-!i113 0
-R12
-R4
-=======
-R2
-R3
-r1
-!s85 0
-31
-R4
-R8
-R5
-!i113 0
+!i122 9
+L0 1 442
 R6
-R7
->>>>>>> origin/Hamdy
+R5
+r1
+!s85 0
+31
+R20
+Z26 !s107 sm.sv|decode_stage.sv|
+R21
+!i113 0
+R4
+R0

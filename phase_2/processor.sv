@@ -20,13 +20,15 @@ module processor(
 
 
 
-    wire[15:0] write_back_data;
+    wire [15:0] write_back_data;
 
     wire [3:0] ALU_Op;
     wire [1:0] carry_sel;
     wire wb_sel, reg_write, mem_read, mem_write;
     wire [1:0] alu_src1_select, alu_src2_select;
-    wire [15:0] reg_file_read_data1, reg_file_read_data2;
+    wire [15:0] read_data1, read_data2;
+    wire [15:0] reg_data1_from_mem, reg_data2_from_mem;
+    wire [4:0] shamt;
     wire [15:0] sign_extend_output_from_decode;
     wire [15:0] sign_extend_output_from_ex;
     wire [15:0] sign_extend_output_to_wb;
@@ -37,33 +39,29 @@ module processor(
     wire mem_push_out, mem_pop_out, mem_read_out, mem_write_out;
 
 
-    decode_stage
-    decode_stage_dut (
-        .clk (clk ),
-        .rst (rst ),
-        .instruction (instruction ),
-        .regFile_write_data (write_back_data),
-        .ALUOp_r (ALUOp ),
-        .carrySelect_r (carrySelect),
-        .WB_ALUtoReg_r (write_back_sel ),
-        .RegWrite_r (RegWrite ),
-        .MemRead_r ( MemRead ),
-        .MemWrite_r (MemWrite ),
-        .reg_file_read_data1_r (reg_file_read_data1 ),
-        .reg_file_read_data2_r (reg_file_read_data2 ),
-        .sign_extend_output_r  ( sign_extend_output_from_decode),
-        .regFile_write_from_wb(RegWrite_from_mem),
-        .reg_write_address_from_wb(write_address_from_wb),
-        .reg_write_address_r(write_address_from_decode)
+    // decode_stage
+    // decode_stage_dut (
+    //     .clk (clk ),
+    //     .rst (rst ),
+    //     .instruction (instruction ),
+    //     .regFile_write_data (write_back_data),
+    //     .ALUOp_r (ALUOp ),
+    //     .carrySelect_r (carrySelect),
+    //     .WB_ALUtoReg_r (write_back_sel ),
+    //     .RegWrite_r (RegWrite ),
+    //     .MemRead_r ( MemRead ),
+    //     .MemWrite_r (MemWrite ),
+    //     .reg_file_read_data1_r (reg_file_read_data1 ),
+    //     .reg_file_read_data2_r (reg_file_read_data2 ),
+    //     .sign_extend_output_r  ( sign_extend_output_from_decode),
+    //     .regFile_write_from_wb(RegWrite_from_mem),
+    //     .reg_write_address_from_wb(write_address_from_wb),
+    //     .reg_write_address_r(write_address_from_decode)
 
-    );
-
-
-    wire RegWrite_from_ex;
+    // );
 
     wire [15:0] ALU_out, read_data1_out, read_data2_out;
     wire [2:0] write_address_to_mem;
-    wire [4:0] shamt;
 
     execute_stage
     execute_stage_dut (
@@ -117,9 +115,9 @@ module processor(
 
     wire write_back_sel_to_wb;
 
-    
 
-    
+
+
     wire [15:0] mem_data;
     wire [31:0] shift_reg;
     wire [15:0] mem_ldm_value;
@@ -144,30 +142,18 @@ module processor(
         .shift_reg  ( shift_reg),
 
         // passing 
-
         .LDM_value(LDM_value_out),
         .LDM_value_out(mem_ldm_value),
-
         .reg_write(reg_write_out),
         .reg_write_out(mem_reg_write),
-        
         .wb_sel(wb_sel_out),
         .wb_sel_out(mem_wb_sel),
-
         .pc_enable(pc_enable_out),
         .pc_enable_out(mem_pc_enable)
     );
 
 
 
-
-
-
-
-
-
-
-    
     write_back_stage
     write_back_stage_dut (
         .clk (clk ),

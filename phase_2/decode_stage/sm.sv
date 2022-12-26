@@ -13,8 +13,7 @@ module sm (
 	output logic  [1:0] mem_addsel,
 	output logic  [1:0] mem_srcsel,
 	output logic  [1:0] carry_sel,
-	output logic  [1:0] alu_src1sel,
-	output logic  [1:0] alu_src2sel,
+	output logic  alu_srcsel,
 	output logic  outport_enable,
 	output logic  inport_sel,
 	output logic  flagreg_enable,
@@ -38,7 +37,7 @@ module sm (
 		inport_sel = 1'b0;
 		clear_intruction = 1'b0;
 		// execution stage signals
-		ALUOp = 3'b1111;
+		ALUOp = 4'b1111;
 		alu_srcsel = 1'b0;
 		jump_selector = 3'b000;
 		carry_sel = 2'b00;
@@ -171,7 +170,6 @@ module sm (
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b10;
-								outport_enable = 1'b0;
 							end
 							// LDM Rdst,imm
 							3'b001:begin
