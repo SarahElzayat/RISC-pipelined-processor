@@ -5,7 +5,54 @@ module memory_stage (
     input[31:0] pc,
     input [2:0] flags,
     output [15:0] data_r, //wire on the inside
-    output [31:0] shift_reg //reg on the inside
+    output [31:0] shift_reg, //reg on the inside
+
+    //passing
+
+    input [15:0] LDM_value,
+    output [15:0] LDM_value_out,
+
+    input reg_write,
+    output reg_write_out,
+
+    input [1:0] wb_sel,
+    output [1:0] wb_sel_out,
+
+    input pc_enable,
+    output pc_enable_out,
+
+);
+
+var_reg #(.size(2))
+data_reg (
+  .D (wb_sel ),
+  .clk (clk ),
+  .Q  (wb_sel_out),
+  .rst (reset)
+);
+
+var_reg #(.size(1))
+data_reg (
+  .D (reg_write ),
+  .clk (clk ),
+  .Q  (reg_write_out),
+  .rst (reset)
+);
+
+var_reg #(.size(1))
+data_reg (
+  .D (pc_enable ),
+  .clk (clk ),
+  .Q  (pc_enable_out),
+  .rst (reset)
+);
+
+var_reg #(.size(16))
+data_reg (
+  .D (LDM_value ),
+  .clk (clk ),
+  .Q  (LDM_value_out),
+  .rst (reset)
 );
 
 wire [15:0] data;
