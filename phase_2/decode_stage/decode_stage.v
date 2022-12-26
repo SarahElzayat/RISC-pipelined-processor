@@ -37,6 +37,8 @@ module decode_stage(
         sign_extend_output_r}),
         .rst (rst)
     );
+
+    
     var_reg #(
     .size(3)
     ) var_reg_instance(
@@ -46,16 +48,7 @@ module decode_stage(
         .Q(reg_write_address_r)
     );
 
-    ControlUnit
-    ControlUnit_dut (
-        .inst (instruction ),
-        .ALUOp (ALUOp ),
-        .carrySelect (carrySelect),
-        .WB_ALUtoReg (WB_ALUtoReg ),
-        .RegWrite (RegWrite ),
-        .MemRead (MemRead ),
-        .MemWrite  ( MemWrite)
-    );
+    
 
     reg_file
     #(

@@ -56,7 +56,7 @@ always @* begin
         
         4'b1000: {alu_carry, result} = Op1 >> Op2;
 
-        default: result = 16'b0;
+        default: result = read_data1;
     endcase
 end
 

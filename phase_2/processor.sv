@@ -22,17 +22,19 @@ module processor(
 
     wire[15:0] write_back_data;
 
-    wire [1:0] ALUOp;
-    wire [1:0] carrySelect;
-    wire  write_back_sel, RegWrite, MemRead, MemWrite;
-    wire  [15:0] reg_file_read_data1,reg_file_read_data2;
-    wire  [15:0] sign_extend_output_from_decode;
-    wire  [15:0] sign_extend_output_from_ex;
-    wire  [15:0] sign_extend_output_to_wb;
+    wire [3:0] ALU_Op;
+    wire [1:0] carry_sel;
+    wire wb_sel, reg_write, mem_read, mem_write;
+    wire [1:0] alu_src1_select, alu_src2_select;
+    wire [15:0] reg_file_read_data1, reg_file_read_data2;
+    wire [15:0] sign_extend_output_from_decode;
+    wire [15:0] sign_extend_output_from_ex;
+    wire [15:0] sign_extend_output_to_wb;
 
     wire RegWrite_from_mem;
     wire [2:0] write_address_from_wb;
     wire [2:0] write_address_from_decode;
+    wire mem_push_out, mem_pop_out, mem_read_out, mem_write_out;
 
 
     decode_stage
@@ -60,63 +62,58 @@ module processor(
     wire RegWrite_from_ex;
 
     wire [15:0] ALU_out, read_data1_out, read_data2_out;
-    wire [15:0] reg_file_read_data1_to_mem ;
-    wire [15:0] reg_file_read_data2_to_mem ;
-    wire MemRead_to_mem ,MemWrite_to_mem;
     wire [2:0] write_address_to_mem;
-    wire [1:0] alu_src1_select, alu_src2_select;
-    wire write_back_sel_to_mem;
-    wire mem_push_out, mem_pop_out, mem_read_out, mem_write_out;
+    wire [4:0] shamt;
 
     execute_stage
     execute_stage_dut (
-        .clk (clk ),
-        .reset (reset ),
-        .carry_sel (carry_sel ),
-        .alu_src2_select (alu_src2_select ),
-        .read_data1 (read_data1 ),
-        .read_data2 (read_data2 ),
-        .alu_src1_select (alu_src1_select ),
-        .shamt (shamt ),
-        .ALU_Op (ALU_Op ),
-        .write_back_data (write_back_data ),
-        .reg_data1_from_mem (reg_data1_from_mem ),
-        .reg_data2_from_mem (reg_data2_from_mem ),
+        .clk (clk),
+        .reset (reset),
+        .carry_sel (carry_sel),
+        .alu_src2_select (alu_src2_select),
+        .read_data1 (read_data1),
+        .read_data2 (read_data2),
+        .alu_src1_select (alu_src1_select),
+        .shamt (shamt),
+        .ALU_Op (ALU_Op),
+        .write_back_data (write_back_data),
+        .reg_data1_from_mem (reg_data1_from_mem),
+        .reg_data2_from_mem (reg_data2_from_mem),
         .read_data1_out (read_data1_out),
         .read_data2_out (read_data2_out),
-        .jump_selector (jump_selector ),
-        .flag_regsel (flag_regsel ),
-        .flagreg_enable (flagreg_enable ),
-        .conditions_from_memory_pop (conditions_from_memory_pop ),
-        .result_out (result_out ),
-        .new_PC_out (new_PC_out ),
-        .flag_register_out (flag_register_out ),
-        .PC (PC ),
-        .PC_out (PC_out ),
-        .LDM_value (LDM_value ),
-        .LDM_value_out (LDM_value_out ),
-        .mem_pop (mem_pop ),
-        .mem_pop_out (mem_pop_out ),
-        .mem_push (mem_push ),
-        .mem_push_out (mem_push_out ),
-        .reg_write (reg_write ),
-        .reg_write_out (reg_write_out ),
-        .wb_sel (wb_sel ),
-        .wb_sel_out (wb_sel_out ),
-        .mem_read (mem_read ),
-        .mem_read_out (mem_read_out ),
-        .mem_write (mem_write ),
-        .mem_write_out (mem_write_out ),
-        .pc_enable (pc_enable ),
-        .pc_enable_out (pc_enable_out ),
-        .memory_address_select (memory_address_select ),
-        .memory_address_select_out (memory_address_select_out ),
-        .memory_write_src_select (memory_write_src_select ),
-        .memory_write_src_select_out ( memory_write_src_select_out)
+        .jump_selector (jump_selector),
+        .flag_regsel (flag_regsel),
+        .flagreg_enable (flagreg_enable),
+        .conditions_from_memory_pop (conditions_from_memory_pop),
+        .result_out (result_out),
+        .new_PC_out (new_PC_out),
+        .flag_register_out (flag_register_out),
+        .PC (PC),
+        .PC_out (PC_out),
+        .LDM_value (LDM_value),
+        .LDM_value_out (LDM_value_out),
+        .mem_pop (mem_pop),
+        .mem_pop_out (mem_pop_out),
+        .mem_push (mem_push),
+        .mem_push_out (mem_push_out),
+        .reg_write (reg_write),
+        .reg_write_out (reg_write_out),
+        .wb_sel (wb_sel),
+        .wb_sel_out (wb_sel_out),
+        .mem_read (mem_read),
+        .mem_read_out (mem_read_out),
+        .mem_write (mem_write),
+        .mem_write_out (mem_write_out),
+        .pc_enable (pc_enable),
+        .pc_enable_out (pc_enable_out),
+        .memory_address_select (memory_address_select),
+        .memory_address_select_out (memory_address_select_out),
+        .memory_write_src_select (memory_write_src_select),
+        .memory_write_src_select_out (memory_write_src_select_out)
     );
 
 
-    wire  [15:0] ALU_out_to_wb;
+    wire [15:0] ALU_out_to_wb;
 
     wire write_back_sel_to_wb;
 
