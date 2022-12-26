@@ -54,7 +54,10 @@ module execute_stage (
     output [1:0] memory_address_select_out,
 
     input [1:0] memory_write_src_select,
-    output [1:0] memory_write_src_select_out
+    output [1:0] memory_write_src_select_out,
+
+    output [15:0] read_data1_out,
+    output [15:0] read_data2_out
 );
 
 wire [15:0] result;

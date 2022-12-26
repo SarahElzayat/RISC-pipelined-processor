@@ -19,7 +19,7 @@ module memory_stage (
     output [1:0] wb_sel_out,
 
     input pc_enable,
-    output pc_enable_out,
+    output pc_enable_out
 
 );
 

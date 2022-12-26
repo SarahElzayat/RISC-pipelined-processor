@@ -1,6 +1,8 @@
 module processor(
     input clk,
     input rst,
+    output [15:0]  input_port,
+    output [15:0]  out_port
 );
     wire [15:0] instruction;
 
@@ -57,12 +59,14 @@ module processor(
 
     wire RegWrite_from_ex;
 
-    wire  [15:0] ALU_out;
-    wire  [15:0] reg_file_read_data1_to_mem ;
-    wire  [15:0] reg_file_read_data2_to_mem ;
+    wire [15:0] ALU_out, read_data1_out, read_data2_out;
+    wire [15:0] reg_file_read_data1_to_mem ;
+    wire [15:0] reg_file_read_data2_to_mem ;
     wire MemRead_to_mem ,MemWrite_to_mem;
     wire [2:0] write_address_to_mem;
+    wire [1:0] alu_src1_select, alu_src2_select;
     wire write_back_sel_to_mem;
+    wire mem_push_out, mem_pop_out, mem_read_out, mem_write_out;
 
     execute_stage
     execute_stage_dut (
@@ -78,6 +82,8 @@ module processor(
         .write_back_data (write_back_data ),
         .reg_data1_from_mem (reg_data1_from_mem ),
         .reg_data2_from_mem (reg_data2_from_mem ),
+        .read_data1_out (read_data1_out),
+        .read_data2_out (read_data2_out),
         .jump_selector (jump_selector ),
         .flag_regsel (flag_regsel ),
         .flagreg_enable (flagreg_enable ),
@@ -106,50 +112,76 @@ module processor(
         .memory_address_select (memory_address_select ),
         .memory_address_select_out (memory_address_select_out ),
         .memory_write_src_select (memory_write_src_select ),
-        .memory_write_src_select_out  ( memory_write_src_select_out)
+        .memory_write_src_select_out ( memory_write_src_select_out)
     );
 
 
     wire  [15:0] ALU_out_to_wb;
 
-    wire [15:0] mem_out;
     wire write_back_sel_to_wb;
 
+    
 
-
-
+    
+    wire [15:0] mem_data;
+    wire [31:0] shift_reg;
+    wire [15:0] mem_ldm_value;
+    wire [15:0] mem_reg_write;
+    wire [15:0] mem_wb_sel;
+    wire [15:0] mem_pc_enable;
     memory_stage
     memory_stage_dut (
-        .clk (clk ),
-        .reset (reset ),
-        . memory_read ( MemRead_to_mem ),
-        . memory_write ( MemWrite_to_mem ),
-        . memory_push ( 1'b0 ),
-        . memory_pop ( 1'b0 ),
-        .address (ALU_out ),
-        . write_data (reg_file_read_data2_to_mem),
-        .data_r  ( mem_out),
+        .clk (clk),
+        .reset (reset),
+        .memory_read ( mem_read_out ),
+        .memory_write ( mem_write_out ),
+        . memory_push ( mem_push_out ),
+        . memory_pop ( mem_pop_out ),
+        .std_address(read_data1_out),
+        .ldd_address(read_data2_out),
+        . memory_address_select ( memory_address_select_out ),
+        . memory_write_src_select ( memory_write_src_select_out ),
+        .pc (PC_out),
+        .flags (flag_register_out),
+        .data_r  ( mem_data),
+        .shift_reg  ( shift_reg),
 
         // passing 
-        .RegWrite(RegWrite_from_ex),
-        .RegWrite_r(RegWrite_from_mem),
-        .reg_write_address_r_to_wb(write_address_from_wb),
-        .reg_write_address_from_ex(write_address_to_mem),
-        .sign_extend_from_ex(sign_extend_output_from_ex),
-        .sign_extend_to_wb(sign_extend_output_to_wb),
-        .alu_result_from_ex(ALU_out),
-        .alu_result_to_wb(ALU_out_to_wb),
-        .write_back_select_from_ex(write_back_sel_to_mem),
-        .write_back_select_to_wb(write_back_sel_to_wb)
+
+        .LDM_value(LDM_value_out),
+        .LDM_value_out(mem_ldm_value),
+
+        .reg_write(reg_write_out),
+        .reg_write_out(mem_reg_write),
+        
+        .wb_sel(wb_sel_out),
+        .wb_sel_out(mem_wb_sel),
+
+        .pc_enable(pc_enable_out),
+        .pc_enable_out(mem_pc_enable)
     );
 
 
+
+
+
+
+
+
+
+
+    
     write_back_stage
     write_back_stage_dut (
+        .clk (clk ),
+        .rst (rst ),
         .sel (write_back_sel_to_wb ),
-        .immediate_value (sign_extend_output_to_wb),
-        . alu_value ( ALU_out_to_wb ),
-        .data  ( write_back_data)
+        .outport_enable (outport_enable ),
+        .immediate_value (immediate_value ),
+        .alu_value (ALU_out_to_wb ),
+        .mem_data (mem_data ),
+        .data (write_back_data ),
+        .outport  (out_port)
     );
 
 
