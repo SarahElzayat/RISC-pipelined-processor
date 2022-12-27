@@ -1,13 +1,13 @@
 instruction_table = {
     # 2 operand instructions
     # 11 bits and need to be extended with 5 more bits
-    'add':['00011','Rdst','Rscr'],
-    'sub':['00100','Rdst','Rscr'],
-    'and':['00101','Rdst','Rscr'],
-    'or':['00111','Rdst','Rscr'],
-    'mov':['10000','Rdst','Rscr'],
-    'ldd':['10010','Rdst','Rscr'],
-    'std':['10011','Rdst','Rscr'],
+    'add':['00011','Rscr','Rdst'],
+    'sub':['00100','Rscr','Rdst'],
+    'and':['00101','Rscr','Rdst'],
+    'or' :['00111','Rscr','Rdst'],
+    'mov':['10000','Rscr','Rdst'],
+    'ldd':['10010','Rscr','Rdst'],
+    'std':['10011','Rscr','Rdst'],
 
     # special instructions because the second operand is immediate value
     # 8 bits at least and need to be to 16 bits

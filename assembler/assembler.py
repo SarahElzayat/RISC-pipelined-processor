@@ -50,7 +50,7 @@ def machine_code (command,arguments):
     if len(arguments)==2 and sudo_line[2]!='imm':
         i = 0
         while i in range(2):
-            sudo_line[i+1] = reg_table[arguments[i]]
+            sudo_line[i+1] = reg_table[arguments[1-i]]
             i += 1
         # extend to 16 bit
         return ''.join(sudo_line)+5*'0'
@@ -73,13 +73,20 @@ def machine_code (command,arguments):
         sudo_line[2]=(8-len(arguments[1]))*'0'+arguments[1]
         return ''.join(sudo_line) 
 
+def bin2hex(bit_string):
+    bit_string = '0b'+bit_string
+    hex_string = str(hex(int(bit_string, 2)))[2:]
+    hex_string = hex_string.zfill(2)
+    hex_string=(4-len(hex_string))*'0'+hex_string
+    return hex_string
+
 def assembler(input_path,output_path,hex_flag):
     lines = read_file(input_path)
     commands,arguments = sanitize(lines)
     output = parse(commands,arguments)
     if hex_flag:
         for i in range (len(output)):
-            output[i] = f'{int(output[i], 2):X}'
+            output[i] = bin2hex(output[i])+'\n'
     write_file(output_path,output)
 
 input_path = './assembler/test.txt'
