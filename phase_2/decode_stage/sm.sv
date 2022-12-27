@@ -2,9 +2,9 @@ module sm (
 	input clk,reset,
 	input interrupt_signal,
 	input [15:0] instruction,
-	input [32-1:0]PC,
+	input [32-1:0] PC,
 	output logic  reg_write, mem_read, mem_write, mem_pop,mem_push,
-	output logic  carry_select, clear_instruction,flag_reg_select,pc_choose_memory,
+	output logic   clear_instruction ,flag_reg_select,pc_choose_memory,
 	output logic [2 :0] jump_selector,
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
@@ -15,9 +15,9 @@ module sm (
 	output logic  alu_srcsel,
 	output logic  outport_enable,
 	output logic  inport_sel,
-	output logic  flagreg_enable,
-	output logic  clear_intruction
+	output logic  flagreg_enable
 );
+
 	typedef enum int unsigned { IDLE,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 
 	State current_state;
@@ -34,7 +34,7 @@ module sm (
 		//fetch stage signals
 		pc_write = 1'b1;
 		inport_sel = 1'b0;
-		clear_intruction = 1'b0;
+		clear_instruction = 1'b0;
 		// execution stage signals
 		ALUOp = 4'b1111;
 		alu_srcsel = 1'b0;

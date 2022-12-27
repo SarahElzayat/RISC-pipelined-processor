@@ -4,7 +4,7 @@ module decode_stage(
     input [15:0] instruction,
     input [32-1:0]PC,
     output  reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r,
-    output  carry_select_r, clear_instruction_r,flag_reg_select_r,pc_choose_memory_r,
+    output   flag_reg_select_r,pc_choose_memory_r,
     output [2 :0] jump_selector_r,
     output  [1:0] mem_src_select_r,
     output  [3:0] ALUOp_r,
@@ -12,11 +12,11 @@ module decode_stage(
     output  pc_write_r,
     output  [1:0] mem_addsel_r,
     output  [1:0] carry_sel_r,
-
+    ////////////////////////////
     output  outport_enable_r,
     output  inport_sel_r, alu_srcsel,
     output  flagreg_enable_r,
-    output  clear_intruction_r,
+    output  clear_instruction_r,
     input reg_write_wb,
     input[15:0] reg_write_data_from_wb,
     input[2:0] reg_write_address_from_wb,
@@ -27,7 +27,7 @@ module decode_stage(
 );
 
     wire reg_write, mem_read, mem_write, mem_pop,mem_push;
-    wire carry_select, clear_instruction,flag_reg_select,pc_choose_memory;
+    wire flag_reg_select,pc_choose_memory;
     wire [2:0] jump_selector;
     wire [1:0] mem_src_select;
     wire [3:0] ALUOp;
@@ -40,7 +40,8 @@ module decode_stage(
     wire outport_enable;
     wire inport_sel;
     wire flagreg_enable;
-    wire clear_intruction;
+
+
     var_reg #(
     .size(4)
     ) var_reg_instance(
@@ -84,17 +85,9 @@ module decode_stage(
 
     var_reg #(.size(4))
     var_reg_4 (
-        .D ({outport_enable,inport_sel,flagreg_enable,clear_intruction} ),
+        .D ({outport_enable,inport_sel,flagreg_enable,clear_instruction} ),
         .clk (clk ),
-        .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r, clear_intruction_r} ),
-        .rst (reset)
-    );
-
-    var_reg #(.size(4))
-    var_reg_44 (
-        .D ({outport_enable,inport_sel,flagreg_enable,clear_intruction} ),
-        .clk (clk ),
-        .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r, clear_intruction_r} ),
+        .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r, clear_instruction_r} ),
         .rst (reset)
     );
 
@@ -109,7 +102,6 @@ module decode_stage(
         .mem_write(mem_write),
         .mem_pop(mem_pop),
         .mem_push(mem_push),
-        .carry_select(carry_select),
         .clear_instruction(clear_instruction),
         .flag_reg_select(flag_reg_select),
         .pc_choose_memory(pc_choose_memory),
@@ -123,8 +115,7 @@ module decode_stage(
         .alu_srcsel(alu_srcsel),
         .outport_enable(outport_enable),
         .inport_sel(inport_sel),
-        .flagreg_enable(flagreg_enable),
-        .clear_intruction(clear_intruction)
+        .flagreg_enable(flagreg_enable)
     );
 
     reg_file

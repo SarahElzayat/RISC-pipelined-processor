@@ -14,6 +14,8 @@ module memory_stage (
 
   input [15:0] alu_value,
   output [15:0] alu_value_out,
+
+
   input reg_write,
   output reg_write_out,
 

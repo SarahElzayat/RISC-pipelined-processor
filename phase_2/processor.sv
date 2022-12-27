@@ -7,16 +7,19 @@ module processor(
 );
     wire [15:0] instruction;
     wire [31:0] pc_plus_one_r;
-    wire clear_instruction_fet;
+    wire [31:0] pc_write_back_value;
+
+    wire clear_instruction_dec;
+
     fetch_stage
     fetch_stage_dut (
         .clk (clk ),
         .reset (rst ),
         .pc_write (pc_write ),
         .pc_write_back_value (pc_write_back_value ),
-        .clear_instruction (clear_instruction_fet ),
+        .clear_instruction (clear_instruction_dec ),
         .pc_plus_one_r (pc_plus_one_r ),
-        .instruction_r  ( instruction_r)
+        .instruction_r  ( instruction)
     );
 
 
@@ -50,17 +53,19 @@ module processor(
     wire mem_read_dec, mem_write_dec;
     wire mem_read_ex, mem_write_ex;
 
-    wire [15:0] reg_write_mem;
+    wire reg_write_mem;
 
     wire [31:0] pc_plus_one_dec, pc_plus_one_ex;
     wire pc_choose_memory_dec, pc_choose_memory_ex;
 
-    wire [2:0] reg_write_address_dec,reg_write_address_mem, reg_write_address_ex;
+    wire [2:0] reg_write_address_dec, reg_write_address_mem, reg_write_address_ex;
     wire [3:0] shamt_dec, shamt_ex;
 
     wire flag_reg_select_dec;
+    wire flag_reg_enable_dec;
     wire alu_src_dec;
-
+    wire pc_write_dec;
+    
     wire [2:0] jump_selector_dec;
     wire [1:0] mem_src_select_r;
 
@@ -71,13 +76,12 @@ module processor(
         .interrupt_signal (interrupt_signal ),
         .instruction (instruction ),
         .PC (pc_plus_one_r),
-        .reg_write_r (reg_write_r ),
-        .mem_read_r (mem_read_r ),
-        .mem_write_r (mem_write_r ),
+        .reg_write_r (reg_write_dec ),
+        .mem_read_r (mem_read_dec ),
+        .mem_write_r (mem_write_dec ),
         .mem_pop_r (mem_pop_dec ),
         .mem_push_r (mem_push_dec ),
-        .carry_select_r (carry_select_r ),
-        .clear_instruction_r (clear_instruction_r ),
+        .clear_instruction_r (clear_instruction_dec ),
         .flag_reg_select_r (flag_reg_select_dec ),
         .pc_choose_memory_r (pc_choose_memory_dec ),
         .jump_selector_r (jump_selector_dec ),
@@ -85,13 +89,12 @@ module processor(
         .ALUOp_r (alu_op_dec ),
         .wb_sel_r (wb_sel_dec ),
         .alu_srcsel(alu_src_dec),
-        .pc_write_r (pc_write_r ),
+        .pc_write_r (pc_write_dec ),
         .mem_addsel_r (memory_address_select_dec ),
         .carry_sel_r (carry_sel_dec ),
         .outport_enable_r (outport_enable_dec ),
         .inport_sel_r (inport_sel_r ),
-        .flagreg_enable_r (flagreg_enable_r ),
-        .clear_intruction_r  ( clear_intruction_r),
+        .flagreg_enable_r (flag_reg_enable_dec ),
         .reg_write_wb(reg_write_mem),
         .reg_write_data_from_wb(write_back_data),
         .reg_write_address_from_wb(reg_write_address_mem),
@@ -101,12 +104,10 @@ module processor(
         .shamt_out(shamt_dec)
     );
 
-
-    wire [15:0] ALU_out, read_data1_out, read_data2_out;
+    wire [15:0] ALU_ex, read_data1_out, read_data2_out;
     wire [2:0] write_address_to_mem;
-    wire  [15:0] LDM_value_dec, LDM_value_ex;
+    wire [15:0] LDM_value_dec, LDM_value_ex;
     wire outport_enable_mem;
-
 
     execute_stage
     execute_stage_dut (
@@ -117,7 +118,7 @@ module processor(
         .read_data1 (read_data1),
         .read_data2 (read_data2),
         .shamt (shamt_dec),
-        .ALU_Op (alu_op_decdec),
+        .ALU_Op (alu_op_dec),
         .write_back_data (write_back_data),
         .reg_data1_from_mem (reg_data1_from_mem),
         .reg_data2_from_mem (reg_data2_from_mem),
@@ -125,13 +126,13 @@ module processor(
         .read_data2_out (read_data2_ex),
         .jump_selector (jump_selector_dec),
         .flag_regsel (flag_reg_select_dec),
-        .flagreg_enable (flagreg_enable_r),
+        .flagreg_enable (flag_reg_enable_dec),
         .conditions_from_memory_pop (conditions_from_memory_pop),
         .pc_plus_one (pc_plus_one_dec),
         .pc_choose_memory (pc_choose_memory_dec),
         .pc_plus_one_out (pc_plus_one_ex),
         .pc_choose_memory_out (pc_choose_memory_ex),
-        .result_out (ALU_out),
+        .result_out (ALU_ex),
         .new_PC_out (new_PC_ex),
         .flag_register_out (flag_register_ex),
         .PC (PC_dec),
@@ -174,7 +175,6 @@ module processor(
 
     memory_stage
     memory_stage_dut (
-
         .clk (clk),
         .reset (rst),
         .memory_read ( mem_read_ex ),
