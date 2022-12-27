@@ -65,7 +65,11 @@ module execute_stage (
     output [2:0] reg_write_address_out,
 
     output [15:0] read_data1_out,
-    output [15:0] read_data2_out
+    output [15:0] read_data2_out,
+
+    // FU
+    input [2:0] mem_wb_rdest,
+    input mem_wb_reg_write
 );
 
 wire [15:0] result;
@@ -76,14 +80,16 @@ wire [1:0] alu_src1_select = 2'b10;
 wire [1:0] alu_src2_select = 2'b10;
 
 // FORWARDING
-// forwarding_unit FU (
-//     .ex_mem_rdest (ex_mem_rdest),
-//     .ex_mem_reg_write (ex_mem_reg_write),
-//     .mem_wb_rdest (mem_wb_rdest),
-//     .mem_wb_reg_write (mem_wb_reg_write),
-//     .alu_src1_select (alu_src1_select),
-//     .alu_src2_select (alu_src2_select)
-// )
+forwarding_unit FU (
+    .ex_mem_rdest (reg_write_address_out),
+    .ex_mem_reg_write (reg_write_out),
+    .mem_wb_rdest (mem_wb_rdest),
+    .mem_wb_reg_write (mem_wb_reg_write),
+    // .rsrc (CURRENT REG SOURCE ADDRESS),
+    // .rdest (CURRENT REG DEST ADDRESS),
+    .alu_src1_select (alu_src1_select),
+    .alu_src2_select (alu_src2_select)
+);
 
 // BRANCHING
 branch_controller branching (

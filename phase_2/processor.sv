@@ -160,7 +160,9 @@ module processor(
         .memory_write_src_select (memory_write_src_select_dec),
         .memory_write_src_select_out (memory_write_src_select_ex),
         .outport_enable (outport_enable_dec),
-        .outport_enable_out (outport_enable_ex)
+        .outport_enable_out (outport_enable_ex),
+        .mem_wb_rdest (reg_write_address_mem), // FU
+        .mem_wb_reg_write (reg_write_mem)
     );
 
 
