@@ -75,11 +75,17 @@ wire branch_result = 0;
 wire [1:0] alu_src1_select = 2'b10;
 wire [1:0] alu_src2_select = 2'b10;
 
-
-// TODO: FORWARDING UNIT
+// FORWARDING
+// forwarding_unit FU (
+//     .ex_mem_rdest (ex_mem_rdest),
+//     .ex_mem_reg_write (ex_mem_reg_write),
+//     .mem_wb_rdest (mem_wb_rdest),
+//     .mem_wb_reg_write (mem_wb_reg_write),
+//     .alu_src1_select (alu_src1_select),
+//     .alu_src2_select (alu_src2_select)
+// )
 
 // BRANCHING
-
 branch_controller branching (
     .jump_selector (jump_selector),
     .condition_signals (flag_register),
@@ -91,7 +97,6 @@ assign new_PC =
 (branch_result === 1) ? {{16{read_data1[31]}}, read_data1} : PC;
 
 // BUFFERS  
-
 var_reg #(.size(16))
 buffer1 (
     .clk (clk),
