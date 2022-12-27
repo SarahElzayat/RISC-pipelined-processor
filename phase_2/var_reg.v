@@ -5,10 +5,10 @@ module var_reg #(parameter size = 8)(
     output reg [size-1:0] Q
 );
 
-    always @(posedge clk)
+    always @(posedge clk, posedge rst)
     begin
         if (rst)
-            Q <= 'bx;
+            Q <= 'bz;
         else
             Q <= D;
     end

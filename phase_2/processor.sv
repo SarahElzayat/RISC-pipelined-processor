@@ -5,6 +5,8 @@ module processor(
     output [15:0]  input_port,
     output [15:0]  out_port
 );
+    wire [15:0] LDM_value_fet;
+
     wire [15:0] instruction;
     wire [31:0] pc_plus_one_r;
     wire [31:0] pc_write_back_value;
@@ -19,7 +21,8 @@ module processor(
         .pc_write_back_value (pc_write_back_value ),
         .clear_instruction (clear_instruction_dec ),
         .pc_plus_one_r (pc_plus_one_r ),
-        .instruction_r  ( instruction)
+        .instruction_r  ( instruction),
+        .immediate_value (LDM_value_fet )
     );
 
 
@@ -34,7 +37,6 @@ module processor(
     wire reg_write_dec, reg_write_ex;
 
     wire [1:0] alu_src1_select, alu_src2_select;
-    wire [15:0] read_data1, read_data2;
 
     wire [15:0] reg_data1_from_mem, reg_data2_from_mem, reg_data1_from_dec, reg_data2_from_dec;
     wire [4:0] shamt;
@@ -65,7 +67,7 @@ module processor(
     wire flag_reg_enable_dec;
     wire alu_src_dec;
     wire pc_write_dec;
-    
+
     wire [2:0] jump_selector_dec;
     wire [1:0] mem_src_select_r;
 
@@ -115,8 +117,8 @@ module processor(
         .reset (rst),
         .carry_sel (carry_sel_dec),
         .alu_src_select (alu_src_dec),
-        .read_data1 (read_data1),
-        .read_data2 (read_data2),
+        .read_data1 (reg_data1_from_dec),
+        .read_data2 (reg_data2_from_dec),
         .shamt (shamt_dec),
         .ALU_Op (alu_op_dec),
         .write_back_data (write_back_data),
@@ -137,7 +139,7 @@ module processor(
         .flag_register_out (flag_register_ex),
         .PC (PC_dec),
         .PC_out (PC_ex),
-        .LDM_value (LDM_value_dec),
+        .LDM_value (LDM_value_fet),
         .LDM_value_out (LDM_value_ex),
         .mem_pop (mem_pop_dec),
         .mem_pop_out (mem_pop_ex),

@@ -5,7 +5,8 @@ module fetch_stage (
   input [31:0] pc_write_back_value,
   input clear_instruction, //overrides the current instruction with NOP (selector of the output mux)
   output [31:0] pc_plus_one_r,
-  output [15:0] instruction_r
+  output [15:0] instruction_r,
+  output [15:0] immediate_value
 );
 
   wire [15:0] instruction;
@@ -35,7 +36,8 @@ module fetch_stage (
     .pc_write_back_value( pc_write_back_value),
     .clear_instruction(clear_instruction),
     .pc_plus_one(pc_plus_one_r),
-    .instruction  (instruction)
+    .instruction  (instruction),
+    .immediate_value(immediate_value)
   );
 
 

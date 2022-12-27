@@ -79,7 +79,7 @@ def assembler(input_path,output_path):
     output = parse(commands,arguments)
     write_file(output_path,output)
 
-input_path = './assembler/test.txt'
-output_path = './assembler/output.txt'
+input_path = './test.txt'
+output_path = './output.txt'
 
 assembler(input_path,output_path)

@@ -131,8 +131,8 @@ module decode_stage(
         .write_address (reg_write_address_from_wb),
         .write_data (reg_write_data_from_wb ),
         // 12 11 10 9 8 7 6 5 4 3 2 1 0
-        .read_address1 (instruction[12:10] ),
-        .read_address2 (instruction[9:7] ),
+        .read_address1 (instruction[10:8] ),
+        .read_address2 (instruction[7:5] ),
         .read_data1 (reg_file_read_data1 ),
         .read_data2  ( reg_file_read_data2)
     );

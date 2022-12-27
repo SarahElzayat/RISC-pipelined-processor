@@ -81,7 +81,7 @@ module sm (
 							// DEC Rdst
 							3'b010:begin
 								// execution stage signals
-								ALUOp = 4'b0001;
+								ALUOp = 4'b0010;
 							end
 							// ADD Rds,Rscr
 							3'b011:begin
