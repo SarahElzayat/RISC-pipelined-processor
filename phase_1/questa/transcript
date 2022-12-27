@@ -2381,3 +2381,7 @@ run
 add wave -position 40  sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_address_select
 run
 run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/wave.do
+# End time: 05:05:22 on Dec 27,2022, Elapsed time: 2:33:50
+# Errors: 0, Warnings: 2
