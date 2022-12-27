@@ -2,24 +2,22 @@ module sm (
 	input clk,reset,
 	input interrupt_signal,
 	input [15:0] instruction,
-	input [32-1:0]PC,
+	input [32-1:0] PC,
 	output logic  reg_write, mem_read, mem_write, mem_pop,mem_push,
-	output logic  carry_select, clear_instruction,flag_reg_select,pc_choose_memory,
+	output logic   clear_instruction ,flag_reg_select,pc_choose_memory,
 	output logic [2 :0] jump_selector,
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
 	output logic  [1:0] wb_sel,
 	output logic  pc_write,
 	output logic  [1:0] mem_addsel,
-	output logic  [1:0] mem_srcsel,
 	output logic  [1:0] carry_sel,
-	output logic  [1:0] alu_src1sel,
-	output logic  [1:0] alu_src2sel,
+	output logic  alu_srcsel,
 	output logic  outport_enable,
 	output logic  inport_sel,
-	output logic  flagreg_enable,
-	output logic  clear_intruction
+	output logic  flagreg_enable
 );
+
 	typedef enum int unsigned { IDLE,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 
 	State current_state;
@@ -36,9 +34,9 @@ module sm (
 		//fetch stage signals
 		pc_write = 1'b1;
 		inport_sel = 1'b0;
-		clear_intruction = 1'b0;
+		clear_instruction = 1'b0;
 		// execution stage signals
-		ALUOp = 3'b1111;
+		ALUOp = 4'b1111;
 		alu_srcsel = 1'b0;
 		jump_selector = 3'b000;
 		carry_sel = 2'b00;
@@ -50,7 +48,7 @@ module sm (
 		mem_pop = 1'b0;
 		mem_push = 1'b0;
 		mem_addsel = 2'b00;
-		mem_srcsel = 2'b00;
+		mem_src_select = 2'b00;
 		// write back stage signals
 		reg_write = 1'b0;
 		wb_sel = 2'b01;
@@ -83,7 +81,7 @@ module sm (
 							// DEC Rdst
 							3'b010:begin
 								// execution stage signals
-								ALUOp = 4'b0001;
+								ALUOp = 4'b0010;
 							end
 							// ADD Rds,Rscr
 							3'b011:begin
@@ -147,7 +145,7 @@ module sm (
 								mem_write = 1'b1;
 								mem_push = 1'b1;
 								mem_addsel = 2'b10;
-								mem_srcsel = 2'b11;
+								mem_src_select = 2'b11;
 							end
 							// POP Rdst
 							3'b110:begin
@@ -155,7 +153,7 @@ module sm (
 								mem_read = 1'b1;
 								mem_pop = 1'b1;
 								mem_addsel = 2'b10;
-								mem_srcsel = 2'b11;
+								mem_src_select = 2'b11;
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b01;
@@ -170,8 +168,7 @@ module sm (
 							3'b000:begin
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b10;
-								outport_enable = 1'b0;
+								wb_sel = 2'b01;
 							end
 							// LDM Rdst,imm
 							3'b001:begin
@@ -205,7 +202,7 @@ module sm (
 								flagreg_enable = 1'b1;
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b00;
+								wb_sel = 2'b01;
 							end
 							// SHR Rdst,imm
 							3'b101:begin
@@ -215,7 +212,7 @@ module sm (
 								flagreg_enable = 1'b1;
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b00;
+								wb_sel = 2'b01;
 							end
 							default :;
 						endcase

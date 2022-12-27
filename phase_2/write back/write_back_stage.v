@@ -7,9 +7,9 @@ module write_back_stage (
     output  [15:0] outport
 );
 
-    assign data = (sel == 2'b00)? immediate_value:
-    (sel == 2'b01)? alu_value:
-    (sel == 2'b10)? mem_data: 16'bz;
+    assign data = (sel === 2'b00)? immediate_value:
+    (sel === 2'b01)? alu_value:
+    (sel === 2'b10)? mem_data: 16'bz;
 
 
     var_reg_with_enable

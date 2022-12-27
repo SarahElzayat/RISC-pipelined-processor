@@ -89,7 +89,7 @@ def assembler(input_path,output_path,hex_flag):
             output[i] = bin2hex(output[i])+'\n'
     write_file(output_path,output)
 
-input_path = './assembler/test.txt'
-output_path = './assembler/output.txt'
+input_path = './test.txt'
+output_path = './output.txt'
 
 assembler(input_path,output_path,hex_flag=1)

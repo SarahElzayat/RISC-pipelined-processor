@@ -2,10 +2,11 @@ module mem_fetch (
   input clk,
   input reset, //the reset signal resets the pc to 2^5 (first address of the instructions memory)
   input pc_write,
-  input [15:0] pc_write_back_value,
+  input [31:0] pc_write_back_value,
   input clear_instruction, //overrides the current instruction with NOP (selector of the output mux)
   output [31:0] pc_plus_one,
-  output [15:0] instruction
+  output [15:0] instruction,
+  output [15:0] immediate_value
 );
 
   reg [31:0] pc; // = 2**5; //program counter(initally 2^5)
@@ -15,8 +16,10 @@ module mem_fetch (
   // the rest is reserved of the instructions.
 
   assign instruction =
-  clear_instruction? 'h4000: //NOP
+   (clear_instruction === 1'b1 )? 'h4000: //NOP
   instruction_memory[pc];
+
+  assign immediate_value =   instruction_memory[pc];
 
 
   assign pc_plus_one = (!clear_instruction)? pc+1 : 'bz;
@@ -31,10 +34,11 @@ module mem_fetch (
 
     else
       begin
-        if(pc_write)
-        begin
-          pc = pc_write_back_value;
-        end
+        // if(pc_write)
+        // begin
+        //   pc = pc_write_back_value;
+        // end
+        pc = pc +1;
       end
 
   end

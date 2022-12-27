@@ -6,18 +6,6 @@ module memory_stage_without_buffers (
     input [2:0] flags,
     output [15:0] data,
     output [31:0] shift_reg
-    // inputs to ust pass
-    // input RegWrite,
-    // output RegWrite_r,
-    // input[2:0] reg_write_address_from_ex,
-    // output[2:0] reg_write_address_r_to_wb,
-    // input [15:0] sign_extend_from_ex,
-    // output [15:0] sign_extend_to_wb,
-    // input [15:0] alu_result_from_ex,
-    // output [15:0] alu_result_to_wb,
-    // input write_back_select_from_ex,
-    // output write_back_select_to_wb
-
   );
 
 

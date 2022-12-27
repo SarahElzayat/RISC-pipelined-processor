@@ -1,0 +1,82 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory
+vmemory_stage_tb
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1672092534
+!i10b 1
+!s100 _4enhF`k<:@d_ah;dUN6A0
+INEg1?cLDTbG45c^EcRR^W1
+S1
+R0
+Z3 w1672081823
+8memory_stage_tb.sv
+Fmemory_stage_tb.sv
+!i122 0
+Z4 L0 1 74
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z7 !s108 1672092534.000000
+!s107 memory_stage_without_buffers_tb.sv|memory_stage_without_buffers.sv|memory_stage_tb.sv|memory_stage.sv|
+Z8 !s90 memory_stage.sv|memory_stage_tb.sv|memory_stage_without_buffers.sv|memory_stage_without_buffers_tb.sv|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vmemory_stage_without_buffers
+R1
+R2
+!i10b 1
+!s100 6iH5gNGn:Gg3FQ207b`LH0
+I75SWAIJN;[:edZV=7IQi03
+S1
+R0
+R3
+8memory_stage_without_buffers.sv
+Fmemory_stage_without_buffers.sv
+!i122 0
+L0 1 88
+R5
+R6
+r1
+!s85 0
+31
+R7
+Z11 !s107 memory_stage_without_buffers_tb.sv|memory_stage_without_buffers.sv|memory_stage_tb.sv|memory_stage.sv|
+R8
+!i113 0
+R9
+R10
+vmemory_stage_without_buffers_tb
+R1
+R2
+!i10b 1
+!s100 X<4amMYUdHgLkEKXNmK?K3
+Ie[HoC[g0]Qfd7YMDaRV_N1
+S1
+R0
+R3
+8memory_stage_without_buffers_tb.sv
+Fmemory_stage_without_buffers_tb.sv
+!i122 0
+R4
+R5
+R6
+r1
+!s85 0
+31
+R7
+R11
+R8
+!i113 0
+R9
+R10
