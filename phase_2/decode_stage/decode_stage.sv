@@ -26,6 +26,10 @@ module decode_stage(
     input [3:0] shamt_out
 );
 
+    wire [15:0] reg_file_read_data1_s;
+    wire [15:0] reg_file_read_data2_s;
+
+
     wire reg_write, mem_read, mem_write, mem_pop,mem_push;
     wire flag_reg_select,pc_choose_memory;
     wire [2:0] jump_selector;
@@ -43,12 +47,21 @@ module decode_stage(
 
 
     var_reg #(
-    .size(4)
-    ) var_reg_instance(
-        .D(instruction[3:0]),
+    .size(32)
+    ) var_reg_instance123(
+        .D({reg_file_read_data1_s, reg_file_read_data2_s}),
         .clk(clk),
         .rst(reset),
-        .Q(shamt_out)
+        .Q({reg_file_read_data1, reg_file_read_data2})
+    );
+
+    var_reg #(
+    .size(5)
+    ) var_reg_instance(
+        .D({instruction[3:0], flag_reg_select}),
+        .clk(clk),
+        .rst(reset),
+        .Q({shamt_out, flag_reg_select_r})
     );
 
     var_reg #(
@@ -133,8 +146,8 @@ module decode_stage(
         // 12 11 10 9 8 7 6 5 4 3 2 1 0
         .read_address1 (instruction[10:8] ),
         .read_address2 (instruction[7:5] ),
-        .read_data1 (reg_file_read_data1 ),
-        .read_data2  ( reg_file_read_data2)
+        .read_data1 (  reg_file_read_data1_s ),
+        .read_data2  ( reg_file_read_data2_s)
     );
 
 endmodule

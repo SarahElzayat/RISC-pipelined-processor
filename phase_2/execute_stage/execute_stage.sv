@@ -87,8 +87,8 @@ branch_controller branching (
 );
 
 assign new_PC =
-(branch_result == 0) ? PC :
-(branch_result == 1) ? {{16{read_data1[31]}}, read_data1} : PC;
+(branch_result === 0) ? PC :
+(branch_result === 1) ? {{16{read_data1[31]}}, read_data1} : PC;
 
 // BUFFERS  
 

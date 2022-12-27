@@ -79,7 +79,7 @@ def assembler(input_path,output_path,hex_flag):
     output = parse(commands,arguments)
     if hex_flag:
         for i in range (len(output)):
-            output[i] = f'{int(output[i], 2):X}'
+            output[i] = f'{int(output[i], 2):X} \n'
     write_file(output_path,output)
 
 input_path = './test.txt'

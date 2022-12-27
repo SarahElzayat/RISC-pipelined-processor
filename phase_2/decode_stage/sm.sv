@@ -168,7 +168,7 @@ module sm (
 							3'b000:begin
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b10;
+								wb_sel = 2'b01;
 							end
 							// LDM Rdst,imm
 							3'b001:begin
@@ -202,7 +202,7 @@ module sm (
 								flagreg_enable = 1'b1;
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b00;
+								wb_sel = 2'b01;
 							end
 							// SHR Rdst,imm
 							3'b101:begin
@@ -212,7 +212,7 @@ module sm (
 								flagreg_enable = 1'b1;
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b00;
+								wb_sel = 2'b01;
 							end
 							default :;
 						endcase

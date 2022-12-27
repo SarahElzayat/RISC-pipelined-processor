@@ -1822,3 +1822,562 @@ restart
 # Loading work.memory_stage_without_buffers(fast)
 # Loading work.write_back_stage(fast)
 # Loading work.var_reg_with_enable(fast__1)
+mem load -filltype value -filldata 0900 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+force -freeze sim:/processor/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/processor/rst 1'h1 0 -cancel 100
+run 600
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 1100 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run 600
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 4000 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run 1000 
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+run 1000
+mem load -filltype value -filldata 8320 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+toggle add sim:/processor/execute_stage_dut/*
+# ** UI-Msg (suppressible): (vsim-8681) Coverage statistics must be enabled before nodes can be added for toggle coverage analysis. Please invoke vsim with '-coverage' command-line option to enable coverage statistics.
+# 
+add wave -position end  sim:/processor/write_back_data
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/wb_sel_dec
+add wave -position end  sim:/processor/wb_sel_ex
+add wave -position end  sim:/processor/wb_sel_mem
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+restartresta
+# invalid command name "restartresta"
+restartresta
+# invalid command name "restartresta"
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.var_reg(fast__8)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.var_reg(fast__8)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.var_reg_with_enable(fast__1)
+mem load -filltype value -filldata 0900 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+force -freeze sim:/processor/rst 1'h1 0 -cancel 100
+run 400
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/clk 1 0, 0 {5 ns} -r 10
+run 400
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 8320 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/alu_src_dec
+add wave -position end  sim:/processor/alu_value_mem
+add wave -position end  sim:/processor/reg_write_address_ex
+add wave -position 23  sim:/processor/reg_write_address_dec
+add wave -position end  sim:/processor/reg_write_address_mem
+add wave -position end  sim:/processor/write_back_stage_dut/data
+add wave -position end  sim:/processor/write_back_stage_dut/sel
+# Compile of decode_stage.sv failed with 1 errors.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 1 failed with 1 error.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.var_reg(fast__8)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.var_reg_with_enable(fast__1)
+force -freeze sim:/processor/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/processor/rst 1'h1 0 -cancel 100
+mem load -filltype value -filldata 0900 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 8320 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 1A20 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/execute_stage_dut/alu_src1_select
+add wave -position end  sim:/processor/execute_stage_dut/alu_src2_select
+add wave -position end  sim:/processor/execute_stage_dut/alu_dut/Op1
+add wave -position end  sim:/processor/execute_stage_dut/alu_dut/Op2
+run
+run
+add wave -position end  sim:/processor/execute_stage_dut/alu_dut/alu_src1_select
+add wave -position end  sim:/processor/execute_stage_dut/alu_dut/alu_src_select
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+force -freeze sim:/processor/execute_stage_dut/alu_dut/alu_src_select 1'h1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file
+add wave -position end  sim:/processor/decode_stage_dut/reg_file_dut/reg_file
+run
+run
+run
+run
+run
+run
+run
+noforce sim:/processor/execute_stage_dut/alu_dut/alu_src_select
+mem load -filltype value -filldata 0100 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run 200
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/execute_stage_dut/flag_register
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem load -filltype value -filldata 6900 -fillradix hexadecimal -skip 0 /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/memory_stage_dut/memory_push
+run
+run
+run
+run
+add wave -position end  sim:/processor/memory_stage_dut/memory_write
+add wave -position end  sim:/processor/memory_stage_dut/data
+add wave -position end  sim:/processor/memory_stage_dut/std_address
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/sp
+run
+run
+run
+add wave -position end  sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_address
+run
+add wave -position 40  sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_address_select
+run
+run
