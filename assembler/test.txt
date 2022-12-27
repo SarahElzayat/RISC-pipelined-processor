@@ -1,5 +1,19 @@
-// fady
-loop:add r1 //,r2
-add r1,r2        //lol
-add r1,r2 
-// sub r2,r3,11111
+ldm r1,0101
+ldm r2,1010
+add r1,r2
+dec r1
+inc r1
+not r1
+sub r2,r1
+or r1,r2
+and r1,r2
+setc
+clrc
+out r1
+push r2
+pop r3
+mov r3,r1
+ldd r4,r3
+std r1,r4
+shl r1,0001
+shr r1,0001
