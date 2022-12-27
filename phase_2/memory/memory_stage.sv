@@ -1,10 +1,11 @@
 module memory_stage (
-  input clk, reset,memory_read, memory_write, memory_push, memory_pop,
+  input clk, reset,memory_read, memory_write, memory_push, memory_pop, interrupt, pc_choose_memory,
   input [15:0] std_address, ldd_address, //read data1 & read data
   input [1:0] memory_address_select, memory_write_src_select,
-  input[31:0] pc,
+  input[31:0] pc,pc_from_mux_ex,
   input [2:0] flags,
   output [15:0] data_r, //wire on the inside
+  output [31:0] final_pc,
   output [31:0] shift_reg, //reg on the inside
 
   //passing
@@ -96,6 +97,8 @@ module memory_stage (
     .memory_write (memory_write ),
     .memory_push (memory_push ),
     .memory_pop (memory_pop ),
+    .interrupt (interrupt ),
+    .pc_choose_memory (pc_choose_memory ),
     .std_address (std_address ),
     .ldd_address (ldd_address ),
     .memory_address_select (memory_address_select ),
@@ -103,6 +106,8 @@ module memory_stage (
     .pc (pc ),
     .flags (flags ),
     .data  ( data),
+    .pc_from_mux_ex (pc_from_mux_ex ),
+    .final_pc (final_pc ),
     .shift_reg(shift_reg)
   );
 

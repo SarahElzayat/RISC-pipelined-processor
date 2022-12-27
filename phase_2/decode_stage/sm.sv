@@ -156,7 +156,7 @@ module sm (
 								mem_src_select = 2'b11;
 								// write back stage signals
 								reg_write = 1'b1;
-								wb_sel = 2'b01;
+								wb_sel = 2'b10;
 							end
 							default:;
 						endcase

@@ -1,9 +1,10 @@
-push r1
+pop r3
+inc r1
 ldm r1,0101
 ldm r2,1010
+push r1
 add r1,r2
 dec r1
-inc r1
 not r1
 sub r2,r1
 or r1,r2

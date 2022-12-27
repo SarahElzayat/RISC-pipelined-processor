@@ -9,274 +9,497 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1
+valu
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1672151858
+!i10b 1
+!s100 >GON^FK9Y:@SH5jY[EjR@0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IFJ9`^ge<TjI5a20=z`<e`2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dD:/arch_project/RISC-pipelined-processor/phase_1
+Z5 w1672150262
+8D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
+!i122 138
+L0 1 83
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1672151858.000000
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv|
+!i113 1
+Z8 o-work work -sv
+Z9 tCvgOpt 0
 vbooth_multiplier
-Z0 !s110 1671809758
+Z10 !s110 1671809758
 !i10b 1
 !s100 ]RPJ[T`j;_D5[bLPN`TFQ0
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+R2
 IY?<V1J<6>:@[44iWeUSh00
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dD:/arch_project/RISC-pipelined-processor/phase_1
-Z4 w1671807863
+R3
+R4
+Z11 w1671807863
 8D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier.v
 FD:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier.v
 !i122 36
 L0 1 100
-Z5 OV;L;2020.1;71
+R6
 r1
 !s85 0
 31
-Z6 !s108 1671809758.000000
+Z12 !s108 1671809758.000000
 !s107 D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z13 o-work work
+R9
 vbooth_multiplier_tb
-R0
+R10
 !i10b 1
 !s100 KneaJ3b^5]KJc4^;6Ne[l1
-R1
-IMZibXz8bWj2OVNX=Sih>z1
 R2
+IMZibXz8bWj2OVNX=Sih>z1
 R3
 R4
+R11
 8D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier_tb.v
 FD:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier_tb.v
 !i122 37
 L0 1 57
-R5
+R6
 r1
 !s85 0
 31
-R6
+R12
 !s107 D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/CMP #3/VLSI/VLSI-Projects/VLSI-Multipliers/deliveribles/booth_multiplier/booth_multiplier_tb.v|
 !i113 1
-R7
-R8
-vfetch_stage
-Z9 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z10 !s110 1671809757
+R13
+R9
+vbranch_controller
+R0
+Z14 !s110 1672151859
 !i10b 1
-!s100 ]<deUzA7PC10;JXdPOe5z3
-R1
-IjDQMH<cMIkjIR2J2QVfgc0
+!s100 OJ6Li9;C[GG[C<7ifJjoC2
 R2
-S1
+ICiJ^j=4zJlj_m@2l;1A>g1
 R3
-w1671643439
-8D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage.sv
-FD:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage.sv
-!i122 33
-L0 1 45
-R5
+S1
+R4
+Z15 w1672085610
+8D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv
+!i122 139
+L0 1 41
+R6
 r1
 !s85 0
 31
-Z11 !s108 1671809757.000000
-!s107 D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage.sv|
+R7
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv|
 !i113 1
-Z12 o-work work -sv
 R8
-vfetch_stage_tb
 R9
+vdecode_stage
 R0
+R1
+!i10b 1
+!s100 C7Uj7_L]PVeCOFGWe]G7<0
+R2
+I6=8iad1FzZ1YLNY@OjF`d2
+R3
+S1
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv
+!i122 136
+L0 1 153
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv|
+!i113 1
+R8
+R9
+vexecute_stage
+R0
+R14
+!i10b 1
+!s100 gIjUmDIXCRHP01`P]LY1U1
+R2
+IMoEoDg`n8Tb1NmMZkT0eS3
+R3
+S1
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
+!i122 140
+L0 1 227
+R6
+r1
+!s85 0
+31
+Z16 !s108 1672151859.000000
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv|
+!i113 1
+R8
+R9
+vexecute_stage_tb
+R0
+R14
+!i10b 1
+!s100 5BMXmVg8<Dh0Z`O?UW[KM3
+R2
+I4Y6LNR:Rbg8J^NczVb2La0
+R3
+S1
+R4
+R15
+8D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
+!i122 141
+L0 1 88
+R6
+r1
+!s85 0
+31
+R16
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv|
+!i113 1
+R8
+R9
+vfetch_stage
+R0
+R14
+!i10b 1
+!s100 n996L0`ibC1Um2eUAQLHS3
+R2
+I@Al97MIn7IY1mYg;iOJB@3
+R3
+S1
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
+!i122 143
+L0 1 44
+R6
+r1
+!s85 0
+31
+R16
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv|
+!i113 1
+R8
+R9
+vfetch_stage_tb
+R0
+R14
 !i10b 1
 !s100 0LgY?b^NPgBV88Xgb1FPn2
-R1
-I@`PF^^i_Td0:NlZJAAXg<2
 R2
-S1
+I6WDhnO:a:h8hDZgh9^NHo2
 R3
-w1671642857
-8D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv
-FD:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv
-!i122 34
-Z13 L0 1 56
-R5
+S1
+R4
+R15
+8D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage_tb.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage_tb.sv
+!i122 144
+Z17 L0 1 56
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/fetch/fetch_stage_tb.sv|
+R16
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage_tb.sv|
 !i113 1
-R12
 R8
-vmem_fetch
 R9
-R10
+vforwarding_unit
+R0
+R14
 !i10b 1
-!s100 PQn?2[;0Mg2GYeQ5V]jW_3
-R1
-Ic?ci@:T1CVKmnWlGkkGiG2
+!s100 NQD>nnRD^j[6icG4;?i093
 R2
-S1
+IeAh]LZbX8hmJPdSC2i`Th1
 R3
-w1671645127
-8D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv
-FD:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv
-!i122 31
-L0 1 46
+S1
+R4
 R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
+!i122 142
+L0 1 30
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch.sv|
+R16
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv|
 !i113 1
-R12
 R8
-vmem_fetch_tb
 R9
-R10
+vmem_fetch
+R0
+R14
+!i10b 1
+!s100 Qee[MB5R4mJBC?XLY7;aU2
+R2
+I29W0mR3U?K3?fFiTI]GCS3
+R3
+S1
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
+!i122 145
+L0 1 46
+R6
+r1
+!s85 0
+31
+R16
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv|
+!i113 1
+R8
+R9
+vmem_fetch_tb
+R0
+Z18 !s110 1672151860
 !i10b 1
 !s100 ;c_DbFk6IX2lkIIO3gDTg1
-R1
-IfiMzS:SOd;`kjLR1V>iF]0
 R2
-S1
+I3Q;dVV60hg`?3_0H>ZSHW3
 R3
-w1671640617
-8D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv
-FD:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv
-!i122 32
-R13
-R5
+S1
+R4
+R15
+8D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch_tb.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch_tb.sv
+!i122 146
+R17
+R6
 r1
 !s85 0
 31
-R11
-!s107 D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/fetch/mem_fetch_tb.sv|
+Z19 !s108 1672151860.000000
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch_tb.sv|
 !i113 1
-R12
 R8
-vmemory_stage
 R9
-Z14 !s110 1672064673
+vmemory_stage
+R0
+Z20 !s110 1672150920
 !i10b 1
-!s100 54@H2BD9@M6:MT9AnzW392
-R1
-If?;?S[:RZmENFa`6;94151
+!s100 ZHJ@nMdXE8MI?Lm=Igz^11
 R2
-S1
+Ii2@AF0hYNVX003PmnZSdO1
 R3
-w1672064193
+S1
+R4
+R5
 8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
 FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
-!i122 129
-L0 1 38
-R5
+!i122 133
+L0 1 109
+R6
 r1
 !s85 0
 31
-Z15 !s108 1672064673.000000
+Z21 !s108 1672150920.000000
 !s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
 !i113 1
-R12
 R8
-vmemory_stage_tb
 R9
-R14
+vmemory_stage_tb
+R0
+R20
 !i10b 1
 !s100 _4enhF`k<:@d_ah;dUN6A0
-R1
-IJn[YVCW`>j^30cfUNa[h83
 R2
-S1
+IJn[YVCW`>j^30cfUNa[h83
 R3
-w1672064666
+S1
+R4
+R15
 8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
 FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
-!i122 130
-Z16 L0 1 74
-R5
+!i122 134
+Z22 L0 1 74
+R6
 r1
 !s85 0
 31
-R15
+R21
 !s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv|
 !i113 1
-R12
 R8
-vmemory_stage_without_buffers
 R9
-R14
+vmemory_stage_without_buffers
+R0
+R18
 !i10b 1
-!s100 6iH5gNGn:Gg3FQ207b`LH0
-R1
-IP7hgG^8SED_0FJJ<L;ndI3
+!s100 _]9FkAngS]jLmI]ok[mfN0
 R2
-S1
+IWS54[4]D@i8BWa:MzS]F82
 R3
-w1672063934
-8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-!i122 127
-L0 1 88
-R5
+S1
+R4
+R15
+8D:/arch_project/RISC-pipelined-processor/phase_1/memory/memory_stage_without_buffers.sv
+FD:/arch_project/RISC-pipelined-processor/phase_1/memory/memory_stage_without_buffers.sv
+!i122 147
+L0 1 54
+R6
 r1
 !s85 0
 31
-R15
-!s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
+R19
+!s107 D:/arch_project/RISC-pipelined-processor/phase_1/memory/memory_stage_without_buffers.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/memory/memory_stage_without_buffers.sv|
 !i113 1
-R12
 R8
-vmemory_stage_without_buffers_tb
 R9
-R14
+vmemory_stage_without_buffers_tb
+R0
+R20
 !i10b 1
 !s100 X<4amMYUdHgLkEKXNmK?K3
-R1
-I70Hk7cj]BZHWI:BXM94i=1
 R2
-S1
+I70Hk7cj]BZHWI:BXM94i=1
 R3
-w1672064601
+S1
+R4
+R15
 8D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
 FD:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
-!i122 128
-R16
-R5
+!i122 132
+R22
+R6
 r1
 !s85 0
 31
-R15
+R21
 !s107 D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv|
 !i113 1
-R12
 R8
-vvar_reg
 R9
+vprocessor
 R0
+R1
+!i10b 1
+!s100 _L?Yz=D6SA[fk6DGLh1;22
+R2
+IU:6?C9b_`P<a6U=WimXB70
+R3
+S1
+R4
+w1672151539
+8D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/processor.sv
+!i122 135
+L0 1 231
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv|
+!i113 1
+R8
+R9
+vsm
+R0
+R1
+!i10b 1
+!s100 O:UYzm>KP07[ln7^3kd4h3
+R2
+I:5NM9iNCmgSJ2NKWJoDnE2
+R3
+S1
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
+FD:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
+!i122 137
+L0 1 441
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv|
+!i113 1
+R8
+R9
+vvar_reg
+R0
+R10
 !i10b 1
 !s100 ZW;M;nF]^966m@VY2T_NX1
-R1
-IJ4R?PKh0G@j;hk:?_6N@:0
 R2
-S1
+IJ4R?PKh0G@j;hk:?_6N@:0
 R3
+S1
+R4
 w1668184344
 8D:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv
 FD:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv
 !i122 35
 L0 1 15
-R5
+R6
 r1
 !s85 0
 31
-R6
+R12
 !s107 D:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_1/var_reg.sv|
 !i113 1
-R12
 R8
+R9
+vwrite_back_stage
+R18
+!i10b 1
+!s100 i6MD1N<MIaMzHBQz7];GA0
+R2
+IFddL9E?KDjYaB<ll=;^UA0
+R3
+R4
+R5
+8D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v
+FD:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v
+!i122 148
+L0 1 29
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v|
+!i113 1
+R13
+R9

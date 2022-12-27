@@ -169,11 +169,12 @@ module processor(
     wire write_back_sel_to_wb;
 
     wire [15:0] mem_data;
-    wire [31:0] shift_reg;
     wire [15:0] ldm_value_mem;
     wire [1:0] wb_sel_mem;
     wire [15:0] alu_value_mem;
-
+    wire [31:0] shift_reg;
+    wire [31:0] final_pc;
+    
 
     memory_stage
     memory_stage_dut (
@@ -183,15 +184,18 @@ module processor(
         .memory_write ( mem_write_ex ),
         .memory_push ( mem_push_ex ),
         .memory_pop ( mem_pop_ex ),
+        .interrupt(interrupt_signal),
+        .pc_choose_memory ( pc_choose_memory_ex ),
         .std_address(read_data1_ex),
         .ldd_address(read_data2_ex),
         .memory_address_select ( memory_address_select_ex ),
         .memory_write_src_select ( memory_write_src_select_ex ),
         .pc (PC_ex),
+        .pc_from_mux_ex(new_PC_ex),
         .flags (flag_register_ex),
         .data_r  ( mem_data),
         .shift_reg  ( shift_reg),
-
+        .final_pc  ( final_pc),
         // passing 
         .alu_value(ALU_ex),
         .alu_value_out(alu_value_mem),
