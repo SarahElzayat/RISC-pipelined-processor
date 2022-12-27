@@ -73,13 +73,16 @@ def machine_code (command,arguments):
         sudo_line[2]=(8-len(arguments[1]))*'0'+arguments[1]
         return ''.join(sudo_line) 
 
-def assembler(input_path,output_path):
+def assembler(input_path,output_path,hex_flag):
     lines = read_file(input_path)
     commands,arguments = sanitize(lines)
     output = parse(commands,arguments)
+    if hex_flag:
+        for i in range (len(output)):
+            output[i] = f'{int(output[i], 2):X}'
     write_file(output_path,output)
 
 input_path = './test.txt'
 output_path = './output.txt'
 
-assembler(input_path,output_path)
+assembler(input_path,output_path,hex_flag=1)
