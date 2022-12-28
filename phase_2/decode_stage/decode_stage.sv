@@ -9,7 +9,6 @@ module decode_stage(
     output  [1:0] mem_src_select_r,
     output  [3:0] ALUOp_r,
     output  [1:0] wb_sel_r,
-    output  pc_write_r,
     output  [1:0] mem_addsel_r,
     output  [1:0] carry_sel_r,
     ////////////////////////////
@@ -36,7 +35,6 @@ module decode_stage(
     wire [1:0] mem_src_select;
     wire [3:0] ALUOp;
     wire [1:0] wb_sel;
-    wire pc_write;
     wire [1:0] mem_addsel;
     wire [1:0] carry_sel;
 
@@ -124,7 +122,6 @@ module decode_stage(
         .mem_src_select(mem_src_select),
         .ALUOp(ALUOp),
         .wb_sel(wb_sel),
-        .pc_write(pc_write),
         .mem_addsel(mem_addsel),
         .carry_sel(carry_sel),
         .alu_srcsel(alu_srcsel),

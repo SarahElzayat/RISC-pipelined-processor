@@ -5,11 +5,10 @@ module sm (
 	input [32-1:0] PC,
 	output logic  reg_write, mem_read, mem_write, mem_pop,mem_push,
 	output logic   clear_instruction ,flag_reg_select,pc_choose_memory,
-	output logic [2 :0] jump_selector,r_scr,r_dst;
+	output logic [2 :0] jump_selector,r_scr,r_dst,
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
 	output logic  [1:0] wb_sel,
-	output logic  pc_write,
 	output logic  [1:0] mem_addsel,
 	output logic  [1:0] carry_sel,
 	output logic  alu_srcsel,
@@ -32,7 +31,6 @@ module sm (
 	begin
 		//----------------default values-------------------
 		//fetch stage signals
-		pc_write = 1'b1;
 		inport_sel = 1'b0;
 		clear_instruction = 1'b0;
 		// execution stage signals
@@ -128,7 +126,7 @@ module sm (
 								r_scr = 3'bzzz;
 								r_dst = 3'bzzz;
 							end
-							
+
 							// SETC
 							3'b001:begin
 								// execution stage signals

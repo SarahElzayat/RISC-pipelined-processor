@@ -131,7 +131,8 @@ buffer1 (
 
 var_reg_with_enable #(.size(3))
 buffer2 (
-    .clk (clk),
+    // NOTE : Flag Reg works on negedge of clk
+    .clk (~clk),
     .rst(reset),
     .en (flagreg_enable),
     .D (flag_register),
