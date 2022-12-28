@@ -13,7 +13,7 @@ instruction_table = {
     # 8 bits at least and need to be to 16 bits
     'ldm':['10001','Rdst','imm'],
     'shl':['10100','Rscr','imm'],
-    'shl':['10101','Rscr','imm'],
+    'shr':['10101','Rscr','imm'],
     
     # 1 operand instructions
     # 8 bits and need to extended with 8 bits
@@ -36,6 +36,9 @@ instruction_table = {
     'clrc':['01010'],
     'call':['11100'],
     'ret':['11101'],
+
+    # org
+    '.org':['target','dummy']
 }
 
 reg_table = {
