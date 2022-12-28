@@ -26,13 +26,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	execute_stage_tb
 
-} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module memory_stage_without_buffers
-
-Top level modules:
-	memory_stage_without_buffers
-
 } {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module var_reg

@@ -66,6 +66,7 @@ module processor(
     wire flag_reg_select_dec;
     wire flag_reg_enable_dec;
     wire alu_src_dec;
+    wire inport_sel_ex;
 
     wire [2:0] jump_selector_dec;
     wire [1:0] mem_src_select_r;
@@ -93,7 +94,7 @@ module processor(
         .mem_addsel_r (memory_address_select_dec ),
         .carry_sel_r (carry_sel_dec ),
         .outport_enable_r (outport_enable_dec ),
-        .inport_sel_r (inport_sel_r ),
+        .inport_sel_r (inport_sel_ex ),
         .flagreg_enable_r (flag_reg_enable_dec ),
         .reg_write_wb(reg_write_mem),
         .reg_write_data_from_wb(write_back_data),
