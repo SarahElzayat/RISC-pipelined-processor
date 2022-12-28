@@ -12,7 +12,7 @@ module execute_stage (
     input [15:0] write_back_data,
     input [15:0] reg_data1_from_mem,
     input [15:0] reg_data2_from_mem,
-    input [2:0] jump_selector,
+    input [2:0] jump_selector,r_scr_buff,r_dst_buff,r_scr,r_dst,
     input flag_regsel,
     input flagreg_enable,
     input [2:0] conditions_from_memory_pop,
