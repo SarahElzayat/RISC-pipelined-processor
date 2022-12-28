@@ -66,7 +66,7 @@ module processor(
     wire flag_reg_select_dec;
     wire flag_reg_enable_dec;
     wire alu_src_dec;
-    wire inport_sel_ex;
+    wire inport_sel_ex,inport_sel_dec,inport_sel_mem;
 
     wire [2:0] jump_selector_dec,r_scr_dec,r_dst_dec,r_scr,r_dst;
     wire [1:0] mem_src_select_r;
@@ -87,10 +87,10 @@ module processor(
         .flag_reg_select_r (flag_reg_select_dec ),
         .pc_choose_memory_r (pc_choose_memory_dec ),
         .jump_selector_r (jump_selector_dec ),
+        .r_scr_fetch(r_scr),
+        .r_dst_fetch(r_dst),
         .r_scr_r(r_scr_dec),
         .r_dst_r (r_dst_dec),
-        .r_scr(r_scr),
-        .r_dst(r_dst),
         .mem_src_select_r (memory_write_src_select_dec ),
         .ALUOp_r (alu_op_dec ),
         .wb_sel_r (wb_sel_dec ),
@@ -98,7 +98,7 @@ module processor(
         .mem_addsel_r (memory_address_select_dec ),
         .carry_sel_r (carry_sel_dec ),
         .outport_enable_r (outport_enable_dec ),
-        .inport_sel_r (inport_sel_ex ),
+        .inport_sel_r (inport_sel_dec ),
         .flagreg_enable_r (flag_reg_enable_dec ),
         .reg_write_wb(reg_write_mem),
         .reg_write_data_from_wb(write_back_data),
@@ -132,8 +132,12 @@ module processor(
         .jump_selector (jump_selector_dec),
         .r_scr_buff(r_scr_dec),
         .r_dst_buff (r_dst_dec),
-        .r_scr(r_scr),
-        .r_dst(r_dst),
+        .ex_inPortSelect (inport_sel_dec),
+        .ex_inPortSelect_buff (inport_sel_ex),
+        .ex_inPortValue (input_port),
+        .ex_inPortValue_buff(input_port_ex),
+        .mem_inPortValue (input_port_mem),
+        .mem_inPortSelect (inport_sel_mem),
         .flag_regsel (flag_reg_select_dec),
         .flagreg_enable (flag_reg_enable_dec),
         .conditions_from_memory_pop (conditions_from_memory_pop),
@@ -169,9 +173,9 @@ module processor(
         .outport_enable (outport_enable_dec),
         .outport_enable_out (outport_enable_ex),
         .mem_wb_rdest (reg_write_address_mem), // FU
-        .mem_wb_reg_write (reg_write_mem),
-        .input_port (input_port),
-        .input_port_out (input_port_ex)
+        // .input_port (input_port),
+        // .input_port_out (input_port_ex)
+        .mem_wb_reg_write (reg_write_mem)
     );
 
 
@@ -222,7 +226,9 @@ module processor(
         .reg_write_address_out(reg_write_address_mem),
         .input_port(input_port_ex),
         .input_port_out(input_port_mem),
-        .read_data1_mem(read_data1_mem)
+        .read_data1_mem(read_data1_mem),
+        .mem_inPortSelect(inport_sel_ex),
+        .mem_inPortSelect_buff(inport_sel_mem)
     );
 
 

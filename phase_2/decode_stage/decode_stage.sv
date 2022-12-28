@@ -5,7 +5,7 @@ module decode_stage(
     input [32-1:0]PC,
     output  reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r,
     output   flag_reg_select_r,pc_choose_memory_r,
-    output [2 :0] jump_selector_r,r_scr_r,r_dst_r,r_scr,r_dst,
+    output [2 :0] jump_selector_r,r_scr_r,r_dst_r,r_scr_fetch,r_dst_fetch,
     output  [1:0] mem_src_select_r,
     output  [3:0] ALUOp_r,
     output  [1:0] wb_sel_r,
@@ -42,6 +42,8 @@ module decode_stage(
     wire inport_sel;
     wire flagreg_enable;
 
+    assign r_scr_fetch = r_scr;
+    assign r_dst_fetch = r_dst;
 
     var_reg #(
     .size(32)

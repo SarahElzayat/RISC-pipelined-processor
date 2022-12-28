@@ -12,7 +12,7 @@ module execute_stage (
     input [15:0] write_back_data,
     input [15:0] reg_data1_from_mem,
     input [15:0] reg_data2_from_mem,
-    input [2:0] jump_selector,r_scr_buff,r_dst_buff,r_scr,r_dst,
+    input [2:0] jump_selector,r_scr_buff,r_dst_buff,
     input flag_regsel,
     input flagreg_enable,
     input [2:0] conditions_from_memory_pop,
@@ -68,18 +68,13 @@ module execute_stage (
     output [15:0] read_data2_out,
     
     input [15:0] ex_inPortValue,
-    output [15:0] ex_inPortValue_out,
+    output [15:0] ex_inPortValue_buff,
     
     input [15:0] mem_inPortValue,
-    output [15:0] mem_inPortValue_out,
-
-    input rsrc,
-    input rdest,
 
     input ex_inPortSelect,
-    input ex_inPortSelect_out,
+    input ex_inPortSelect_buff,
     input mem_inPortSelect,
-    input mem_inPortSelect_out,
 
     // FU
     input [2:0] mem_wb_rdest,
@@ -99,11 +94,11 @@ forwarding_unit FU (
     .ex_mem_reg_write (reg_write_out),
     .mem_wb_rdest (mem_wb_rdest),
     .mem_wb_reg_write (mem_wb_reg_write),
-    .rsrc (rsrc),
-    .rdest (rdest),
-    .ex_inPortSelect (ex_inPortSelect),
+    .rsrc (r_scr_buff),
+    .rdest (r_dst_buff),
+    .ex_inPortSelect (ex_inPortSelect_buff),
     .mem_inPortSelect (mem_inPortSelect),
-    .ex_inPortValue (ex_inPortValue),
+    .ex_inPortValue (ex_inPortValue_buff),
     .mem_inPortValue (mem_inPortValue),
     .alu_src1_select (alu_src1_select),
     .alu_src2_select (alu_src2_select)
@@ -127,6 +122,14 @@ buffer1 (
     .rst(reset),
     .D (result),
     .Q (result_out)
+);
+
+var_reg #(.size(16))
+buffer123 (
+    .clk (clk),
+    .rst(reset),
+    .D (ex_inPortValue),
+    .Q (ex_inPortValue_buff)
 );
 
 var_reg_with_enable #(.size(3))
@@ -179,8 +182,6 @@ buffer7 (
     .Q (PC_out)
 );
 
-
-
 var_reg #(.size(33))
 buffer8 (
     .clk (clk),
@@ -212,12 +213,13 @@ buffer11 (
     .D ({read_data1, read_data2}),
     .Q ({read_data1_out, read_data2_out})
 );
-var_reg #(.size(16))
+
+var_reg #(.size(1))
 buffer121 (
     .clk (clk),
     .rst(reset),
-    .D ({input_port}),
-    .Q ({input_port_out})
+    .D ({ex_inPortSelect}),
+    .Q ({ex_inPortSelect_buff})
 );
 
 var_reg #(.size(2))
@@ -242,6 +244,8 @@ alu_dut (
     .clk (clk),
     .carry_sel (carry_sel),
     .alu_src2_select (alu_src2_select),
+    .ex_inPortValue (ex_inPortValue_buff),
+    .mem_inPortValue (mem_inPortValue),
     .read_data1 (read_data1),
     .read_data2 (read_data2),
     .alu_src1_select (alu_src1_select),

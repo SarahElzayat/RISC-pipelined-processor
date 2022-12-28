@@ -3,7 +3,7 @@ inc r1
 dec r2
 nop
 not r1
-mov r1,r0
+mov r3,r0
 inc r4
 inc r4
 inc r4
