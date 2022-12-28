@@ -45,7 +45,7 @@ module processor(
     wire [2:0] write_address_from_decode, jump_selector, conditions_from_memory_pop;
 
     wire mem_push_ex, mem_pop_ex;
-    wire [15:0] read_data1_ex, read_data2_ex;
+    wire [15:0] read_data1_ex, read_data2_ex, read_data1_mem;
     wire [15:0] input_port_ex, input_port_mem;
     wire [31:0] new_PC_ex, PC_dec, PC_ex;
 
@@ -215,7 +215,8 @@ module processor(
         .reg_write_address(reg_write_address_ex),
         .reg_write_address_out(reg_write_address_mem),
         .input_port(input_port_ex),
-        .input_port_out(input_port_mem)
+        .input_port_out(input_port_mem),
+        .read_data1_mem(read_data1_mem)
     );
 
 
@@ -231,7 +232,8 @@ module processor(
         .mem_data (mem_data ),
         .data (write_back_data ),
         .outport(out_port),
-        .input_port_val(input_port_mem)
+        .input_port_val(input_port_mem),
+        .Read_data1(read_data1_mem)
     );
 
 

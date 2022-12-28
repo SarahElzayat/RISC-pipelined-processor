@@ -12,6 +12,7 @@ module memory_stage (
 
   input [15:0] LDM_value,
   output [15:0] LDM_value_out,
+  output [15:0] read_data1_mem,
 
   input [15:0] alu_value,
   output [15:0] alu_value_out,
@@ -71,6 +72,13 @@ module memory_stage (
     .D (wb_sel ),
     .clk (clk ),
     .Q  (wb_sel_out),
+    .rst (reset)
+  );
+  var_reg #(.size(16))
+  wb_sel_reg232 (
+    .D (std_address ),
+    .clk (clk ),
+    .Q  (read_data1_mem),
     .rst (reset)
   );
 

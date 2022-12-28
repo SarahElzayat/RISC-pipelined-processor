@@ -4,6 +4,7 @@ module write_back_stage (
     input outport_enable,
     input [15:0] immediate_value, alu_value, mem_data, input_port_val,
     output  [15:0] data,
+    output  [15:0] Read_data1,
     output  [15:0] outport
 );
 
@@ -20,7 +21,7 @@ module write_back_stage (
     16 )
     )
     var_reg_with_enable_dut (
-        .D (data),
+        .D (Read_data1),
         .clk (clk ),
         .en (outport_enable ),
         .rst (rst ),
