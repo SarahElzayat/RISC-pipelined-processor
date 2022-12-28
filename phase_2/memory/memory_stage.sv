@@ -31,7 +31,10 @@ module memory_stage (
   output [15:0] input_port_out,
 
   input [2:0] reg_write_address,
-  output [2:0] reg_write_address_out
+  output [2:0] reg_write_address_out,
+
+  input mem_inPortSelect,
+  input mem_inPortSelect_buff
 
 
 );
@@ -42,6 +45,14 @@ module memory_stage (
     .rst(reset),
     .D ({input_port}),
     .Q ({input_port_out})
+  );
+
+  var_reg #(.size(1))
+  buffer122 (
+    .clk (clk),
+    .rst(reset),
+    .D ({mem_inPortSelect}),
+    .Q ({mem_inPortSelect_buff})
   );
 
   var_reg #(.size(3))

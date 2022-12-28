@@ -9,8 +9,8 @@ module reg_file #(parameter WIDTH = 16 , parameter N_REGS = 8) (
     // input RegRead,
     input [$clog2(N_REGS)  -1 :0] read_address1,
     input [$clog2(N_REGS)  -1 :0] read_address2,
-    output reg [WIDTH - 1:0] read_data1,
-    output reg [WIDTH - 1:0] read_data2
+    output [WIDTH - 1:0] read_data1,
+    output [WIDTH - 1:0] read_data2
 );
     // reg file as an array
     reg [WIDTH -1 :0] reg_file [0:N_REGS -1];
@@ -18,7 +18,7 @@ module reg_file #(parameter WIDTH = 16 , parameter N_REGS = 8) (
 
     integer i;
 
-    always @(posedge clk, posedge rst)
+    always @(negedge clk, posedge rst)
     begin : writeBlock
         if(rst)
             begin
@@ -28,7 +28,6 @@ module reg_file #(parameter WIDTH = 16 , parameter N_REGS = 8) (
         else
             begin
 
-
                 if (RegWrite)
                     reg_file[write_address] = write_data;
 
@@ -36,21 +35,21 @@ module reg_file #(parameter WIDTH = 16 , parameter N_REGS = 8) (
     end
 
 
-    always @(negedge clk, posedge rst)
-    begin
-        if(rst)
-            begin
-                read_data1 = 0;
-                read_data2 = 0;
-            end
-        else
-            begin
-                read_data1 = reg_file[read_address1];
-                read_data2 = reg_file[read_address2];
-            end
-    end
+    // always @(negedge clk, posedge rst)
+    // begin
+    //     if(rst)
+    //         begin
+    //             read_data1 = 0;
+    //             read_data2 = 0;
+    //         end
+    //     else
+    //         begin
+    //             read_data1 = reg_file[read_address1];
+    //             read_data2 = reg_file[read_address2];
+    //         end
+    // end
 
-    // assign read_data1 = reg_file[read_address1];
-    // assign read_data2 = reg_file[read_address2];
+    assign read_data1 = reg_file[read_address1];
+    assign read_data2 = reg_file[read_address2];
 
 endmodule

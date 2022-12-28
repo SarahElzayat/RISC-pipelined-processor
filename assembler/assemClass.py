@@ -25,9 +25,9 @@ class Assembler:
             f.write(header+'\n')
             for i in range(0,524287):
                 if i in self.machine.keys():
-                    f.write('%d:%s\n' % (i, self.machine[i]))
+                    f.write('%d: %s\n' % (i, self.machine[i]))
                 else:
-                    f.write('%d:%s\n' % (i, 16*'x'))
+                    f.write('%d: %s\n' % (i, 16*'x'))
 
     def sanitize (self):
         instructions = []
@@ -112,7 +112,7 @@ class Assembler:
 
 
 asm = Assembler()
-asm.read_file('./assembler/test.txt')
+asm.read_file('./test.txt')
 asm.sanitize()
 asm.parse()
-asm.write_file('./assembler/output.mem')
+asm.write_file('./output.mem')

@@ -1,9 +1,10 @@
 module hazard_controller(
     input branch_result,
-    input [15:0] R1_dec,
-    input [15:0] R2_dec,
-    input [15:0] R1_fetch,
-    input [15:0] R2_fetch,
+    input [2:0] R_dest_dec,
+    input [2:0] R_src_dec,
+    input [2:0] R_dest_fetch,
+    input [2:0] R_src_fetch,
+    input mem_read_dec,
 
     output flush_fetch,
     output flush_decode,
@@ -16,6 +17,14 @@ module hazard_controller(
     assign flush_decode = branch_result === 1'b1;
 
     // Staalling is just inserting a nop instruction in the pipeline at the execute stage and stoping the fetch stage temporarily
+    always @(*) begin
+        stall_fetch = 1'b0;
+        stall_decode = 1'b0;
 
+        if(mem_read_dec === 1'b1 && (R_dest_dec === R_src_fetch || R_dest_dec === R_dest_fetch )) begin
+            stall_fetch = 1'b1;
+            stall_decode = 1'b1;
+        end
+    end
 
 endmodule : hazard_controller
