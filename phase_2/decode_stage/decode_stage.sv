@@ -38,7 +38,6 @@ module decode_stage(
     wire [1:0] wb_sel;
     wire pc_write;
     wire [1:0] mem_addsel;
-    wire [1:0] mem_srcsel;
     wire [1:0] carry_sel;
 
     wire outport_enable;
