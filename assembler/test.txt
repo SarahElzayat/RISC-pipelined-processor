@@ -1,5 +1,8 @@
-out r0
-out r2
+shl r4,0001
+or r2,r0
+mov r0,r4 //working 
+add r2,r4 
+sub r2,r0
 ldm r1,0101
 ldm r2,1010
 pop r3
@@ -19,5 +22,4 @@ pop r3
 mov r3,r1
 ldd r4,r3
 std r1,r4
-shl r1,0001
 shr r1,0001

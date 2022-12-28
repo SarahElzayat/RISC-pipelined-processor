@@ -11,7 +11,6 @@ wire [1:0] jmp_type;
 assign carry = condition_signals[2];
 assign negative = condition_signals[1];
 assign zero = condition_signals[0];
-
 assign branch_enable = jump_selector[2];
 assign jmp_type = jump_selector[1:0];
 

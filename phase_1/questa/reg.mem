@@ -1,0 +1,5 @@
+// memory data file (do not edit the following line - required for mem load use)
+// instance=/processor/decode_stage_dut/reg_file_dut/reg_file
+// format=mti addressradix=d dataradix=s version=1.0 wordsperline=4
+             0: 0000000000000000 0000000000000000 0000000000000001 1010101010101010
+4: 0000111111111111 0000000000000000 0000000000000000 0000000000000000

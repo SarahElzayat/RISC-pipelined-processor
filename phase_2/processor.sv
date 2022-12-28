@@ -5,12 +5,11 @@ module processor(
     output [15:0]  input_port,
     output [15:0]  out_port
 );
+    wire pc_write;
     wire [15:0] LDM_value_fet;
-
     wire [15:0] instruction;
     wire [31:0] pc_plus_one_r;
     wire [31:0] pc_write_back_value;
-
     wire clear_instruction_dec;
 
     fetch_stage
@@ -67,7 +66,6 @@ module processor(
     wire flag_reg_select_dec;
     wire flag_reg_enable_dec;
     wire alu_src_dec;
-    wire pc_write_dec;
 
     wire [2:0] jump_selector_dec;
     wire [1:0] mem_src_select_r;
@@ -92,7 +90,6 @@ module processor(
         .ALUOp_r (alu_op_dec ),
         .wb_sel_r (wb_sel_dec ),
         .alu_srcsel(alu_src_dec),
-        .pc_write_r (pc_write_dec ),
         .mem_addsel_r (memory_address_select_dec ),
         .carry_sel_r (carry_sel_dec ),
         .outport_enable_r (outport_enable_dec ),
