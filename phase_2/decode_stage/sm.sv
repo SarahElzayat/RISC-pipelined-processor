@@ -5,7 +5,7 @@ module sm (
 	input [32-1:0] PC,
 	output logic  reg_write, mem_read, mem_write, mem_pop,mem_push,
 	output logic   clear_instruction ,flag_reg_select,pc_choose_memory,
-	output logic [2 :0] jump_selector,
+	output logic [2 :0] jump_selector,r_scr,r_dst;
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
 	output logic  [1:0] wb_sel,
@@ -53,6 +53,9 @@ module sm (
 		reg_write = 1'b0;
 		wb_sel = 2'b01;
 		outport_enable = 1'b0;
+		//registers identifiers
+		r_dst = instruction[10:8];
+		r_scr = instruction[7:5];
 		case (current_state)
 			IDLE :
 			begin
@@ -70,18 +73,24 @@ module sm (
 							3'b000:begin
 								// execution stage signals
 								ALUOp = 4'b0000;
+								//registers identifiers
+								r_scr = 3'bzzz;
 							end
 
 							// INC Rdst
 							3'b001:begin
 								// execution stage signals
 								ALUOp = 4'b0001;
+								//registers identifiers
+								r_scr = 3'bzzz;
 							end
 
 							// DEC Rdst
 							3'b010:begin
 								// execution stage signals
 								ALUOp = 4'b0010;
+								//registers identifiers
+								r_scr = 3'bzzz;
 							end
 							// ADD Rds,Rscr
 							3'b011:begin
@@ -114,23 +123,36 @@ module sm (
 					2'b01:begin
 						case(opcode[2:0])
 							// NOP
-							3'b000:;
+							3'b000:begin
+								//reg identifiers
+								r_scr = 3'bzzz;
+								r_dst = 3'bzzz;
+							end
+							
 							// SETC
 							3'b001:begin
 								// execution stage signals
 								carry_sel = 2'b01;
 								flagreg_enable = 1'b1;
+								//reg identifiers
+								r_scr = 3'bzzz;
+								r_dst = 3'bzzz;
 							end
 							// CLRC
 							3'b010:begin
 								// execution stage signals
 								carry_sel = 2'b10;
 								flagreg_enable = 1'b1;
+								//reg identifiers
+								r_scr = 3'bzzz;
+								r_dst = 3'bzzz;
 							end
 							// OUT Rdst
 							3'b011:begin
 								// write back stage signals
 								outport_enable = 1'b1;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							// IN Rdst
 							3'b100:begin
@@ -140,6 +162,8 @@ module sm (
 								reg_write = 1'b1;
 								//NOTE - @Atta ADDED THIS
 								wb_sel = 2'b11;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							// PUSH Rdst
 							3'b101:begin
@@ -148,6 +172,8 @@ module sm (
 								mem_push = 1'b1;
 								mem_addsel = 2'b10;
 								mem_src_select = 2'b11;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							// POP Rdst
 							3'b110:begin
@@ -159,6 +185,8 @@ module sm (
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b10;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							default:;
 						endcase
@@ -179,6 +207,8 @@ module sm (
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b00;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							// LDD Rdst,Rscr
 							3'b010:begin
@@ -206,6 +236,8 @@ module sm (
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b01;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							// SHR Rdst,imm
 							3'b101:begin
@@ -216,6 +248,8 @@ module sm (
 								// write back stage signals
 								reg_write = 1'b1;
 								wb_sel = 2'b01;
+								//reg identifiers
+								r_scr = 3'bzzz;
 							end
 							default :;
 						endcase
