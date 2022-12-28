@@ -1,7 +1,7 @@
-pop r3
-inc r1
 ldm r1,0101
 ldm r2,1010
+pop r3
+inc r1
 push r1
 add r1,r2
 dec r1
