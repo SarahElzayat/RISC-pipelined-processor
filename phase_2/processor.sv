@@ -46,6 +46,7 @@ module processor(
 
     wire mem_push_ex, mem_pop_ex;
     wire [15:0] read_data1_ex, read_data2_ex;
+    wire [15:0] input_port_ex, input_port_mem;
     wire [31:0] new_PC_ex, PC_dec, PC_ex;
 
     wire [1:0] memory_address_select_dec, memory_write_src_select_dec;
@@ -162,7 +163,9 @@ module processor(
         .outport_enable (outport_enable_dec),
         .outport_enable_out (outport_enable_ex),
         .mem_wb_rdest (reg_write_address_mem), // FU
-        .mem_wb_reg_write (reg_write_mem)
+        .mem_wb_reg_write (reg_write_mem),
+        .input_port (input_port),
+        .input_port_out (input_port_ex)
     );
 
 
@@ -176,7 +179,7 @@ module processor(
     wire [15:0] alu_value_mem;
     wire [31:0] shift_reg;
     wire [31:0] final_pc;
-    
+
 
     memory_stage
     memory_stage_dut (
@@ -210,14 +213,16 @@ module processor(
         .outport_enable(outport_enable_ex),
         .outport_enable_out(outport_enable_mem),
         .reg_write_address(reg_write_address_ex),
-        .reg_write_address_out(reg_write_address_mem)
+        .reg_write_address_out(reg_write_address_mem),
+        .input_port(input_port_ex),
+        .input_port_out(input_port_mem)
     );
 
 
 
     write_back_stage
     write_back_stage_dut (
-        .clk (clk ),
+        .clk (clk),
         .rst (rst ),
         .sel (wb_sel_mem ),
         .outport_enable (outport_enable_mem ),
@@ -225,7 +230,8 @@ module processor(
         .alu_value (alu_value_mem ),
         .mem_data (mem_data ),
         .data (write_back_data ),
-        .outport  (out_port)
+        .outport(out_port),
+        .input_port_val(input_port_mem)
     );
 
 

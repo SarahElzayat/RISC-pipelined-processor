@@ -66,6 +66,9 @@ module execute_stage (
 
     output [15:0] read_data1_out,
     output [15:0] read_data2_out,
+    
+    input [15:0] input_port,
+    output [15:0] input_port_out,
 
     // FU
     input [2:0] mem_wb_rdest,
@@ -160,6 +163,8 @@ buffer7 (
     .Q (PC_out)
 );
 
+
+
 var_reg #(.size(33))
 buffer8 (
     .clk (clk),
@@ -190,6 +195,13 @@ buffer11 (
     .rst(reset),
     .D ({read_data1, read_data2}),
     .Q ({read_data1_out, read_data2_out})
+);
+var_reg #(.size(16))
+buffer121 (
+    .clk (clk),
+    .rst(reset),
+    .D ({input_port}),
+    .Q ({input_port_out})
 );
 
 var_reg #(.size(2))

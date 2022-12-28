@@ -104,6 +104,7 @@ module decode_stage(
         .rst (reset)
     );
 
+
     sm control_unit(
         .clk(clk),
         .reset(reset),

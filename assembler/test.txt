@@ -1,3 +1,5 @@
+in r1
+in r2
 ldm r1,0101
 ldm r2,1010
 pop r3

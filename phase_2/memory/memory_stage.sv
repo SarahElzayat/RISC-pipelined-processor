@@ -26,11 +26,22 @@ module memory_stage (
   input outport_enable,
   output outport_enable_out,
 
+  input [15:0] input_port,
+  output [15:0] input_port_out,
+
   input [2:0] reg_write_address,
   output [2:0] reg_write_address_out
 
 
 );
+
+  var_reg #(.size(16))
+  buffer121 (
+    .clk (clk),
+    .rst(reset),
+    .D ({input_port}),
+    .Q ({input_port_out})
+  );
 
   var_reg #(.size(3))
   reg_write_address_reg (
@@ -39,7 +50,7 @@ module memory_stage (
     .Q  (reg_write_address_out),
     .rst (reset)
   );
-  
+
   var_reg #(.size(1))
   outport_enable_reg (
     .D (outport_enable ),

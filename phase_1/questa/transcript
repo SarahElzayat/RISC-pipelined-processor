@@ -100,3 +100,160 @@ mem load -i mem2.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
 mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/mem22.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
 mem load -filltype value -filldata AAAA -fillradix hexadecimal /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory(3)
 mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_1/questa/mem22.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 6100 -fillradix hexadecimal /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+mem load -skip 0 -filltype value -filldata 6100 -fillradix hexadecimal /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+add wave -position end  sim:/processor/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 14980
+#           Attempting to use alternate WLF file "./wlfttkjey0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttkjey0
+add wave -position end  sim:/processor/fetch_stage_dut/reset
+add wave -position end  sim:/processor/rst
+add wave -position end  sim:/processor/input_port
+force -freeze sim:/processor/input_port 16'h1111 0
+add wave -position end  sim:/processor/instruction
+add wave -position end  sim:/processor/out_port
+# Can't move the Now cursor.
+add wave -position end  /processor/decode_stage_dut/reg_file_dut/reg_file
+force -freeze sim:/processor/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/processor/rst 1'h1 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/processor/instruction
+add wave -position end  sim:/processor/inport_sel_r
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 3 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 1 failed with 3 errors.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv failed with 1 errors.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 1 failed with 1 error.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# 17 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "sm(fast)".
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(86): (vopt-2685) [TFMPC] - Too few port connections for 'FU'.  Expected 8, found 6.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(86): (vopt-2718) [TFMPC] - Missing connection for port 'rdest'.
+# ** Warning: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(86): (vopt-2718) [TFMPC] - Missing connection for port 'rsrc'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.var_reg(fast__8)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.var_reg_with_enable(fast__1)
+mem load -skip 0 -filltype value -filldata 6100 -fillradix hexadecimal /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+force -freeze sim:/processor/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/processor/rst 1'h1 0 -cancel 20
+force -freeze sim:/processor/input_port 16'h1111 0
+run
+run
+run
+run
+run
+run
+run

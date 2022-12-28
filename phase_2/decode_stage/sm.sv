@@ -138,6 +138,8 @@ module sm (
 								inport_sel = 1'b1;
 								// write back stage signals
 								reg_write = 1'b1;
+								//NOTE - @Atta ADDED THIS
+								wb_sel = 2'b11;
 							end
 							// PUSH Rdst
 							3'b101:begin
