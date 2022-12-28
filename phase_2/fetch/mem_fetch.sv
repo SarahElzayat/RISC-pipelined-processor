@@ -31,7 +31,6 @@ module mem_fetch (
       begin
         pc = 2**5;
       end
-
     else
       begin
         // if(pc_write)

@@ -1,27 +1,14 @@
-in r2
-nop
-ldd r1,r7
-std r2,r1
-ldm r1,0101
+.ORG 32
 inc r1
-push r1
-pop r0
-out r0
-out r2
-ldm r2,1010
-add r1,r2
-dec r1
+dec r2
+nop
 not r1
-sub r2,r1
-or r1,r2
-and r1,r2
-.org 20
-setc
-clrc
-out r1
-push r2
-pop r3
-mov r3,r1
-std r1,r4
-shl r1,0001
-shr r1,0001
+mov r1,r0
+inc r4
+inc r4
+inc r4
+add r4,r0
+nop
+nop
+nop
+nop
