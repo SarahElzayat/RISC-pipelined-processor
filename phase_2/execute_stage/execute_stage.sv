@@ -67,8 +67,19 @@ module execute_stage (
     output [15:0] read_data1_out,
     output [15:0] read_data2_out,
     
-    input [15:0] input_port,
-    output [15:0] input_port_out,
+    input [15:0] ex_inPortValue,
+    output [15:0] ex_inPortValue_out,
+    
+    input [15:0] mem_inPortValue,
+    output [15:0] mem_inPortValue_out,
+
+    input rsrc,
+    input rdest,
+
+    input ex_inPortSelect,
+    input ex_inPortSelect_out,
+    input mem_inPortSelect,
+    input mem_inPortSelect_out,
 
     // FU
     input [2:0] mem_wb_rdest,
@@ -88,8 +99,12 @@ forwarding_unit FU (
     .ex_mem_reg_write (reg_write_out),
     .mem_wb_rdest (mem_wb_rdest),
     .mem_wb_reg_write (mem_wb_reg_write),
-    // .rsrc (CURRENT REG SOURCE ADDRESS),
-    // .rdest (CURRENT REG DEST ADDRESS),
+    .rsrc (rsrc),
+    .rdest (rdest),
+    .ex_inPortSelect (ex_inPortSelect),
+    .mem_inPortSelect (mem_inPortSelect),
+    .ex_inPortValue (ex_inPortValue),
+    .mem_inPortValue (mem_inPortValue),
     .alu_src1_select (alu_src1_select),
     .alu_src2_select (alu_src2_select)
 );
