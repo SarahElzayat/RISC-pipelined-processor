@@ -5,7 +5,7 @@ module decode_stage(
     input [32-1:0]PC,
     output  reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r,
     output   flag_reg_select_r,pc_choose_memory_r,
-    output [2 :0] jump_selector_r,
+    output [2 :0] jump_selector_r,r_scr_r,r_dst_r,r_scr,r_dst,
     output  [1:0] mem_src_select_r,
     output  [3:0] ALUOp_r,
     output  [1:0] wb_sel_r,
@@ -31,7 +31,7 @@ module decode_stage(
 
     wire reg_write, mem_read, mem_write, mem_pop,mem_push;
     wire flag_reg_select,pc_choose_memory;
-    wire [2:0] jump_selector;
+    wire [2:0] jump_selector,r_scr,r_dst;
     wire [1:0] mem_src_select;
     wire [3:0] ALUOp;
     wire [1:0] wb_sel;
@@ -77,11 +77,11 @@ module decode_stage(
         .rst (reset)
     );
 
-    var_reg #(.size(12))
+    var_reg #(.size(18))
     var_reg_2 (
-        .D ({jump_selector, mem_src_select, ALUOp, wb_sel} ),
+        .D ({jump_selector,r_scr,r_dst, mem_src_select, ALUOp, wb_sel,pc_write} ),
         .clk (clk ),
-        .Q  ({ jump_selector_r,mem_src_select_r,ALUOp_r,wb_sel_r} ),
+        .Q  ({ jump_selector_r,r_scr_r,r_dst_r,mem_src_select_r,ALUOp_r,wb_sel_r,pc_write_r} ),
         .rst (reset)
     );
 
@@ -117,6 +117,8 @@ module decode_stage(
         .flag_reg_select(flag_reg_select),
         .pc_choose_memory(pc_choose_memory),
         .jump_selector(jump_selector),
+        .r_scr(r_scr),
+        .r_dst(r_dst),
         .mem_src_select(mem_src_select),
         .ALUOp(ALUOp),
         .wb_sel(wb_sel),

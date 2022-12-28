@@ -12,7 +12,7 @@ module execute_stage (
     input [15:0] write_back_data,
     input [15:0] reg_data1_from_mem,
     input [15:0] reg_data2_from_mem,
-    input [2:0] jump_selector,
+    input [2:0] jump_selector,r_scr_buff,r_dst_buff,r_scr,r_dst,
     input flag_regsel,
     input flagreg_enable,
     input [2:0] conditions_from_memory_pop,
@@ -79,8 +79,8 @@ wire [15:0] result;
 wire [31:0] new_PC;
 wire [2:0] flag_register;
 wire branch_result = 0;
-wire [1:0] alu_src1_select = 2'b10;
-wire [1:0] alu_src2_select = 2'b10;
+wire [2:0] alu_src1_select = 3'b010;
+wire [2:0] alu_src2_select = 3'b010;
 
 // FORWARDING
 forwarding_unit FU (

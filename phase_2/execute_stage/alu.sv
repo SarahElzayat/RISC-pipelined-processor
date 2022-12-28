@@ -1,10 +1,10 @@
 module alu (
     input clk,
     input [1:0] carry_sel,
-    input [1:0] alu_src2_select,
+    input [2:0] alu_src2_select,
     input [15:0] read_data1,
     input [15:0] read_data2,
-    input [1:0] alu_src1_select,
+    input [2:0] alu_src1_select,
     input alu_src_select,
     input [3:0] shamt,
     input [3:0] ALU_Op,
@@ -13,6 +13,8 @@ module alu (
     input [15:0] reg_data2_from_mem,
     input flag_regsel,
     input flagreg_enable,
+    input [15:0] ex_inPortValue,
+    input [15:0] mem_inPortValue,
     input [2:0] conditions_from_memory_pop,
 
     output reg [2:0] flag_register,
@@ -26,18 +28,22 @@ module alu (
     wire [15:0] Op1, Op2, src1;
 
     assign Op1 =
-    (alu_src1_select === 2'b00) ? write_back_data :
-    (alu_src1_select === 2'b01) ? reg_data1_from_mem :
-    (alu_src1_select === 2'b10) ? read_data1 : 'bz;
+    (alu_src1_select === 3'b000) ? write_back_data :
+    (alu_src1_select === 3'b001) ? reg_data1_from_mem :
+    (alu_src1_select === 3'b010) ? read_data1 :
+    (alu_src1_select === 3'b011) ? ex_inPortValue :
+    (alu_src1_select === 3'b100) ? mem_inPortValue : 'bz;
 
     assign src1 =
     (alu_src_select === 1'b0) ? read_data2 :
     (alu_src_select === 1'b1) ? shamt : 'bz;
 
     assign Op2 =
-    (alu_src2_select === 2'b00) ? write_back_data :
-    (alu_src2_select === 2'b01) ? reg_data2_from_mem :
-    (alu_src2_select === 2'b10) ? src1 : 'bz;
+    (alu_src2_select === 3'b000) ? write_back_data :
+    (alu_src2_select === 3'b001) ? reg_data2_from_mem :
+    (alu_src2_select === 3'b010) ? src1 :
+    (alu_src2_select === 3'b011) ? ex_inPortValue :
+    (alu_src2_select === 3'b100) ? mem_inPortValue : 'bz;
 
     always @* begin
         alu_carry = 0;
@@ -58,7 +64,7 @@ module alu (
 
             4'b0111: {alu_carry, result} = Op1 << Op2;
 
-            4'b1000: {alu_carry, result} = Op1 >> Op2;
+            4'b1000: {result, alu_carry} = Op1 >> Op2;
 
             default: result = read_data2;
         endcase
@@ -74,7 +80,7 @@ module alu (
 
     assign alu_flags = {carry, negative, zero};
 
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         flag_register =
         (flag_regsel === 1'b0) ? alu_flags :
         (flag_regsel === 1'b1) ? conditions_from_memory_pop : 'bz;

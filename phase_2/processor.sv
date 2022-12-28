@@ -68,7 +68,7 @@ module processor(
     wire alu_src_dec;
     wire inport_sel_ex;
 
-    wire [2:0] jump_selector_dec;
+    wire [2:0] jump_selector_dec,r_scr_dec,r_dst_dec,r_scr,r_dst;
     wire [1:0] mem_src_select_r;
 
     decode_stage
@@ -87,6 +87,10 @@ module processor(
         .flag_reg_select_r (flag_reg_select_dec ),
         .pc_choose_memory_r (pc_choose_memory_dec ),
         .jump_selector_r (jump_selector_dec ),
+        .r_scr_r(r_scr_dec),
+        .r_dst_r (r_dst_dec),
+        .r_scr(r_scr),
+        .r_dst(r_dst),
         .mem_src_select_r (memory_write_src_select_dec ),
         .ALUOp_r (alu_op_dec ),
         .wb_sel_r (wb_sel_dec ),
@@ -126,6 +130,10 @@ module processor(
         .read_data1_out (read_data1_ex),
         .read_data2_out (read_data2_ex),
         .jump_selector (jump_selector_dec),
+        .r_scr_buff(r_scr_dec),
+        .r_dst_buff (r_dst_dec),
+        .r_scr(r_scr),
+        .r_dst(r_dst),
         .flag_regsel (flag_reg_select_dec),
         .flagreg_enable (flag_reg_enable_dec),
         .conditions_from_memory_pop (conditions_from_memory_pop),
