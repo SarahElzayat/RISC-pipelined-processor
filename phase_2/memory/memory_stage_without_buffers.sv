@@ -11,7 +11,7 @@ module memory_stage_without_buffers (
 
 
   // read - write - push - pop
-  reg [10:0] final_address;
+  wire [10:0] final_address;
   wire [15:0] write_data;
 
   assign write_data =
@@ -23,12 +23,15 @@ module memory_stage_without_buffers (
 
   reg [31:0] temp_shift_reg;
   reg  [31:0] sp; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
-  reg [15:0] data_memory [0: (2 ** 9) -1]; //data memory of 4KB
+  reg [15:0] data_memory [0: (2 ** 10) -1]; //data memory of 4KB
 
   assign data = (memory_read == 1) ? data_memory[final_address] : 'bz;
   assign shift_reg = temp_shift_reg;
 
 
+  assign final_address = (memory_address_select == 2'b00)? std_address[10:0] :
+                         (memory_address_select == 2'b01)? ldd_address[10:0] :
+                         (memory_address_select == 2'b10)? sp : 'bz;
 
   wire[31:0] temp_pc;
   assign temp_pc = (pc_choose_memory == 1'b0) ? pc_from_mux_ex : shift_reg;
@@ -39,7 +42,7 @@ module memory_stage_without_buffers (
 
     if(reset)
     begin
-      sp = (2**9)-1;
+      sp = (2**10);
       temp_shift_reg = 0;
     end
 
@@ -51,21 +54,10 @@ module memory_stage_without_buffers (
         sp = sp - 1;
       end
 
-      if (memory_pop == 1'b1 && sp < 2**9 -2)
+      if (memory_pop == 1'b1 && sp < 2**10 )
       begin
         sp = sp + 1;
       end
-
-
-      case (memory_address_select)
-        2'b00:
-          final_address = std_address[10:0];
-        2'b01:
-          final_address = ldd_address[10:0];
-        2'b10:
-          final_address = sp;
-        // default:
-      endcase
 
       if(memory_write)
       begin

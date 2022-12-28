@@ -192,6 +192,7 @@ module sm (
 
 								// memory stage signals
 								mem_write = 1'b1;
+								mem_src_select = 2'b11;
 								mem_addsel = 2'b00;
 							end
 							// SHL Rdst,imm

@@ -36,7 +36,6 @@ module decode_stage(
     wire [3:0] ALUOp;
     wire [1:0] wb_sel;
     wire [1:0] mem_addsel;
-    wire [1:0] mem_srcsel;
     wire [1:0] carry_sel;
 
     wire outport_enable;

@@ -1,25 +1,34 @@
+<<<<<<< HEAD
 shl r4,0001
 or r2,r0
 mov r0,r4 //working 
 add r2,r4 
 sub r2,r0
+=======
+in r2
+nop
+ldd r1,r7
+std r2,r1
+>>>>>>> f277c7ca6c89a552742a9cc802293a41dff346f6
 ldm r1,0101
-ldm r2,1010
-pop r3
 inc r1
 push r1
+pop r0
+out r0
+out r2
+ldm r2,1010
 add r1,r2
 dec r1
 not r1
 sub r2,r1
 or r1,r2
 and r1,r2
+.org 20
 setc
 clrc
 out r1
 push r2
 pop r3
 mov r3,r1
-ldd r4,r3
 std r1,r4
 shr r1,0001
