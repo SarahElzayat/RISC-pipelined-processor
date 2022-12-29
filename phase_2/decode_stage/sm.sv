@@ -279,7 +279,7 @@ module sm (
 							begin
 								jump_selector <= {1'b1,instruction[12:11]};
 								//registers identifiers
-								r_scr = instruction[10:8];
+								r_dst = instruction[10:8];
 							end
 							3'b100: // call
 							begin
@@ -291,7 +291,7 @@ module sm (
 								// jmp-no-condition in execute stage
 								jump_selector <= 3'B111;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								r_dst = instruction[10:8];
 							end
 							3'b101: // ret
 							begin

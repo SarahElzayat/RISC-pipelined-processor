@@ -8,9 +8,16 @@ module processor(
     wire pc_write;
     wire [15:0] LDM_value_fet;
     wire [15:0] instruction;
+    wire [31:0] pc_plus_one_fetch_s;
     wire [31:0] pc_plus_one_r;
     wire [31:0] pc_write_back_value;
     wire clear_instruction_dec;
+
+    // STALL & FLUSH
+    wire flush_decode;
+    wire flush_fetch;
+    wire stall_fetch;
+    wire stall_decode;
 
     fetch_stage
     fetch_stage_dut (
@@ -18,8 +25,9 @@ module processor(
         .reset (rst ),
         .pc_write (pc_write ),
         .pc_write_back_value (pc_write_back_value ),
-        .clear_instruction (clear_instruction_dec ),
+        .clear_instruction (clear_instruction_dec || flush_fetch), // TODO: MOVE INSIDE
         .pc_plus_one_r (pc_plus_one_r ),
+        .pc_plus_one_s (pc_plus_one_fetch_s ),
         .instruction_r  ( instruction),
         .immediate_value (LDM_value_fet )
     );
@@ -35,17 +43,17 @@ module processor(
     wire [4:0] shamt;
 
     wire [2:0] write_address_from_wb, flag_register_ex;
-    wire [2:0] write_address_from_decode, jump_selector, conditions_from_memory_pop;
+    wire [2:0] write_address_from_decode, conditions_from_memory_pop;
 
     wire mem_push_ex, mem_pop_ex;
     wire [15:0] read_data1_ex, read_data2_ex;
     wire [15:0] input_port_ex, input_port_mem;
-    wire [31:0] new_PC_ex, PC_dec, PC_ex;
+    wire [31:0] new_PC_ex, PC_ex;
 
     wire [1:0] memory_address_select_dec, memory_write_src_select_dec;
     wire [1:0] memory_address_select_ex, memory_write_src_select_ex;
 
-    wire mem_push_dec, mem_pop_dec, flagreg_enable, flag_reg_select;
+    wire mem_push_dec, mem_pop_dec, flag_reg_select;
     wire mem_read_dec, mem_write_dec;
     wire mem_read_ex, mem_write_ex;
 
@@ -69,6 +77,7 @@ module processor(
     decode_stage_dut (
         .clk (clk ),
         .reset (rst ),
+        .flush_decode (flush_decode),
         .interrupt_signal (interrupt_signal ),
         .instruction (instruction ),
         .PC (pc_plus_one_r),
@@ -100,7 +109,8 @@ module processor(
         .reg_write_address_r(reg_write_address_dec),
         .reg_file_read_data1(reg_data1_from_dec),
         .reg_file_read_data2(reg_data2_from_dec),
-        .shamt_out(shamt_dec)
+        .shamt_out(shamt_dec),
+        .pc_plus_one_dec(pc_plus_one_dec)
     );
 
     wire [15:0] ALU_ex;
@@ -108,6 +118,7 @@ module processor(
     wire [15:0] LDM_value_dec, LDM_value_ex;
     wire outport_enable_mem;
     wire [15:0] alu_value_mem;
+    wire branch_result;
 
     execute_stage
     execute_stage_dut (
@@ -141,9 +152,9 @@ module processor(
         .pc_plus_one_out (pc_plus_one_ex),
         .pc_choose_memory_out (pc_choose_memory_ex),
         .result_out (ALU_ex),
-        .new_PC_out (new_PC_ex),
+        .new_PC (new_PC_ex),
         .flag_register_out (flag_register_ex),
-        .PC (PC_dec),
+        .PC (pc_plus_one_fetch_s),
         .PC_out (PC_ex),
         .LDM_value (LDM_value_fet),
         .LDM_value_out (LDM_value_ex),
@@ -168,7 +179,8 @@ module processor(
         .outport_enable (outport_enable_dec),
         .outport_enable_out (outport_enable_ex),
         .mem_wb_rdest (r_dst_mem), // FU
-        .mem_wb_reg_write (reg_write_mem)
+        .mem_wb_reg_write (reg_write_mem),
+        .branch_result (branch_result)
     );
 
 
@@ -178,7 +190,7 @@ module processor(
     wire [15:0] ldm_value_mem;
     wire [1:0] wb_sel_mem;
     wire [31:0] shift_reg;
-    wire [31:0] final_pc;
+    // wire [31:0] final_pc;
 
 
     memory_stage
@@ -200,7 +212,7 @@ module processor(
         .flags (flag_register_ex),
         .data_r  ( mem_data),
         .shift_reg  ( shift_reg),
-        .final_pc  ( final_pc),
+        .final_pc  ( pc_write_back_value),
         // passing 
         .alu_value(ALU_ex),
         .alu_value_out(alu_value_mem),
@@ -241,6 +253,20 @@ module processor(
         .Read_data1(reg_data1_mem)
     );
 
+    //  HAZARD CONTROLLER
+    hazard_controller
+    hazard_controller_dut (
+        .branch_result (branch_result ),
+        .R_dest_dec (r_dst_dec ),
+        .R_src_dec (r_scr_dec ),
+        .R_dest_fetch (r_dst_fetch ),
+        .R_src_fetch (r_scr_fetch ),
+        .mem_read_dec (mem_read_dec),
+        .flush_fetch  (flush_fetch),
+        .flush_decode (flush_decode),
+        .stall_fetch  (stall_fetch ),
+        .stall_decode (stall_decode ),
+        .pc_write (pc_write)
+    );
 
-
-endmodule 
+endmodule

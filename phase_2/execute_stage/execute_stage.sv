@@ -17,7 +17,7 @@ module execute_stage (
     input [2:0] conditions_from_memory_pop,
 
     output [15:0] result_out, // ALU Result
-    output [31:0] new_PC_out, // ALU Result
+    output [31:0] new_PC, // ALU Result
     output [2:0] flag_register_out, // Carry, negative, zero
 
     // inputs to just pass
@@ -77,13 +77,12 @@ module execute_stage (
 
     // FU
     input [2:0] mem_wb_rdest,
-    input mem_wb_reg_write
+    input mem_wb_reg_write,
+    output branch_result
 );
 
     wire [15:0] result;
-    wire [31:0] new_PC;
     wire [2:0] flag_register;
-    wire branch_result = 0;
     wire [2:0] alu_src1_select;
     wire [2:0] alu_src2_select;
 
@@ -106,13 +105,18 @@ module execute_stage (
     // BRANCHING
     branch_controller branching (
         .jump_selector (jump_selector),
-        .condition_signals (flag_register),
+        .condition_signals (flag_register_out),
         .result (branch_result)
     );
 
     assign new_PC =
     (branch_result === 0) ? PC :
-    (branch_result === 1) ? {{16{read_data1[15]}}, read_data1} : PC;
+    (branch_result === 1) ? (
+    (alu_src1_select === 3'b000) ? {{16{write_back_data[15]}}, write_back_data} :
+    (alu_src1_select === 3'b001) ? {{16{result_out[15]}}, result_out} :
+    (alu_src1_select === 3'b010) ? {{16{read_data1[15]}}, read_data1} :
+    (alu_src1_select === 3'b011) ? {{16{ex_inPortValue[15]}}, ex_inPortValue} :
+    (alu_src1_select === 3'b100) ? {{16{mem_inPortValue[15]}}, mem_inPortValue} : 'bz ) : PC;
 
     // BUFFERS  
     var_reg #(.size(16))
@@ -134,7 +138,7 @@ module execute_stage (
     var_reg_with_enable #(.size(3))
     buffer2 (
         // NOTE : Flag Reg works on negedge of clk
-        .clk (~clk),
+        .clk (clk),
         .rst(reset),
         .en (flagreg_enable),
         .D (flag_register),
@@ -187,14 +191,6 @@ module execute_stage (
         .rst(reset),
         .D ({pc_plus_one, pc_choose_memory}),
         .Q ({pc_plus_one_out, pc_choose_memory_out})
-    );
-
-    var_reg #(.size(32))
-    buffer9 (
-        .clk (clk),
-        .rst(reset),
-        .D (new_PC),
-        .Q (new_PC_out)
     );
 
     var_reg #(.size(16))
