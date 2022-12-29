@@ -13,7 +13,7 @@ module decode_stage(
     output  [1:0] carry_sel_r,
     ////////////////////////////
     output  outport_enable_r,
-    output  inport_sel_r, alu_srcsel,
+    output  inport_sel_r, alu_srcsel_r,
     output  flagreg_enable_r,
     output  clear_instruction_r,
     input reg_write_wb,

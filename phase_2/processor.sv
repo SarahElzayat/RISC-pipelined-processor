@@ -31,7 +31,6 @@ module processor(
     wire outport_enable_dec, outport_enable_ex;
     wire [1:0] wb_sel_dec, wb_sel_ex;
     wire reg_write_dec, reg_write_ex;
-    wire [1:0] alu_src1_select, alu_src2_select;
     wire [15:0] reg_data1_mem, reg_data2_mem, reg_data1_from_dec, reg_data2_from_dec;
     wire [4:0] shamt;
 
@@ -89,7 +88,7 @@ module processor(
         .mem_src_select_r (memory_write_src_select_dec ),
         .ALUOp_r (alu_op_dec ),
         .wb_sel_r (wb_sel_dec ),
-        .alu_srcsel(alu_src_dec),
+        .alu_srcsel_r(alu_src_dec),
         .mem_addsel_r (memory_address_select_dec ),
         .carry_sel_r (carry_sel_dec ),
         .outport_enable_r (outport_enable_dec ),
@@ -108,6 +107,7 @@ module processor(
     wire [2:0] write_address_to_mem;
     wire [15:0] LDM_value_dec, LDM_value_ex;
     wire outport_enable_mem;
+    wire [15:0] alu_value_mem;
 
     execute_stage
     execute_stage_dut (
@@ -121,8 +121,7 @@ module processor(
         .shamt (shamt_dec),
         .ALU_Op (alu_op_dec),
         .write_back_data (write_back_data),
-        .reg_data1_from_mem (ALU_ex),
-        .reg_data2_from_mem (ALU_ex),
+        .alu_result_from_mem (alu_value_mem),
         .read_data1_out (read_data1_ex),
         .read_data2_out (read_data2_ex),
         .jump_selector (jump_selector_dec),
@@ -178,7 +177,6 @@ module processor(
     wire [15:0] mem_data;
     wire [15:0] ldm_value_mem;
     wire [1:0] wb_sel_mem;
-    wire [15:0] alu_value_mem;
     wire [31:0] shift_reg;
     wire [31:0] final_pc;
 

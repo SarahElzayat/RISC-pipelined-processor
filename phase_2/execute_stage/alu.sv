@@ -9,8 +9,8 @@ module alu (
     input [3:0] shamt,
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
+    input [15:0] alu_result_from_ex,
     input [15:0] alu_result_from_mem,
-    input [15:0] reg_data2_from_mem,
     input flag_regsel,
     input flagreg_enable,
     input [15:0] ex_inPortValue,
@@ -25,26 +25,25 @@ module alu (
     wire carry, zero, negative;
     wire [2:0] alu_flags;
 
-    wire [15:0] Op1, Op2, src1;
+    wire [15:0] Op1, Op2, firstMux;
 
     assign Op1 =
     (alu_src1_select === 3'b000) ? write_back_data :
-    (alu_src1_select === 3'b001) ? alu_result_from_mem :
+    (alu_src1_select === 3'b001) ? alu_result_from_ex :
     (alu_src1_select === 3'b010) ? read_data1 :
     (alu_src1_select === 3'b011) ? ex_inPortValue :
     (alu_src1_select === 3'b100) ? mem_inPortValue : 'bz;
 
-    assign src1 =
+    assign firstMux =
     (alu_src_select === 1'b0) ? read_data2 :
     (alu_src_select === 1'b1) ? shamt : 'bz;
 
     assign Op2 =
     (alu_src2_select === 3'b000) ? write_back_data :
-    (alu_src2_select === 3'b001) ? reg_data2_from_mem :
-    (alu_src2_select === 3'b010) ? src1 : //TODO: SOLVE IT
+    (alu_src2_select === 3'b001) ? alu_result_from_mem :
+    (alu_src2_select === 3'b010) ? firstMux :
     (alu_src2_select === 3'b011) ? ex_inPortValue :
     (alu_src2_select === 3'b100) ? mem_inPortValue : 'bz;
-
     always @* begin
         alu_carry = 0;
         case (ALU_Op)
@@ -62,9 +61,9 @@ module alu (
 
             4'b0110: {alu_carry, result} = Op1 | Op2;
 
-            4'b0111:  result = Op1 << Op2;
+            4'b0111: {alu_carry, result} = {alu_carry, Op1} << Op2;
 
-            4'b1000:  result = Op1 >> Op2;
+            4'b1000: {result, alu_carry} = {Op1, alu_carry} >> Op2;
 
             default: result = Op2;
         endcase

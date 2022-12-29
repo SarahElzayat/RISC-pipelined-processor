@@ -74,7 +74,7 @@ module sm (
 								// execution stage signals
 								ALUOp = 4'b0000;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								// r_scr = instruction[10:8];
 								r_dst = instruction[10:8];
 							end
 
@@ -83,7 +83,7 @@ module sm (
 								// execution stage signals
 								ALUOp = 4'b0001;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								// r_scr = instruction[10:8];
 								r_dst = instruction[10:8];
 							end
 
@@ -92,7 +92,7 @@ module sm (
 								// execution stage signals
 								ALUOp = 4'b0010;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								// r_scr = instruction[10:8];
 								r_dst = instruction[10:8];
 							end
 							// ADD Rds,Rscr
@@ -251,7 +251,7 @@ module sm (
 								reg_write = 1'b1;
 								wb_sel = 2'b01;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								// r_scr = instruction[10:8];
 								r_dst = instruction[10:8];
 							end
 							// SHR Rdst,imm
@@ -264,7 +264,7 @@ module sm (
 								reg_write = 1'b1;
 								wb_sel = 2'b01;
 								//registers identifiers
-								r_scr = instruction[10:8];
+								// r_scr = instruction[10:8];
 								r_dst = instruction[10:8];
 							end
 							default :;
