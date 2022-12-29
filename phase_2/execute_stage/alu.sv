@@ -9,7 +9,7 @@ module alu (
     input [3:0] shamt,
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
-    input [15:0] reg_data1_from_mem,
+    input [15:0] alu_result_from_mem,
     input [15:0] reg_data2_from_mem,
     input flag_regsel,
     input flagreg_enable,
@@ -29,7 +29,7 @@ module alu (
 
     assign Op1 =
     (alu_src1_select === 3'b000) ? write_back_data :
-    (alu_src1_select === 3'b001) ? reg_data1_from_mem :
+    (alu_src1_select === 3'b001) ? alu_result_from_mem :
     (alu_src1_select === 3'b010) ? read_data1 :
     (alu_src1_select === 3'b011) ? ex_inPortValue :
     (alu_src1_select === 3'b100) ? mem_inPortValue : 'bz;
@@ -41,7 +41,7 @@ module alu (
     assign Op2 =
     (alu_src2_select === 3'b000) ? write_back_data :
     (alu_src2_select === 3'b001) ? reg_data2_from_mem :
-    (alu_src2_select === 3'b010) ? src1 :
+    (alu_src2_select === 3'b010) ? src1 : //TODO: SOLVE IT
     (alu_src2_select === 3'b011) ? ex_inPortValue :
     (alu_src2_select === 3'b100) ? mem_inPortValue : 'bz;
 
@@ -62,11 +62,11 @@ module alu (
 
             4'b0110: {alu_carry, result} = Op1 | Op2;
 
-            4'b0111: {alu_carry, result} = Op1 << Op2;
+            4'b0111:  result = Op1 << Op2;
 
-            4'b1000: {result, alu_carry} = Op1 >> Op2;
+            4'b1000:  result = Op1 >> Op2;
 
-            default: result = read_data2;
+            default: result = Op2;
         endcase
     end
 

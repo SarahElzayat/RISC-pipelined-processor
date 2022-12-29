@@ -8,8 +8,8 @@ module hazard_controller(
 
     output flush_fetch,
     output flush_decode,
-    output stall_fetch,
-    output stall_decode,
+    output reg stall_fetch,
+    output reg stall_decode,
     output pc_write
 );
 

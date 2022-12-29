@@ -78,19 +78,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	branch_controller
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module execute_stage_tb
-
-Top level modules:
-	execute_stage_tb
-
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module processor
 
 Top level modules:
 	processor
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module execute_stage_tb
+
+Top level modules:
+	execute_stage_tb
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

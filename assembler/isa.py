@@ -4,7 +4,7 @@ instruction_table = {
     'add':['00011','Rscr','Rdst'],
     'sub':['00100','Rscr','Rdst'],
     'and':['00101','Rscr','Rdst'],
-    'or' :['00111','Rscr','Rdst'],
+    'or' :['00110','Rscr','Rdst'],
     'mov':['10000','Rscr','Rdst'],
     'ldd':['10010','Rscr','Rdst'],
     'std':['10011','Rscr','Rdst'],

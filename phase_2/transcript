@@ -13,3 +13,22 @@
 # Compile of mem_fetch.sv was successful.
 # Compile of write_back_stage.v was successful.
 # 13 compiles, 1 failed with 2 errors.
+# Errors: 0, Warnings: 2
+# Compile of decode_stage.sv was successful with warnings.
+# Compile of reg_file.v was successful with warnings.
+# Compile of sign_extend.v was successful with warnings.
+# Compile of sm.sv was successful with warnings.
+# Compile of alu.sv was successful with warnings.
+# Compile of branch_controller.sv was successful with warnings.
+# Compile of execute_stage.sv was successful with warnings.
+# Compile of forwarding_unit.sv was successful with warnings.
+# Compile of memory_stage.sv was successful with warnings.
+# Compile of memory_stage_without_buffers.sv was successful with warnings.
+# Compile of fetch_stage.sv was successful with warnings.
+# Compile of mem_fetch.sv was successful with warnings.
+# Compile of write_back_stage.v was successful with warnings.
+# 13 compiles, 0 failed with no errors.
+# Project file D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/phase2.mpf is write protected, data cannot be saved.
+# Unable to save project.
+# reading C:/intelFPGA/21.1/questa_fse/win64/../modelsim.ini
+# Loading project phase_2

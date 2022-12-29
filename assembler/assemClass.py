@@ -104,7 +104,7 @@ class Assembler:
                 if len(self.arguments[i]) == len(instruction_table[self.commands[i]])-1:
                     self.machine_code(self.commands[i],self.arguments[i])
                 else:
-                    print('mismatch arguments in command number %d' % i)
+                    print('mismatch arguments in command number %s' % self.commands[i])
             else:
                 print('unknown instruction number %s' % self.commands[i])
 

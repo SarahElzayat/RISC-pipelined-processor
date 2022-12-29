@@ -1,14 +1,19 @@
-.ORG 32
-inc r1
-dec r2
-nop
-not r1
-mov r3,r0
-inc r4
-inc r4
-inc r4
-add r4,r0
-nop
-nop
-nop
-nop
+#this is a comment 
+#all numbers are in hexadecimal
+#the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
+.ORG 0 #this is the interrupt code
+AND R3,R4
+ADD R1,R4
+OUT R4
+.ORG 32 #this is the instructions code
+IN R1                   #add 00000005 in R1
+IN R2                   #add 5 in R2
+IN R3                   #FFFFFFFF
+IN R4                   #FFFFF320
+MOV R3,R5               #R5= FFFFFFFF 
+ADD R1,R4               #R4= FFFFF325 
+SUB R5,R4               #R4= 00000CDA 
+AND R7,R4               #R4= 00000000 
+OR  R2,R1               #R1= 0000001D 
+SHL R1,100                #R1= 000001D0 
+SHR R1,10                #R1= 0000001D 

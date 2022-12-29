@@ -17,7 +17,7 @@ module forwarding_unit (
     output reg [2:0] alu_src2_select
 );
 
-/*
+    /*
 in r1
 in r1
 -----
@@ -32,27 +32,27 @@ ADD R1, R2
 */
 
 
-always @(*) begin
-    alu_src1_select = 3'b010; // read_data1
-    alu_src2_select = 3'b010; // read_data2 or shamt
+    always @(*) begin
+        alu_src1_select = 3'b010; // read_data1
+        alu_src2_select = 3'b010; // read_data2 or shamt
 
-    if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rsrc) begin
-        alu_src1_select = 3'b001; // reg_data1_from_mem
-        if (ex_inPortSelect) alu_src1_select = 3'b011; // ex_inPortValue
-    end
-    else if (mem_wb_reg_write === 1'b1 && mem_wb_rdest === rsrc) begin
-        alu_src1_select = 3'b000; // write_back_data
-        if (mem_inPortSelect) alu_src1_select = 3'b100; // mem_inPortValue
-    end
+        if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rdest) begin
+            alu_src1_select = 3'b001; // ALU RESULT
+            if (ex_inPortSelect) alu_src1_select = 3'b011; // ex_inPortValue
+        end
+        else if (mem_wb_reg_write === 1'b1 && mem_wb_rdest === rdest) begin
+            alu_src1_select = 3'b000; // write_back_data
+            if (mem_inPortSelect) alu_src1_select = 3'b100; // mem_inPortValue
+        end
 
-    if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rdest) begin
-        alu_src2_select = 3'b001; // reg_data2_from_mem
-        if (ex_inPortSelect) alu_src2_select = 3'b100; // ex_inPortValue
+        if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rsrc) begin
+            alu_src2_select = 3'b001; // ALU RESULT
+            if (ex_inPortSelect) alu_src2_select = 3'b011; // ex_inPortValue
+        end
+        else if (mem_wb_reg_write === 1'b1 && mem_wb_rdest === rsrc) begin
+            alu_src2_select = 3'b000; // write_back_data
+            if (mem_inPortSelect) alu_src2_select = 3'b100; // mem_inPortValue
+        end
     end
-    else if (mem_wb_reg_write === 1'b1 && mem_wb_rdest === rdest) begin
-        alu_src2_select = 3'b000; // write_back_data
-        if (mem_inPortSelect) alu_src2_select = 3'b011; // mem_inPortValue
-    end
-end
 
 endmodule
