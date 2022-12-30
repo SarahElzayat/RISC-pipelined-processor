@@ -1,34 +1,693 @@
-# 0 compiles, 17 failed with no errors.
-# Compile of decode_stage.sv failed with 2 errors.
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
 # Compile of reg_file.v was successful.
-# Compile of sign_extend.v was successful.
 # Compile of sm.sv was successful.
 # Compile of alu.sv was successful.
 # Compile of branch_controller.sv was successful.
 # Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
 # Compile of forwarding_unit.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
 # Compile of fetch_stage.sv was successful.
 # Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
 # Compile of write_back_stage.v was successful.
-# 13 compiles, 1 failed with 2 errors.
-# Errors: 0, Warnings: 2
-# Compile of decode_stage.sv was successful with warnings.
-# Compile of reg_file.v was successful with warnings.
-# Compile of sign_extend.v was successful with warnings.
-# Compile of sm.sv was successful with warnings.
-# Compile of alu.sv was successful with warnings.
-# Compile of branch_controller.sv was successful with warnings.
-# Compile of execute_stage.sv was successful with warnings.
-# Compile of forwarding_unit.sv was successful with warnings.
-# Compile of memory_stage.sv was successful with warnings.
-# Compile of memory_stage_without_buffers.sv was successful with warnings.
-# Compile of fetch_stage.sv was successful with warnings.
-# Compile of mem_fetch.sv was successful with warnings.
-# Compile of write_back_stage.v was successful with warnings.
-# 13 compiles, 0 failed with no errors.
-# Project file D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/phase2.mpf is write protected, data cannot be saved.
-# Unable to save project.
-# reading C:/intelFPGA/21.1/questa_fse/win64/../modelsim.ini
-# Loading project phase_2
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+vsim -gui work.processor
+# vsim -gui work.processor 
+# Start time: 19:32:06 on Dec 30,2022
+# Loading sv_std.std
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# Cannot open macro file: processor.do
+do processor.do
+# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Error in macro ./processor.do line 1
+# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
+# No such file or directory. (errno = ENOENT)
+#     while executing
+# "mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_m..."
+run
+add wave -position insertpoint  \
+sim:/processor/clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Sarah  Hostname: SARAH  ProcessID: 24264
+#           Attempting to use alternate WLF file "./wlft8jgz5g".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft8jgz5g
+add wave -position insertpoint  \
+sim:/processor/rst
+add wave -position insertpoint  \
+sim:/processor/input_port
+add wave -position insertpoint  \
+sim:/processor/memory_write_src_select_ex \
+sim:/processor/memory_write_src_select_dec \
+sim:/processor/memory_address_select_ex \
+sim:/processor/memory_address_select_dec \
+sim:/processor/mem_write_ex \
+sim:/processor/mem_write_dec \
+sim:/processor/mem_read_ex \
+sim:/processor/mem_read_dec \
+sim:/processor/mem_push_ex \
+sim:/processor/mem_push_dec \
+sim:/processor/mem_pop_ex \
+sim:/processor/mem_pop_dec \
+sim:/processor/mem_data
+add wave -position insertpoint  \
+sim:/processor/PC_ex \
+sim:/processor/pc_choose_memory_ex \
+sim:/processor/pc_choose_memory_dec
+add wave -position insertpoint  \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/write_data \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_shift_reg \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_pc \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/sp \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/shift_reg \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_pc \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/std_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_from_mux_ex \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_choose_memory \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write_src_select \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_read \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_push \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_pop \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_address_select \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/ldd_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/interrupt \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/flags
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart
+do processor.do
+# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Error in macro ./processor.do line 1
+# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
+# No such file or directory. (errno = ENOENT)
+#     while executing
+# "mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_m..."
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+restart
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+restart
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+force -freeze sim:/processor/clk 1 0, 0 {50 ps} -r 100
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+restart
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+do processor.do
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# Error in macro ./processor.do line 3
+# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
+# 
+#     while executing
+# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/instruction
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+add wave -position insertpoint  \
+sim:/processor/decode_stage_dut/reg_file_dut/reg_file
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+restart
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+restart
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+restart
+# Loading work.processor
+# Loading work.decode_stage
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.var_reg_with_mux
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# WARNING: No extended dataflow license exists
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+restart
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+restart
+do processor.do
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 21:10:27 on Dec 30,2022, Elapsed time: 1:38:21
+# Errors: 0, Warnings: 1
