@@ -194,7 +194,7 @@ module sm (
 								mem_addsel = 2'b10;
 								mem_src_select = 2'b11;
 								//reg identifiers
-								r_scr = instruction[10:8];
+								r_dst = instruction[10:8];
 							end
 							// POP Rdst
 							3'b110:
@@ -327,8 +327,9 @@ module sm (
 							begin
 								// pop pc and continue
 								mem_pop <= 1'b1; // first part
-								mem_read = 1'b1;
-								mem_addsel = 2'b10;
+								mem_read <= 1'b1;
+								mem_addsel <= 2'b10;
+								r_dst <= 3'b0z0;	
 							end
 							3'b110: // reti
 							begin
@@ -351,6 +352,7 @@ module sm (
 				// push pc2
 				mem_src_select <= 2'b10;
 				mem_push <= 1'b1;
+				r_dst = instruction[10:8];
 				mem_write = 1'b1;
 				mem_addsel = 2'b10;
 				jump_selector <= 3'b111;

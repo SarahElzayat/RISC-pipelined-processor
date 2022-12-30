@@ -112,12 +112,7 @@ module execute_stage (
 
     assign new_PC =
     (branch_result === 0) ? PC :
-    (branch_result === 1) ? (
-    (alu_src1_select === 3'b000) ? {{16{write_back_data[15]}}, write_back_data} :
-    (alu_src1_select === 3'b001) ? {{16{result_out[15]}}, result_out} :
-    (alu_src1_select === 3'b010) ? {{16{Op1[15]}}, Op1} :
-    (alu_src1_select === 3'b011) ? {{16{ex_inPortValue[15]}}, ex_inPortValue} :
-    (alu_src1_select === 3'b100) ? {{16{mem_inPortValue[15]}}, mem_inPortValue} : 'bz ) : PC;
+    (branch_result === 1) ? {{16{Op1[15]}}, Op1} : PC;
 
     // BUFFERS  
     var_reg #(.size(16))

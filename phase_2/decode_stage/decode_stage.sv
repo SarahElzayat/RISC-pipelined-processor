@@ -83,12 +83,12 @@ module decode_stage(
         .rst(reset),
         .Q(reg_write_address_r)
     );
-    var_reg_with_mux #(.size(5))
+    var_reg_with_mux #(.size(6))
     var_reg_1 (
-        .D ({reg_write, mem_read, mem_write, mem_pop,mem_push} ),
+        .D ({reg_write, mem_read, mem_write, mem_pop,mem_push, pc_choose_memory} ),
         .clk (clk ),
         .mux_clear(flush_decode),
-        .Q  ({ reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r} ),
+        .Q  ({ reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r , pc_choose_memory_r} ),
         .rst (reset)
     );
 
