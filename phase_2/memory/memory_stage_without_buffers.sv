@@ -25,7 +25,7 @@ module memory_stage_without_buffers (
   reg  [31:0] sp; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
   reg [15:0] data_memory [0: (2 ** 10) -1]; //data memory of 4KB
 
-  assign data = (memory_read == 1) ? data_memory[final_address] : 'bz;
+  assign data = (memory_read == 1) ? (memory_pop) ? data_memory[sp]: data_memory[final_address] : 'bz;
   assign shift_reg = temp_shift_reg;
 
 
@@ -35,6 +35,7 @@ module memory_stage_without_buffers (
 
   wire[31:0] temp_pc;
   assign temp_pc = (pc_choose_memory === 1'b1) ? shift_reg: pc_from_mux_ex  ;
+
   assign final_pc = (interrupt === 1'b1) ? 32'b0 : temp_pc;
 
   always @(posedge clk)
@@ -42,32 +43,41 @@ module memory_stage_without_buffers (
 
     if(reset)
       begin
-        sp = (2**10);
+        sp = (2**10); // 1024
         temp_shift_reg = 0;
       end
 
     else
       begin
 
-        if (memory_push === 1'b1 && sp > 0)
+
+        
+        if (memory_push === 1'b1)// && sp > 0)
         begin
-          sp = sp - 1;
+          sp = sp - 1; ///1023
         end
 
-        if (memory_pop === 1'b1 && sp < 2**10 )
-        begin
-          sp = sp + 1;
-        end
 
         if(memory_write)
         begin
-          data_memory[final_address] = write_data;
+          if(memory_push)
+          begin
+            data_memory[sp] = write_data;
+          end
+          else
+            data_memory[final_address] = write_data;
         end
 
         if(memory_read)
         begin
           temp_shift_reg = temp_shift_reg>>16;
           temp_shift_reg = {data, temp_shift_reg[15:0]};
+        end
+
+
+        if (memory_pop === 1'b1)// && sp < 2**10 )
+        begin
+          sp = sp + 1;
         end
       end
 
