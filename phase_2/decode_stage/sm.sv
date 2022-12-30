@@ -9,6 +9,7 @@ module sm (
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
 	output logic  [1:0] wb_sel,
+	output logic stall_fetch_from_cu,
 	output logic  [1:0] mem_addsel,
 	output logic  [1:0] carry_sel,
 	output logic  alu_srcsel,
@@ -36,9 +37,11 @@ module sm (
 		// execution stage signals
 		ALUOp = 4'b1111;
 		alu_srcsel = 1'b0;
+		stall_fetch_from_cu = 1'b0;
 		jump_selector = 3'b000;
 		carry_sel = 2'b00;
 		flag_reg_select = 1'b0;
+		pc_choose_memory = 1'b0;
 		flagreg_enable = 1'b0;
 		// memory stage signals
 		mem_read = 1'b0;
@@ -55,7 +58,7 @@ module sm (
 		// r_dst = instruction[10:8];
 		// r_scr = instruction[7:5];
 		r_dst = 3'bzzz;
-		r_scr = 3'bzzz;
+		r_scr = 3'b0zz;
 		case (current_state)
 			IDLE :
 			begin
@@ -317,11 +320,13 @@ module sm (
 								// jump_selector <= 3'b111;
 								//registers identifiers
 								r_dst = instruction[10:8];
+
 								// TODO: stop the fetch
 								// push pc2
 								mem_push <= 1'b1;
-								mem_write = 1'b1;
-								mem_addsel = 2'b10;
+								stall_fetch_from_cu <= 1'b1;
+								mem_write <= 1'b1;
+								mem_addsel <= 2'b10;
 							end
 							3'b101: // ret
 							begin
@@ -329,7 +334,8 @@ module sm (
 								mem_pop <= 1'b1; // first part
 								mem_read <= 1'b1;
 								mem_addsel <= 2'b10;
-								r_dst <= 3'b0z0;	
+								clear_instruction <= 1'b1;
+								r_dst <= 3'b0z0;
 							end
 							3'b110: // reti
 							begin
@@ -352,7 +358,7 @@ module sm (
 				// push pc2
 				mem_src_select <= 2'b10;
 				mem_push <= 1'b1;
-				r_dst = instruction[10:8];
+				// r_dst = instruction[10:8];
 				mem_write = 1'b1;
 				mem_addsel = 2'b10;
 				jump_selector <= 3'b111;
@@ -386,10 +392,12 @@ module sm (
 				mem_pop <= 1'b1; // first part
 				mem_read = 1'b1;
 				mem_addsel = 2'b10;
+				r_dst <= 3'b00z;
 			end
 			POP_PC2:
 			begin
 				// leach pop at the first cycle
+				clear_instruction <= 1'b1;
 				if(counter == 0)
 				begin
 					mem_pop <= 1'b1;
@@ -398,10 +406,12 @@ module sm (
 					mem_addsel = 2'b10;
 					// It will take pass the first cycle (EXECUTE) and gget the PC in the second cycle (MEMORY)
 					// Change the PC HERE
+					pc_choose_memory <= 1'b1;
+					r_dst <= 3'bz00;
 				end
 				if(counter  == 2)
 				begin
-					pc_choose_memory <= 1'b1;
+					clear_instruction <= 1'b0;
 				end
 
 			end
@@ -413,6 +423,7 @@ module sm (
 				mem_pop <= 1'b1; // first part
 				mem_read = 1'b1;
 				mem_addsel = 2'b10;
+				r_dst <= 3'b0z0;
 			end
 			default :
 			begin

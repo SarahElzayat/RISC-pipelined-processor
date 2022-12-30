@@ -13,6 +13,7 @@ module decode_stage(
     output  [1:0] mem_addsel_r,
     output  [1:0] carry_sel_r,
     ////////////////////////////
+    output fetch_stall_cu,
     output  outport_enable_r,
     output  inport_sel_r, alu_srcsel_r,
     output  flagreg_enable_r,
@@ -137,6 +138,7 @@ module decode_stage(
         .jump_selector(jump_selector),
         .r_scr(r_scr),
         .r_dst(r_dst),
+        .stall_fetch_from_cu(fetch_stall_cu),
         .mem_src_select(mem_src_select),
         .ALUOp(ALUOp),
         .wb_sel(wb_sel),

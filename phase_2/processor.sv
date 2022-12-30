@@ -13,6 +13,8 @@ module processor(
     wire [31:0] pc_write_back_value;
     wire clear_instruction_dec;
 
+    wire fetch_stall_from_cu;
+
     // STALL & FLUSH
     wire flush_decode;
     wire flush_fetch;
@@ -22,13 +24,13 @@ module processor(
     fetch_stage_dut (
         .clk (clk ),
         .reset (rst ),
-        .pc_write (pc_write ),
+        .pc_write (pc_write),
         .pc_write_back_value (pc_write_back_value ),
         .clear_instruction (clear_instruction_dec || flush_fetch), // TODO: MOVE INSIDE
         .pc_plus_one_r (pc_plus_one_r ),
         .pc_plus_one_s (pc_plus_one_fetch_s ),
         .instruction_r  ( instruction),
-        .stall_fetch (stall_fetch),
+        .stall_fetch (stall_fetch || fetch_stall_from_cu),
         .immediate_value (LDM_value_fet )
     );
 
@@ -70,7 +72,6 @@ module processor(
     wire alu_src_dec;
     wire inport_sel_ex,inport_sel_dec,inport_sel_mem;
 
-
     wire [2:0] jump_selector_dec,r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex, r_scr_mem,r_dst_mem,r_scr_fetch,r_dst_fetch;
 
     decode_stage
@@ -110,7 +111,8 @@ module processor(
         .reg_file_read_data1(reg_data1_from_dec),
         .reg_file_read_data2(reg_data2_from_dec),
         .shamt_out(shamt_dec),
-        .pc_plus_one_dec(pc_plus_one_dec)
+        .pc_plus_one_dec(pc_plus_one_dec),
+        .fetch_stall_cu (fetch_stall_from_cu)
     );
 
     wire [15:0] ALU_ex;

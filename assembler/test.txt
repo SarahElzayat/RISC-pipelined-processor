@@ -3,6 +3,8 @@ inc r1
 inc r1
 ret
 
+
+
 .ORG 32 #this is the instructions code
 in r1 
 in r2 

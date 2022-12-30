@@ -22,10 +22,11 @@ module fetch_stage (
   );
 
 
-  var_reg #(.size(32))
+  var_reg_with_enable #(.size(32))
   pc_plus_one_reg (
     .D (pc_plus_one_s ),
     .clk (clk ),
+    .en(~stall_fetch),
     .Q  (pc_plus_one_r ),
     .rst (reset)
   );

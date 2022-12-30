@@ -22,11 +22,11 @@ module memory_stage_without_buffers (
 
 
   reg [31:0] temp_shift_reg;
-  logic  [31:0] sp; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
+  reg  [31:0] sp; //stack pointer pointing at the last entry // @suppress "Register initialization in declaration. Consider using an explicit reset instead"
   reg [15:0] data_memory [0: (2 ** 10) -1]; //data memory of 4KB
 
-  assign data = (memory_read === 1) ? (memory_pop === 1) ? data_memory[sp] : data_memory[final_address] : 'bz;
-  assign shift_reg = temp_shift_reg;
+  assign data = (memory_read === 1) ? (memory_pop === 1) ? data_memory[sp + 1] : data_memory[final_address] : 'bz;
+  assign shift_reg = {data, temp_shift_reg[31:16]};
 
 
   assign final_address = (memory_address_select === 2'b00)? std_address[10:0] :
@@ -49,16 +49,16 @@ module memory_stage_without_buffers (
     else
       begin
 
-   
+
         if(memory_write)
         begin
 
           if(memory_push === 1'b1)
-          begin
-            data_memory[sp] = write_data;
-          end
+            begin
+              data_memory[sp] = write_data;
+            end
           else
-          data_memory[final_address] = write_data;
+            data_memory[final_address] = write_data;
         end
 
         if(memory_read)
@@ -66,12 +66,12 @@ module memory_stage_without_buffers (
           temp_shift_reg = temp_shift_reg>>16;
           temp_shift_reg = {data, temp_shift_reg[15:0]};
         end
-        if (memory_push === 1'b1)// && sp > 0)
+        if (memory_push === 1'b1) // && sp > 0)
         begin
           sp = sp - 1;
         end
 
-        if (memory_pop === 1'b1)// && sp < 2**10 )
+        if (memory_pop === 1'b1) // && sp < 2**10 )
         begin
           sp = sp + 1;
         end
@@ -80,7 +80,7 @@ module memory_stage_without_buffers (
   end
 
 
-// always @(negedge clk) begin
-  
-// end
+  // always @(negedge clk) begin
+
+  // end
 endmodule
