@@ -1228,6 +1228,7 @@ run
 run
 run
 run
+<<<<<<< HEAD
 restart
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.processor(fast)
@@ -2064,3 +2065,5 @@ run
 run
 # End time: 23:04:42 on Dec 30,2022, Elapsed time: 7:47:41
 # Errors: 0, Warnings: 1
+=======
+>>>>>>> 4725da176a34b28e7371e6d25c977d870a048e34
