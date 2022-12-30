@@ -39,7 +39,7 @@ class Assembler:
             line = line.strip()
             if line != '':
                 print(line)
-                line = re.split(r'\s+|,\s+',line)
+                line = re.split(r'[^a-z0-7]+',line)
                 command = line[0]
                 args = line[1:]
                 instructions.append(command)
