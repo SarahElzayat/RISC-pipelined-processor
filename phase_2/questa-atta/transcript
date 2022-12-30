@@ -1,6 +1,6 @@
 vsim work.processor -voptargs=+acc
 # vsim work.processor -voptargs="+acc" 
-# Start time: 05:51:47 on Dec 30,2022
+# Start time: 15:17:01 on Dec 30,2022
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.processor(fast)
@@ -30,6 +30,7 @@ vsim work.processor -voptargs=+acc
 # Loading work.memory_stage_without_buffers(fast)
 # Loading work.write_back_stage(fast)
 # Loading work.hazard_controller(fast)
+do processor.do
 add wave -position insertpoint  \
 sim:/processor/ALU_ex \
 sim:/processor/alu_op_dec \
@@ -120,8 +121,6 @@ sim:/processor/write_address_from_decode \
 sim:/processor/write_address_from_wb \
 sim:/processor/write_address_to_mem \
 sim:/processor/write_back_data
-do processor.do
-add wave -position 1  sim:/processor/decode_stage_dut/control_unit/current_state
 restart
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.processor(fast)
@@ -151,6 +150,111 @@ restart
 # Loading work.memory_stage_without_buffers(fast)
 # Loading work.write_back_stage(fast)
 # Loading work.hazard_controller(fast)
+add wave -position insertpoint  \
+sim:/processor/memory_stage_dut/alu_value \
+sim:/processor/memory_stage_dut/alu_value_out \
+sim:/processor/memory_stage_dut/clk \
+sim:/processor/memory_stage_dut/data \
+sim:/processor/memory_stage_dut/data_r \
+sim:/processor/memory_stage_dut/final_pc \
+sim:/processor/memory_stage_dut/flags \
+sim:/processor/memory_stage_dut/input_port \
+sim:/processor/memory_stage_dut/input_port_out \
+sim:/processor/memory_stage_dut/interrupt \
+sim:/processor/memory_stage_dut/ldd_address \
+sim:/processor/memory_stage_dut/LDM_value \
+sim:/processor/memory_stage_dut/LDM_value_out \
+sim:/processor/memory_stage_dut/mem_inPortSelect \
+sim:/processor/memory_stage_dut/mem_inPortSelect_buff \
+sim:/processor/memory_stage_dut/memory_address_select \
+sim:/processor/memory_stage_dut/memory_pop \
+sim:/processor/memory_stage_dut/memory_push \
+sim:/processor/memory_stage_dut/memory_read \
+sim:/processor/memory_stage_dut/memory_write \
+sim:/processor/memory_stage_dut/memory_write_src_select \
+sim:/processor/memory_stage_dut/outport_enable \
+sim:/processor/memory_stage_dut/outport_enable_out \
+sim:/processor/memory_stage_dut/pc \
+sim:/processor/memory_stage_dut/pc_choose_memory \
+sim:/processor/memory_stage_dut/pc_from_mux_ex \
+sim:/processor/memory_stage_dut/r_dst \
+sim:/processor/memory_stage_dut/r_dst_buff \
+sim:/processor/memory_stage_dut/read_data1_mem \
+sim:/processor/memory_stage_dut/read_data2_mem \
+sim:/processor/memory_stage_dut/reg_write \
+sim:/processor/memory_stage_dut/reg_write_address \
+sim:/processor/memory_stage_dut/reg_write_address_out \
+sim:/processor/memory_stage_dut/reg_write_out \
+sim:/processor/memory_stage_dut/reset \
+sim:/processor/memory_stage_dut/shift_reg \
+sim:/processor/memory_stage_dut/std_address \
+sim:/processor/memory_stage_dut/wb_sel \
+sim:/processor/memory_stage_dut/wb_sel_out
+do processor.do
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 18 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position 0  sim:/processor/decode_stage_dut/control_unit/current_state
 restart
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading work.processor(fast)
@@ -181,5 +285,211 @@ restart
 # Loading work.write_back_stage(fast)
 # Loading work.hazard_controller(fast)
 do processor.do
-# End time: 05:59:33 on Dec 30,2022, Elapsed time: 0:07:46
-# Errors: 0, Warnings: 1
+run 500
+run 500
+
+run 500
+run 500
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position 1  sim:/processor/fetch_stage_dut/mem_fetch_dut/pc
+add wave -position 1  sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_plus_one
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg(fast)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 18 compiles, 0 failed with no errors.
