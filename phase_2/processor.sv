@@ -17,7 +17,6 @@ module processor(
     wire flush_decode;
     wire flush_fetch;
     wire stall_fetch;
-    wire stall_decode;
 
     fetch_stage
     fetch_stage_dut (
@@ -29,6 +28,7 @@ module processor(
         .pc_plus_one_r (pc_plus_one_r ),
         .pc_plus_one_s (pc_plus_one_fetch_s ),
         .instruction_r  ( instruction),
+        .stall_fetch (stall_fetch),
         .immediate_value (LDM_value_fet )
     );
 
@@ -70,8 +70,8 @@ module processor(
     wire alu_src_dec;
     wire inport_sel_ex,inport_sel_dec,inport_sel_mem;
 
+
     wire [2:0] jump_selector_dec,r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex, r_scr_mem,r_dst_mem,r_scr_fetch,r_dst_fetch;
-    wire [1:0] mem_src_select_r;
 
     decode_stage
     decode_stage_dut (
@@ -264,9 +264,8 @@ module processor(
         .mem_read_dec (mem_read_dec),
         .flush_fetch  (flush_fetch),
         .flush_decode (flush_decode),
-        .stall_fetch  (stall_fetch ),
-        .stall_decode (stall_decode ),
-        .pc_write (pc_write)
+        .pc_write (pc_write),
+        .stall_fetch (stall_fetch)
     );
 
 endmodule
