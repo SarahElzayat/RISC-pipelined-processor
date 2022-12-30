@@ -1,12 +1,13 @@
-
-
-
 .ORG 15
 inc r1
 inc r1
 ret
 
+
 .ORG 32 #this is the instructions code
-in r2 
-in r1 
+in r2
+in r1
+setc
 call r2
+dec r1
+clrc

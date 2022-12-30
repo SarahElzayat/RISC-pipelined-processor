@@ -34,7 +34,7 @@ instruction_table = {
     'nop':['01000'],
     'setc':['01001'],
     'clrc':['01010'],
-    'call':['11100'],
+    'call':['11100','Rdst' ],
     'ret':['11101'],
 
     # org
