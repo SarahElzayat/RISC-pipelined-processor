@@ -1,6 +1,12 @@
+
+
+
+.ORG 15
+inc r1
+inc r1
+ret
+
 .ORG 32 #this is the instructions code
-in r1
-inc r2
-dec r2
-dec r2
-jc r1
+in r2 
+in r1 
+call r2

@@ -85,6 +85,7 @@ module execute_stage (
     wire [2:0] flag_register;
     wire [2:0] alu_src1_select;
     wire [2:0] alu_src2_select;
+    wire [15:0] Op1, Op2;
 
     // FORWARDING
     forwarding_unit FU (
@@ -114,7 +115,7 @@ module execute_stage (
     (branch_result === 1) ? (
     (alu_src1_select === 3'b000) ? {{16{write_back_data[15]}}, write_back_data} :
     (alu_src1_select === 3'b001) ? {{16{result_out[15]}}, result_out} :
-    (alu_src1_select === 3'b010) ? {{16{read_data1[15]}}, read_data1} :
+    (alu_src1_select === 3'b010) ? {{16{Op1[15]}}, Op1} :
     (alu_src1_select === 3'b011) ? {{16{ex_inPortValue[15]}}, ex_inPortValue} :
     (alu_src1_select === 3'b100) ? {{16{mem_inPortValue[15]}}, mem_inPortValue} : 'bz ) : PC;
 
@@ -205,7 +206,7 @@ module execute_stage (
     buffer11 (
         .clk (clk),
         .rst(reset),
-        .D ({read_data1, read_data2}),
+        .D ({Op1, Op2}),
         .Q ({read_data1_out, read_data2_out})
     );
 
@@ -240,7 +241,6 @@ module execute_stage (
         .D ({mem_read, mem_write}),
         .Q ({mem_read_out, mem_write_out})
     );
-
     // ALU
     alu
     alu_dut (
@@ -251,13 +251,14 @@ module execute_stage (
         .mem_inPortValue (mem_inPortValue),
         .read_data1 (read_data1),
         .read_data2 (read_data2),
+        .Op1 (Op1),
+        .Op2 (Op2),
         .alu_src1_select (alu_src1_select),
         .alu_src_select (alu_src_select),
         .shamt (shamt),
         .ALU_Op (ALU_Op),
         .write_back_data (write_back_data),
         .alu_result_from_ex (result_out),
-        .alu_result_from_mem (alu_result_from_mem),
         .flag_regsel (flag_regsel),
         .flagreg_enable (flagreg_enable),
         .conditions_from_memory_pop (conditions_from_memory_pop),

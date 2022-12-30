@@ -15,10 +15,10 @@ module memory_stage_without_buffers (
   wire [15:0] write_data;
 
   assign write_data =
-  (memory_write_src_select == 2'b00) ? {13'b0,flags} :
-  (memory_write_src_select == 2'b01) ? pc[31:16] : //pc upper
-  (memory_write_src_select == 2'b10) ? pc[15:0] : // pc lower
-  (memory_write_src_select == 2'b11) ? std_address : 'bz; //read data 1
+  (memory_write_src_select === 2'b00) ? {13'b0,flags} :
+  (memory_write_src_select === 2'b01) ? pc[31:16] : //pc upper
+  (memory_write_src_select === 2'b10) ? pc[15:0] : // pc lower
+  (memory_write_src_select === 2'b11) ? (memory_push === 1'b1) ? std_address : ldd_address : 'bz; //read data 1
 
 
   reg [31:0] temp_shift_reg;
@@ -29,9 +29,9 @@ module memory_stage_without_buffers (
   assign shift_reg = temp_shift_reg;
 
 
-  assign final_address = (memory_address_select == 2'b00)? std_address[10:0] :
-  (memory_address_select == 2'b01)? ldd_address[10:0] :
-  (memory_address_select == 2'b10)? sp : 'bz;
+  assign final_address = (memory_address_select === 2'b00)? std_address[10:0] :
+  (memory_address_select === 2'b01)? ldd_address[10:0] :
+  (memory_address_select === 2'b10)? sp : 'bz;
 
   wire[31:0] temp_pc;
   assign temp_pc = (pc_choose_memory === 1'b1) ? shift_reg: pc_from_mux_ex  ;
@@ -49,12 +49,12 @@ module memory_stage_without_buffers (
     else
       begin
 
-        if (memory_push == 1'b1 && sp > 0)
+        if (memory_push === 1'b1 && sp > 0)
         begin
           sp = sp - 1;
         end
 
-        if (memory_pop == 1'b1 && sp < 2**10 )
+        if (memory_pop === 1'b1 && sp < 2**10 )
         begin
           sp = sp + 1;
         end

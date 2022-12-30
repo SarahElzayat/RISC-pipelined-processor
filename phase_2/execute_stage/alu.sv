@@ -10,7 +10,6 @@ module alu (
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
     input [15:0] alu_result_from_ex,
-    input [15:0] alu_result_from_mem,
     input flag_regsel,
     input flagreg_enable,
     input [15:0] ex_inPortValue,
@@ -18,14 +17,16 @@ module alu (
     input [2:0] conditions_from_memory_pop,
 
     output reg [2:0] flag_register,
-    output reg [15:0] result
+    output reg [15:0] result,
+    output  [15:0] Op1,
+    output  [15:0] Op2
 );
 
     reg alu_carry;
     wire carry, zero, negative;
     wire [2:0] alu_flags;
 
-    wire [15:0] Op1, Op2, firstMux;
+    wire [15:0]  firstMux;
 
     assign Op1 =
     (alu_src1_select === 3'b000) ? write_back_data :
@@ -40,7 +41,7 @@ module alu (
 
     assign Op2 =
     (alu_src2_select === 3'b000) ? write_back_data :
-    (alu_src2_select === 3'b001) ? alu_result_from_mem :
+    (alu_src2_select === 3'b001) ? alu_result_from_ex :
     (alu_src2_select === 3'b010) ? firstMux :
     (alu_src2_select === 3'b011) ? ex_inPortValue :
     (alu_src2_select === 3'b100) ? mem_inPortValue : 'bz;
