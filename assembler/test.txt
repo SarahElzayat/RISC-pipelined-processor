@@ -23,3 +23,5 @@ call r2
 dec r1
 setc
 clrc
+setc 
+inc r1
