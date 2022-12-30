@@ -28,13 +28,13 @@ instruction_table = {
     'jn':['11001','Rdst'],
     'jc':['11010','Rdst'],
     'jmp':['11011','Rdst'],
+    'call':['11100','Rdst'],
     
     # zero operand instructions
     # 8 bits and need to extended with 11 bits
     'nop':['01000'],
     'setc':['01001'],
     'clrc':['01010'],
-    'call':['11100'],
     'ret':['11101'],
 
     # org

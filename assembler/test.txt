@@ -4,3 +4,4 @@ inc r2
 dec r2
 dec r2
 jc r1
+call r1
