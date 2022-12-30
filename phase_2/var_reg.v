@@ -12,4 +12,4 @@ module var_reg #(parameter size = 8)(
         else
             Q <= D;
     end
-endmodule 
+endmodule

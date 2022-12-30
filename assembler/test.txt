@@ -1,14 +1,23 @@
-.ORG 32
+.ORG 15
 inc r1
-dec r2
+inc r1
+ret
+
+.ORG 32 #this is the instructions code
+in r1 
+in r2 
+push r1
+push r1
+push r1
+inc r1
+inc r1
+inc r1
 nop
-not r1
-mov r3,r0
-inc r4
-inc r4
-inc r4
-add r4,r0
 nop
-nop
-nop
-nop
+pop r7
+pop r6
+inc r1
+call r2
+dec r1
+setc
+clrc

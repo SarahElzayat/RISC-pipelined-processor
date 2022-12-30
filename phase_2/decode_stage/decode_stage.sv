@@ -1,5 +1,6 @@
 module decode_stage(
     input clk,reset,
+    input flush_decode,
     input interrupt_signal,
     input [15:0] instruction,
     input [32-1:0]PC,
@@ -13,7 +14,7 @@ module decode_stage(
     output  [1:0] carry_sel_r,
     ////////////////////////////
     output  outport_enable_r,
-    output  inport_sel_r, alu_srcsel,
+    output  inport_sel_r, alu_srcsel_r,
     output  flagreg_enable_r,
     output  clear_instruction_r,
     input reg_write_wb,
@@ -22,6 +23,7 @@ module decode_stage(
     output[2:0] reg_write_address_r,
     output[15:0] reg_file_read_data1,
     output[15:0] reg_file_read_data2,
+    output [31:0] pc_plus_one_dec,
     input [3:0] shamt_out
 );
 
@@ -55,11 +57,21 @@ module decode_stage(
     );
 
     var_reg #(
+    .size(32)
+    ) var_reg_instance1234(
+        .D(PC),
+        .clk(clk),
+        .rst(reset),
+        .Q(pc_plus_one_dec)
+    );
+
+    var_reg_with_mux #(
     .size(5)
     ) var_reg_instance(
         .D({instruction[3:0], flag_reg_select}),
         .clk(clk),
         .rst(reset),
+        .mux_clear(flush_decode),
         .Q({shamt_out, flag_reg_select_r})
     );
 
@@ -71,34 +83,38 @@ module decode_stage(
         .rst(reset),
         .Q(reg_write_address_r)
     );
-    var_reg #(.size(5))
+    var_reg_with_mux #(.size(6))
     var_reg_1 (
-        .D ({reg_write, mem_read, mem_write, mem_pop,mem_push} ),
+        .D ({reg_write, mem_read, mem_write, mem_pop,mem_push, pc_choose_memory} ),
         .clk (clk ),
-        .Q  ({ reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r} ),
+        .mux_clear(flush_decode),
+        .Q  ({ reg_write_r, mem_read_r, mem_write_r, mem_pop_r,mem_push_r , pc_choose_memory_r} ),
         .rst (reset)
     );
 
-    var_reg #(.size(18))
+    var_reg_with_mux #(.size(18))
     var_reg_2 (
         .D ({jump_selector,r_scr,r_dst, mem_src_select, ALUOp, wb_sel,pc_write} ),
         .clk (clk ),
+        .mux_clear(flush_decode),
         .Q  ({ jump_selector_r,r_scr_r,r_dst_r,mem_src_select_r,ALUOp_r,wb_sel_r,pc_write_r} ),
         .rst (reset)
     );
 
-    var_reg #(.size(5))
+    var_reg_with_mux #(.size(5))
     var_reg_3 (
         .D ({mem_addsel,carry_sel,alu_srcsel} ),
         .clk (clk ),
+        .mux_clear(flush_decode),
         .Q  ({ mem_addsel_r,carry_sel_r,alu_srcsel_r} ),
         .rst (reset)
     );
 
-    var_reg #(.size(4))
+    var_reg_with_mux #(.size(4))
     var_reg_4 (
         .D ({outport_enable,inport_sel,flagreg_enable,clear_instruction} ),
         .clk (clk ),
+        .mux_clear(flush_decode),
         .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r, clear_instruction_r} ),
         .rst (reset)
     );

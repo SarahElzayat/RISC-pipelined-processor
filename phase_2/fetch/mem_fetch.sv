@@ -16,13 +16,13 @@ module mem_fetch (
   // the rest is reserved of the instructions.
 
   assign instruction =
-   (clear_instruction === 1'b1 )? 'h4000: //NOP
+  (clear_instruction === 1'b1 )? 'h4000: //NOP
   instruction_memory[pc];
 
   assign immediate_value =   instruction_memory[pc];
 
 
-  assign pc_plus_one = (!clear_instruction)? pc+1 : 'bz;
+  assign pc_plus_one = (clear_instruction === 'b1 )?  'bz:pc+1;
 
   always @(posedge clk, posedge reset)
   begin
@@ -33,11 +33,11 @@ module mem_fetch (
       end
     else
       begin
-        // if(pc_write)
-        // begin
-        //   pc = pc_write_back_value;
-        // end
-        pc = pc +1;
+        if(pc_write)
+        begin
+          pc = pc_write_back_value;
+        end
+        // pc = pc +1;
       end
 
   end

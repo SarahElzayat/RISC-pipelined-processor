@@ -2,27 +2,29 @@ module fetch_stage (
   input clk,
   input reset, //the reset signal resets the pc to 2^5 (first address of the instructions memory)
   input pc_write,
+  input stall_fetch,
   input [31:0] pc_write_back_value,
   input clear_instruction, //overrides the current instruction with NOP (selector of the output mux)
+  output [31:0] pc_plus_one_s,
   output [31:0] pc_plus_one_r,
   output [15:0] instruction_r,
   output [15:0] immediate_value
 );
 
   wire [15:0] instruction;
-  var_reg #(.size(16))
+  var_reg_with_enable #(.size(16))
   instruction_reg (
     .D (instruction ),
     .clk (clk ),
+    .en(~stall_fetch),
     .Q  (instruction_r ),
     .rst (reset)
   );
 
 
-  wire [31:0] pc_plus_one;
   var_reg #(.size(32))
   pc_plus_one_reg (
-    .D (pc_plus_one ),
+    .D (pc_plus_one_s ),
     .clk (clk ),
     .Q  (pc_plus_one_r ),
     .rst (reset)
@@ -35,7 +37,7 @@ module fetch_stage (
     .pc_write(pc_write),
     .pc_write_back_value( pc_write_back_value),
     .clear_instruction(clear_instruction),
-    .pc_plus_one(pc_plus_one_r),
+    .pc_plus_one(pc_plus_one_s),
     .instruction  (instruction),
     .immediate_value(immediate_value)
   );

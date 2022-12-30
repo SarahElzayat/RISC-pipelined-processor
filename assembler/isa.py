@@ -4,7 +4,7 @@ instruction_table = {
     'add':['00011','Rscr','Rdst'],
     'sub':['00100','Rscr','Rdst'],
     'and':['00101','Rscr','Rdst'],
-    'or' :['00111','Rscr','Rdst'],
+    'or' :['00110','Rscr','Rdst'],
     'mov':['10000','Rscr','Rdst'],
     'ldd':['10010','Rscr','Rdst'],
     'std':['10011','Rscr','Rdst'],
@@ -28,13 +28,14 @@ instruction_table = {
     'jn':['11001','Rdst'],
     'jc':['11010','Rdst'],
     'jmp':['11011','Rdst'],
+    'call':['11100','Rdst'],
     
     # zero operand instructions
     # 8 bits and need to extended with 11 bits
     'nop':['01000'],
     'setc':['01001'],
     'clrc':['01010'],
-    'call':['11100'],
+    # 'call':['11100','Rdst' ],
     'ret':['11101'],
 
     # org

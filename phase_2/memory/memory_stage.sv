@@ -4,6 +4,8 @@ module memory_stage (
   input [1:0] memory_address_select, memory_write_src_select,
   input[31:0] pc,pc_from_mux_ex,
   input [2:0] flags,
+  input [2:0] r_dst,
+  output [2:0] r_dst_buff,
   output [15:0] data_r, //wire on the inside
   output [31:0] final_pc,
   output [31:0] shift_reg, //reg on the inside
@@ -13,6 +15,7 @@ module memory_stage (
   input [15:0] LDM_value,
   output [15:0] LDM_value_out,
   output [15:0] read_data1_mem,
+  output [15:0] read_data2_mem,
 
   input [15:0] alu_value,
   output [15:0] alu_value_out,
@@ -47,12 +50,12 @@ module memory_stage (
     .Q ({input_port_out})
   );
 
-  var_reg #(.size(1))
+  var_reg #(.size(4))
   buffer122 (
     .clk (clk),
     .rst(reset),
-    .D ({mem_inPortSelect}),
-    .Q ({mem_inPortSelect_buff})
+    .D ({mem_inPortSelect, r_dst}),
+    .Q ({mem_inPortSelect_buff, r_dst_buff})
   );
 
   var_reg #(.size(3))
@@ -85,11 +88,11 @@ module memory_stage (
     .Q  (wb_sel_out),
     .rst (reset)
   );
-  var_reg #(.size(16))
+  var_reg #(.size(32))
   wb_sel_reg232 (
-    .D (std_address ),
+    .D ({std_address , ldd_address} ),
     .clk (clk ),
-    .Q  (read_data1_mem),
+    .Q  ({read_data1_mem , read_data2_mem}),
     .rst (reset)
   );
 
