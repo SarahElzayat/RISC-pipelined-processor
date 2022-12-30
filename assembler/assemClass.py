@@ -30,6 +30,7 @@ class Assembler:
         instructions = []
         arguments = {}
         i = 0
+        print(self.lines)
         for line in self.lines:
             line = line.lower()
             if r'#' in line:

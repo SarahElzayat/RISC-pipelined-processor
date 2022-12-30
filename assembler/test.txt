@@ -1,13 +1,9 @@
-.ORG 15
-inc r1
-inc r1
-ret
 
 
-.ORG 32 #this is the instructions code
-in r2
-in r1
+.org 32 #this is the instructions code
 setc
-call r2
-dec r1
 clrc
+# in r2
+# in r1
+# call r2
+# dec r1
