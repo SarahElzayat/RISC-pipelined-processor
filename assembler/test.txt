@@ -1,9 +1,15 @@
+.ORG 15
+inc r1
+inc r1
+ret
 
-
-.org 32 #this is the instructions code
+.ORG 32 #this is the instructions code
+push r1
+push r1
+push r1
+in r2 
+in r1 
+call r2
+dec r1
 setc
 clrc
-# in r2
-# in r1
-# call r2
-# dec r1

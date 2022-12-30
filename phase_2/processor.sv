@@ -207,7 +207,7 @@ module processor(
         .ldd_address(read_data2_ex),
         .memory_address_select ( memory_address_select_ex ),
         .memory_write_src_select ( memory_write_src_select_ex ),
-        .pc (PC_ex),
+        .pc (pc_plus_one_ex),
         .pc_from_mux_ex(new_PC_ex),
         .flags (flag_register_ex),
         .data_r  ( mem_data),

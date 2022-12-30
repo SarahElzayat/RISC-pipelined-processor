@@ -173,8 +173,8 @@ module sm (
 							// PUSH Rdst
 							3'b101:begin
 								// memory stage signals
-								mem_write = 1'b1;
 								mem_push = 1'b1;
+								mem_write = 1'b1;
 								mem_addsel = 2'b10;
 								mem_src_select = 2'b11;
 								//reg identifiers
@@ -287,11 +287,16 @@ module sm (
 								// TODO: stop the fetch 
 								// push pc_1 --> upper part first 
 								mem_src_select <= 2'b01;
-								mem_push <= 1'b1;
 								// jmp-no-condition in execute stage
 								jump_selector <= 3'B111;
 								//registers identifiers
 								r_dst = instruction[10:8];
+
+								// TODO: stop the fetch 
+								// push pc2
+								mem_push <= 1'b1;
+								mem_write = 1'b1;
+								mem_addsel = 2'b10;
 							end
 							3'b101: // ret
 							begin
@@ -326,6 +331,8 @@ module sm (
 				// push pc2
 				mem_src_select <= 2'b10;
 				mem_push <= 1'b1;
+				mem_write = 1'b1;
+				mem_addsel = 2'b10;
 
 			end
 			PUSH_FLAGS :
@@ -479,6 +486,7 @@ module sm (
 					POP_PC2:
 					begin
 						counter <= counter +1;
+						// it waits till the value in mem is present
 						if(counter  == 2)
 						begin
 							current_state <= IDLE;
