@@ -240,6 +240,14 @@ module execute_stage (
         .D ({mem_read, mem_write}),
         .Q ({mem_read_out, mem_write_out})
     );
+    wire flag_regsel_r;
+    var_reg #(.size(2))
+    buffer14 (
+        .clk (clk),
+        .rst (reset),
+        .D ({flag_regsel}),
+        .Q ({flag_regsel_r})
+    );
     // ALU
     alu
     alu_dut (
@@ -258,7 +266,7 @@ module execute_stage (
         .ALU_Op (ALU_Op),
         .write_back_data (write_back_data),
         .alu_result_from_ex (result_out),
-        .flag_regsel (flag_regsel),
+        .flag_regsel (flag_regsel_r),
         .flagreg_enable (flagreg_enable),
         .conditions_from_memory_pop (conditions_from_memory_pop),
         .flag_register (flag_register),
