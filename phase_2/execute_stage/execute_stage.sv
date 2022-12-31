@@ -11,7 +11,8 @@ module execute_stage (
     input [3:0] ALU_Op,
     input [15:0] write_back_data,
     input [15:0] alu_result_from_mem,
-    input [2:0] jump_selector,r_scr_buff,r_dst_buff, r_dst_buff_ex,
+    input [2:0] jump_selector,
+    input [3:0] r_scr_buff,r_dst_buff, r_dst_buff_ex,
     input flag_regsel,
     input flagreg_enable,
     input [2:0] conditions_from_memory_pop,
@@ -221,7 +222,7 @@ module execute_stage (
         .Q ({mem_pop_out, mem_push_out})
     );
 
-    var_reg #(.size(3))
+    var_reg #(.size(4))
     buffer131 (
         .clk (clk),
         .rst (reset),

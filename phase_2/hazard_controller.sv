@@ -1,9 +1,9 @@
 module hazard_controller(
     input branch_result,
-    input [2:0] R_dest_dec,
-    input [2:0] R_src_dec,
-    input [2:0] R_dest_fetch,
-    input [2:0] R_src_fetch,
+    input [3:0] R_dest_dec,
+    input [3:0] R_src_dec,
+    input [3:0] R_dest_fetch,
+    input [3:0] R_src_fetch,
     input mem_read_dec,
     output flush_fetch,
     output reg  stall_fetch,

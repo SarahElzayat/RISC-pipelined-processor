@@ -4,8 +4,8 @@ module memory_stage (
   input [1:0] memory_address_select, memory_write_src_select,
   input[31:0] pc,pc_from_mux_ex,
   input [2:0] flags,
-  input [2:0] r_dst,
-  output [2:0] r_dst_buff,
+  input [3:0] r_dst,
+  output [3:0] r_dst_buff,
   output [15:0] data_r, //wire on the inside
   output [31:0] final_pc,
   output [31:0] shift_reg, //reg on the inside
@@ -50,7 +50,7 @@ module memory_stage (
     .Q ({input_port_out})
   );
 
-  var_reg #(.size(4))
+  var_reg #(.size(5))
   buffer122 (
     .clk (clk),
     .rst(reset),

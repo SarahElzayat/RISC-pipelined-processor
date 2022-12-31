@@ -72,7 +72,8 @@ module processor(
     wire alu_src_dec;
     wire inport_sel_ex,inport_sel_dec,inport_sel_mem;
 
-    wire [2:0] jump_selector_dec,r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex, r_scr_mem,r_dst_mem,r_scr_fetch,r_dst_fetch;
+    wire [2:0] jump_selector_dec;
+    wire [3:0] r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex,r_scr_fetch,r_dst_fetch,r_scr_mem,r_dst_mem;
 
     decode_stage
     decode_stage_dut (

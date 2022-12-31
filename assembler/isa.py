@@ -37,6 +37,7 @@ instruction_table = {
     'clrc':['01010'],
     # 'call':['11100','Rdst' ],
     'ret':['11101'],
+    'reti':['11110'],
 
     # org
     '.org':['target','dummy']
