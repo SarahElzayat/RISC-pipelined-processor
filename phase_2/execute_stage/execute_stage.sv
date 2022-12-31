@@ -37,6 +37,9 @@ module execute_stage (
     input reg_write,
     output reg_write_out,
 
+    input pc_choose_interrupt,
+    output pc_choose_interrupt_out,
+
     input [1:0] wb_sel,
     output [1:0] wb_sel_out,
 
@@ -77,7 +80,7 @@ module execute_stage (
     input mem_inPortSelect,
 
     // FU
-    input [2:0] mem_wb_rdest,
+    input [3:0] mem_wb_rdest,
     input mem_wb_reg_write,
     output branch_result
 );
@@ -158,12 +161,12 @@ module execute_stage (
         .Q (outport_enable_out)
     );
 
-    var_reg #(.size(4))
+    var_reg #(.size(5))
     buffer5 (
         .clk (clk),
         .rst(reset),
-        .D ({memory_address_select, memory_write_src_select}),
-        .Q ({memory_address_select_out, memory_write_src_select_out})
+        .D ({memory_address_select, memory_write_src_select,pc_choose_interrupt}),
+        .Q ({memory_address_select_out, memory_write_src_select_out,pc_choose_interrupt_out})
     );
 
     var_reg #(.size(5))

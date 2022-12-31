@@ -7,7 +7,7 @@ module forwarding_unit (
     input [2:0] ex_mem_rdest,
     input ex_mem_reg_write,
 
-    input [2:0] mem_wb_rdest,
+    input [3:0] mem_wb_rdest,
     input mem_wb_reg_write,
 
     input [3:0] rsrc,
@@ -36,7 +36,7 @@ ADD R1, R2
         alu_src1_select = 3'b010; // read_data1
         alu_src2_select = 3'b010; // read_data2 or shamt
 
-        if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rdest) begin
+        if (ex_mem_reg_write === 1'b1 && {1'b0,ex_mem_rdest} === rdest) begin
             alu_src1_select = 3'b001; // ALU RESULT
             if (ex_inPortSelect) alu_src1_select = 3'b011; // ex_inPortValue
         end
@@ -45,7 +45,7 @@ ADD R1, R2
             if (mem_inPortSelect) alu_src1_select = 3'b100; // mem_inPortValue
         end
 
-        if (ex_mem_reg_write === 1'b1 && ex_mem_rdest === rsrc) begin
+        if (ex_mem_reg_write === 1'b1 && {1'b0,ex_mem_rdest} === rsrc) begin
             alu_src2_select = 3'b001; // ALU RESULT
             if (ex_inPortSelect) alu_src2_select = 3'b011; // ex_inPortValue
         end

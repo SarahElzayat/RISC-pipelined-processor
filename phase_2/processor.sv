@@ -14,6 +14,7 @@ module processor(
     wire clear_instruction_dec;
 
     wire fetch_stall_from_cu;
+    wire pc_write_from_cu;
 
     // STALL & FLUSH
     wire flush_decode;
@@ -24,7 +25,7 @@ module processor(
     fetch_stage_dut (
         .clk (clk ),
         .reset (rst ),
-        .pc_write (pc_write),
+        .pc_write (pc_write && pc_write_from_cu),
         .pc_write_back_value (pc_write_back_value ),
         .clear_instruction (clear_instruction_dec || flush_fetch), // TODO: MOVE INSIDE
         .pc_plus_one_r (pc_plus_one_r ),
@@ -74,13 +75,14 @@ module processor(
 
     wire [2:0] jump_selector_dec;
     wire [3:0] r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex,r_scr_fetch,r_dst_fetch,r_scr_mem,r_dst_mem;
-
+    wire pc_choose_interrupt_dec, pc_choose_interrupt_ex, pc_choose_interrupt_mem;
     decode_stage
     decode_stage_dut (
         .clk (clk ),
         .reset (rst ),
         .flush_decode (flush_decode),
         .interrupt_signal (interrupt_signal ),
+        .pc_choose_interrupt_r (pc_choose_interrupt_dec),
         .instruction (instruction ),
         .PC (pc_plus_one_r),
         .reg_write_r (reg_write_dec ),
@@ -95,6 +97,7 @@ module processor(
         .r_scr_fetch(r_scr_fetch),
         .r_dst_fetch(r_dst_fetch),
         .r_scr_r(r_scr_dec),
+        .pc_write_cu(pc_write_from_cu),
         .r_dst_r (r_dst_dec),
         .mem_src_select_r (memory_write_src_select_dec ),
         .ALUOp_r (alu_op_dec ),
@@ -130,6 +133,8 @@ module processor(
         .r_dst_buff_ex(r_dst_ex),
         .carry_sel (carry_sel_dec),
         .alu_src_select (alu_src_dec),
+        .pc_choose_interrupt (pc_choose_interrupt_dec),
+        .pc_choose_interrupt_out (pc_choose_interrupt_ex),
         .read_data1 (reg_data1_from_dec),
         .read_data2 (reg_data2_from_dec),
         .shamt (shamt_dec),
@@ -204,7 +209,7 @@ module processor(
         .memory_write ( mem_write_ex ),
         .memory_push ( mem_push_ex ),
         .memory_pop ( mem_pop_ex ),
-        .interrupt(interrupt_signal),
+        .interrupt(pc_choose_interrupt_ex),
         .pc_choose_memory ( pc_choose_memory_ex ),
         .std_address(read_data1_ex),
         .ldd_address(read_data2_ex),

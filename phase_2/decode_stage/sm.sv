@@ -5,7 +5,8 @@ module sm (
 	input [32-1:0] PC,
 	output logic  reg_write, mem_read, mem_write, mem_pop,mem_push,
 	output logic   clear_instruction ,flag_reg_select,pc_choose_memory,
-	output logic [2 :0] jump_selector,r_scr,r_dst,
+	output logic [2 :0] jump_selector,
+	output logic [3 :0] r_scr,r_dst,
 	output logic  [1:0] mem_src_select,
 	output logic  [3:0] ALUOp,
 	output logic  [1:0] wb_sel,
@@ -15,7 +16,9 @@ module sm (
 	output logic  alu_srcsel,
 	output logic  outport_enable,
 	output logic  inport_sel,
-	output logic  flagreg_enable
+	output logic  flagreg_enable,
+	output logic pc_write_cu,
+	output logic pc_choose_interrupt
 );
 
 	typedef enum int unsigned { IDLE,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
@@ -54,21 +57,30 @@ module sm (
 		reg_write = 1'b0;
 		wb_sel = 2'b01;
 		outport_enable = 1'b0;
+		pc_choose_interrupt = 1'b0;
 		//registers identifiers
 		r_dst = 4'bzzzz;
 		r_scr = 4'bzzzz;
-
-
+		pc_write_cu <= 1'b1;
 
 		case (current_state)
 			IDLE,PIPE_WAIT :
 			begin
 				//NOTE - NORMAL EXECUTION
 				// TODO- FADY HERE
-				if(current_state == PIPE_WAIT && counter > 0)
+				if(current_state == PIPE_WAIT)
 					begin
-						// clear_instruction <= 1'b1;
-						stall_fetch_from_cu <= 1'b1;
+						pc_write_cu <= 1'b0;
+						if(counter > 0) begin
+							// clear_instruction <= 1'b1;
+							stall_fetch_from_cu <= 1'b1;
+							// dont change the pc till pushing
+							if(counter == 4)
+							begin
+								pc_choose_interrupt <= 1'b1;
+								pc_write_cu <= 1'b1;
+							end
+						end
 					end else
 					begin
 						case (instruction[15:14])
@@ -376,7 +388,7 @@ module sm (
 
 			PUSH_FLAGS :
 			begin
-				mem_src_select <= 2'b10;
+				mem_src_select <= 2'b00;
 				mem_push <= 1'b1;
 				stall_fetch_from_cu <= 1'b1;
 				mem_write <= 1'b1;

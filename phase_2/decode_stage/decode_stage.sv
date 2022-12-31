@@ -14,6 +14,7 @@ module decode_stage(
     output  [1:0] mem_addsel_r,
     output  [1:0] carry_sel_r,
     ////////////////////////////
+    output pc_choose_interrupt_r,
     output fetch_stall_cu,
     output  outport_enable_r,
     output  inport_sel_r, alu_srcsel_r,
@@ -26,6 +27,7 @@ module decode_stage(
     output[15:0] reg_file_read_data1,
     output[15:0] reg_file_read_data2,
     output [31:0] pc_plus_one_dec,
+    output pc_write_cu,
     input [3:0] shamt_out
 );
 
@@ -42,6 +44,7 @@ module decode_stage(
     wire [1:0] wb_sel;
     wire [1:0] mem_addsel;
     wire [1:0] carry_sel;
+    wire pc_choose_interrupt;
 
     wire outport_enable;
     wire inport_sel;
@@ -69,13 +72,13 @@ module decode_stage(
     );
 
     var_reg_with_mux #(
-    .size(5)
+    .size(6)
     ) var_reg_instance(
-        .D({instruction[3:0], flag_reg_select}),
+        .D({instruction[3:0], flag_reg_select, pc_choose_interrupt}),
         .clk(clk),
         .rst(reset),
         .mux_clear(flush_decode),
-        .Q({shamt_out, flag_reg_select_r})
+        .Q({shamt_out, flag_reg_select_r,pc_choose_interrupt_r})
     );
 
     var_reg #(
@@ -126,6 +129,7 @@ module decode_stage(
     sm control_unit(
         .clk(clk),
         .reset(reset),
+        .pc_choose_interrupt(pc_choose_interrupt),
         .interrupt_signal(interrupt_signal),
         .instruction(instruction),
         .PC(PC),
@@ -149,7 +153,8 @@ module decode_stage(
         .alu_srcsel(alu_srcsel),
         .outport_enable(outport_enable),
         .inport_sel(inport_sel),
-        .flagreg_enable(flagreg_enable)
+        .flagreg_enable(flagreg_enable),
+        .pc_write_cu(pc_write_cu)
     );
 
     reg_file
