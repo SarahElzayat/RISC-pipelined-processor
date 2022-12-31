@@ -77,8 +77,8 @@ module sm (
 							// dont change the pc till pushing
 							if(counter == 4)
 							begin
-								pc_choose_interrupt <= 1'b1;
-								pc_write_cu <= 1'b1;
+								// pc_choose_interrupt <= 1'b1;
+								// pc_write_cu <= 1'b1;
 							end
 						end
 					end else
@@ -359,7 +359,6 @@ module sm (
 									end
 									3'b110: // reti
 									begin
-
 									end
 									default :
 									;
@@ -386,35 +385,38 @@ module sm (
 			end
 
 
+
+			PUSH_PC1:
+			begin
+				// push pc1
+				// push pc_1 --> upper part first
+				pc_write_cu <= 1'b0;
+				pc_choose_interrupt <= 1'b1;
+				mem_src_select <= 2'b01;
+				mem_push <= 1'b1;
+				stall_fetch_from_cu <= 1'b1;
+				mem_write <= 1'b1;
+			end
+			PUSH_PC2:
+			begin
+				pc_write_cu <= 1'b0;
+
+				// push pc1
+				// push pc_1 --> upper part first
+				mem_src_select <= 2'b10;
+				mem_push <= 1'b1;
+				stall_fetch_from_cu <= 1'b1;
+				mem_write <= 1'b1;
+
+
+			end
 			PUSH_FLAGS :
 			begin
 				mem_src_select <= 2'b00;
 				mem_push <= 1'b1;
 				stall_fetch_from_cu <= 1'b1;
 				mem_write <= 1'b1;
-				mem_addsel <= 2'b00;
-			end
-			PUSH_PC1:
-			begin
-				// push pc1
-				// push pc_1 --> upper part first
-				mem_src_select <= 2'b01;
-				mem_push <= 1'b1;
-				stall_fetch_from_cu <= 1'b1;
-				mem_write <= 1'b1;
-				mem_addsel <= 2'b10;
-			end
-			PUSH_PC2:
-			begin
-
-				// push pc1
-				// push pc_1 --> upper part first
-				mem_src_select <= 2'b01;
-				mem_push <= 1'b1;
-				stall_fetch_from_cu <= 1'b1;
-				mem_write <= 1'b1;
-				mem_addsel <= 2'b11;
-
+				// pc_choose_interrupt <= 1'b1;
 
 			end
 			POP_FLAGS:

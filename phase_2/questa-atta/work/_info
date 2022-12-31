@@ -80,6 +80,13 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -89,10 +96,10 @@ R0
 cModel Technology
 Z1 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/questa
 T_opt
-!s110 1672452718
-V6Gb1eIU49IT_iPhlSkC:c0
+!s110 1672454570
+V0U?5V9a<d:iPjL2C:e4_N3
 Z2 04 9 4 work processor fast 0
-=38-48e7dabd9c37-63af9a6d-337-280c
+=45-48e7dabd9c37-63afa1aa-2cc-280c
 !s124 OEM10U50 
 o-quiet -auto_acc_if_foreign -work work +acc
 Z3 tCvgOpt 0
@@ -111,7 +118,7 @@ R4
 R1
 valu
 Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z6 !s110 1672452710
+Z6 !s110 1672454567
 !i10b 1
 !s100 Gg>Ab2F;XKSdoCn3IbT=71
 IEFLiGafh@H80HB[=UJb<S0
@@ -120,14 +127,14 @@ Z7 dD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/quest
 w1672358460
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
-!i122 2128
+!i122 2254
 L0 1 89
 Z8 VDg1SIo80bB@j0V0VzS_@n1
 Z9 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z10 !s108 1672452709.000000
+Z10 !s108 1672454567.000000
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv|
 !i113 0
@@ -144,14 +151,14 @@ R7
 w1672254112
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv
-!i122 2129
+!i122 2255
 L0 1 40
 R8
 R9
 r1
 !s85 0
 31
-Z12 !s108 1672452710.000000
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv|
 !i113 0
@@ -159,7 +166,7 @@ R11
 R3
 vdecode_stage
 R5
-Z13 !s110 1672452709
+R6
 !i10b 1
 !s100 L2C[PS;AWd19Whe1mz9ek1
 IL1]eBcgb6O?NPI?WOP][J0
@@ -168,14 +175,14 @@ R7
 w1672451528
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv
-!i122 2124
+!i122 2250
 L0 1 179
 R8
 R9
 r1
 !s85 0
 31
-!s108 1672452708.000000
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/decode_stage.sv|
 !i113 0
@@ -192,14 +199,14 @@ R7
 w1672451653
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
-!i122 2130
+!i122 2256
 L0 1 268
 R8
 R9
 r1
 !s85 0
 31
-R12
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv|
 !i113 0
@@ -216,14 +223,14 @@ R7
 w1672443494
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
-!i122 2132
+!i122 2258
 L0 1 47
 R8
 R9
 r1
 !s85 0
 31
-R12
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv|
 !i113 0
@@ -240,14 +247,14 @@ R7
 w1672448025
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
-!i122 2131
+!i122 2257
 L0 1 58
 R8
 R9
 r1
 !s85 0
 31
-R12
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv|
 !i113 0
@@ -255,7 +262,7 @@ R11
 R3
 vhazard_controller
 R5
-Z14 !s110 1672452712
+R6
 !i10b 1
 !s100 ?DG0094C01f@Ak6m80hFH1
 IzSA5lBg6VZ`CzmO>VAEQh0
@@ -264,14 +271,14 @@ R7
 w1672446072
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/hazard_controller.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/hazard_controller.sv
-!i122 2137
-Z15 L0 1 32
+!i122 2263
+Z12 L0 1 32
 R8
 R9
 r1
 !s85 0
 31
-Z16 !s108 1672452712.000000
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/hazard_controller.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/hazard_controller.sv|
 !i113 0
@@ -279,7 +286,7 @@ R11
 R3
 vmem_fetch
 R5
-Z17 !s110 1672452711
+R6
 !i10b 1
 !s100 T2WKdlo25zzQg]19l<K;83
 I46A[kLYMT6GgdzTNl3B=d1
@@ -288,14 +295,14 @@ R7
 w1672341561
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
-!i122 2133
+!i122 2259
 L0 1 45
 R8
 R9
 r1
 !s85 0
 31
-Z18 !s108 1672452711.000000
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv|
 !i113 0
@@ -303,7 +310,7 @@ R11
 R3
 vmemory_stage
 R5
-R17
+R6
 !i10b 1
 !s100 ]Nz8TcGlR7`IJd0fJ=`^l2
 Il39GfkCNhMVhbg_R16:173
@@ -312,14 +319,14 @@ R7
 w1672447452
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage.sv
-!i122 2134
+!i122 2260
 L0 1 147
 R8
 R9
 r1
 !s85 0
 31
-R18
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage.sv|
 !i113 0
@@ -327,7 +334,7 @@ R11
 R3
 vmemory_stage_without_buffers
 R5
-R17
+R6
 !i10b 1
 !s100 R<[L`P<BbXMaX]8<meWWP0
 II<XY[Md]SaGoHQY?5FL<c1
@@ -336,14 +343,14 @@ R7
 w1672440911
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
-!i122 2135
+!i122 2261
 L0 1 86
 R8
 R9
 r1
 !s85 0
 31
-R18
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv|
 !i113 0
@@ -351,7 +358,7 @@ R11
 R3
 vprocessor
 R5
-R14
+Z13 !s110 1672454568
 !i10b 1
 !s100 8SfD<b@in[i59e4n1H3B52
 IM14?gRf1Oe`E112UnZV681
@@ -360,21 +367,21 @@ R7
 w1672451718
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv
-!i122 2138
+!i122 2264
 L0 1 279
 R8
 R9
 r1
 !s85 0
 31
-R16
+Z14 !s108 1672454568.000000
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/processor.sv|
 !i113 0
 R11
 R3
 vreg_file
-R13
+R6
 !i10b 1
 !s100 ENDJTIT@Xn_ZcW6d_bah21
 IB`NO`bzJ@<9=H3A6hR3dE3
@@ -382,7 +389,7 @@ R7
 w1672267467
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v
-!i122 2125
+!i122 2251
 L0 1 55
 R8
 R9
@@ -393,10 +400,10 @@ R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v|
 !i113 0
-Z19 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R3
 vsign_extend
-R13
+R6
 !i10b 1
 !s100 ^zWB86i>6z602Sa=5FCPS0
 ISYBa];88K@hDKI=ao?SZd1
@@ -404,7 +411,7 @@ R7
 w1671217695
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v
-!i122 2126
+!i122 2252
 L0 1 11
 R8
 R9
@@ -415,21 +422,21 @@ R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v|
 !i113 0
-R19
+R15
 R3
 vsm
 R5
-R13
+R6
 !i10b 1
-!s100 b@IgObNaeX0Gc=DA^5M8k2
-IPGV3To17kTV8Je]a2aa]d0
+!s100 FAJgbN@:9QgdjBB5[PZnn2
+IBHLaGG:3O>0bGA2_5AbJD2
 S1
 R7
-w1672452702
+w1672454564
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
-!i122 2127
-L0 1 592
+!i122 2253
+L0 1 594
 R8
 R9
 r1
@@ -442,7 +449,7 @@ R10
 R11
 R3
 vvar_reg
-R14
+R13
 !i10b 1
 !s100 :G5_cHCBfIjNiZS;<4<kc3
 I;NjAjf09bLXbZ>Gh:egL13
@@ -450,21 +457,21 @@ R7
 w1672340271
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v
-!i122 2139
+!i122 2265
 L0 1 15
 R8
 R9
 r1
 !s85 0
 31
-R16
+R14
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg.v|
 !i113 0
-R19
+R15
 R3
 vvar_reg_with_enable
-Z20 !s110 1672452713
+R13
 !i10b 1
 !s100 IfUe_e3<PWgj:l[QC`zT]2
 I:6[HgPXIZe9U@;dmCcIQa2
@@ -472,21 +479,21 @@ R7
 w1672086316
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_enable.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_enable.v
-!i122 2140
+!i122 2266
 L0 1 17
 R8
 R9
 r1
 !s85 0
 31
-R16
+R14
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_enable.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_enable.v|
 !i113 0
-R19
+R15
 R3
 vvar_reg_with_mux
-R20
+R13
 !i10b 1
 !s100 NjH^69]N@k6[Q3d]dj>=41
 IWojA0Q3TjA3KSBWkKndL]1
@@ -494,21 +501,21 @@ R7
 w1672340318
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
-!i122 2141
+!i122 2267
 L0 1 18
 R8
 R9
 r1
 !s85 0
 31
-!s108 1672452713.000000
+R14
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v|
 !i113 0
-R19
+R15
 R3
 vwrite_back_stage
-R14
+R6
 !i10b 1
 !s100 =3FETJU<Re;RDJzf[lUM22
 I>]2eHCX6778KJ;:Nl;9GL2
@@ -516,16 +523,16 @@ R7
 w1672227895
 8D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v
 FD:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v
-!i122 2136
-R15
+!i122 2262
+R12
 R8
 R9
 r1
 !s85 0
 31
-R16
+R10
 !s107 D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/write back/write_back_stage.v|
 !i113 0
-R19
+R15
 R3
