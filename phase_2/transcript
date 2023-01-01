@@ -945,3 +945,538 @@ do processor.do
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 restart
 do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+restart
+run
+do processor.do
+restart
+do processor.do
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/input_port
+add wave -position insertpoint  \
+sim:/processor/out_port
+restart
+do processor.do
+run
+run
+restart
+do processor.do
+run
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+restart
+do processor.do
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+run
+restart
+run
+do processor.do
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+restart
+do processor.do
+run
+run
+run
+run
+# WARNING: No extended dataflow license exists
+# UndoStart or Redo start was not called Delete {.main_pane.dataflow.interior.cs.body.pw.wf.top.tree.tree1 undo delete 1}
+#  Trace back: 
+#    <7:eval:1: ::Wave::UndoRedoCaptureTransform Delete {.main_pane.dataflow.interior.cs.body.pw.wf.top.tree.tree1 undo delete 1}
+#    >6:eval:1: ::.main_pane.dataflow.interior.cs.body.pw.wf.top.tree insert end {sim:/processor/decode_stage_dut/reg_file_dut/reg_file[2]}
+#    <5:proc:4: ::vsimwidgets::dfAddDataflowFromWave .main_pane.wave.interior.cs.body.pw.wf.tree {0.858 ns} {{sim:/processor/decode_stage_dut/reg_file_dut/reg_file[2]}} 1
+#    <4:C:/mtitcl/vsim/dataflow.tc_:-1: ::Wave::_showDFReadersDrivers drivers .main_pane.wave.interior.cs.body.pw.wf 1
+#    <3:C:/mtitcl/vsim/wave.tc_:3477: ::Wave::ShowDFDrivers .main_pane.wave.interior.cs.body.pw.wf 1
+#    <2:eval:1: ::Wave::1Up .main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data 351 208
+#    <1:C:/mtitcl/vsim/wave.tc_:3432: ::Wave::SelectUp .main_pane.wave.interior.cs.body.pw.wf.grid.row0,wave.data 351 208 1374 392
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/processor/input_port 1 0
+restart
+do processor.do
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# Error in macro ./processor.do line 7
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# 
+#     while executing
+# "force -freeze sim:/processor/input_port 5"
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# Error in macro ./processor.do line 7
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# 
+#     while executing
+# "force -freeze sim:/processor/input_port 5"
+run
+run
+run
+run
+restart
+do processor.do
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# Error in macro ./processor.do line 7
+# Invalid binary digit: 5.
+# ** UI-Msg: (vsim-4011) Invalid force value: 5.
+# 
+#     while executing
+# "force -freeze sim:/processor/input_port 5"
+restart
+do processor.do
+# Invalid (0-size) sized constant.
+# ** UI-Msg: (vsim-4011) Invalid force value: h'5.
+# Error in macro ./processor.do line 7
+# Invalid (0-size) sized constant.
+# ** UI-Msg: (vsim-4011) Invalid force value: h'5.
+# 
+#     while executing
+# "force -freeze sim:/processor/input_port h'5"
+do processor.do
+restart
+restart
+do processor.do
+restart
+do processor.do
+run
+run
+restart
+run
+do processor.do
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/flag_register
+add wave -position insertpoint  \
+sim:/processor/ALU_ex
+restart
+restart
+do processor.do
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/read_data1_out \
+sim:/processor/execute_stage_dut/read_data2_out
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/alu_src1_select \
+sim:/processor/execute_stage_dut/alu_src2_select
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/flagreg_enable
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/flag_register_out
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+do processor.do
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+# End time: 19:28:40 on Jan 01,2023, Elapsed time: 5:41:31
+# Errors: 0, Warnings: 1
