@@ -26,7 +26,7 @@
  16: xxxxxxxxxxxxxxxx
  17: xxxxxxxxxxxxxxxx
  18: xxxxxxxxxxxxxxxx
- 19: xxxxxxxxxxxxxxxx
+ 19: 0000000000011001
  1a: xxxxxxxxxxxxxxxx
  1b: xxxxxxxxxxxxxxxx
  1c: xxxxxxxxxxxxxxxx
@@ -1022,6 +1022,6 @@
 3fa: xxxxxxxxxxxxxxxx
 3fb: xxxxxxxxxxxxxxxx
 3fc: xxxxxxxxxxxxxxxx
-3fd: 0000000000001111
-3fe: 0000000000001111
-3ff: 0000000000001111
+3fd: xxxxxxxxxxxxxxxx
+3fe: xxxxxxxxxxxxxxxx
+3ff: 1111001100100000

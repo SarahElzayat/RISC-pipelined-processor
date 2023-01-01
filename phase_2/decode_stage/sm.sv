@@ -193,7 +193,7 @@ module sm (
 										// write back stage signals
 										outport_enable = 1'b1;
 										//registers identifiers
-										r_scr = {1'b0,instruction[10:8]};
+										r_dst = {1'b0,instruction[10:8]};
 									end
 									// IN Rdst
 									3'b100:

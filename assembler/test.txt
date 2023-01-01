@@ -1,24 +1,18 @@
-.ORG 0
-inc R6
-inc R6
-inc R6
-inc R6
-inc R6
-reti
+# all numbers in hex format
+# we always start by reset signal
+# this is a commented line
 
-.ORG 15
-inc r1
-inc r1
-ret
-
-
-.ORG 32 #this is the instructions code
-inc r1
-ldm r1,35
-inc r1
-std r1,r2
-ldd r1,r5
-inc r5
-push r5
-pop r7
-inc r7
+.ORG 32
+IN R1        #add 5 in R1
+IN R2        #add 19 in R2
+IN R3        #FFFF
+IN R4        #F320
+push r4
+STD R2,R2
+LDD R2,R1
+MOV R3,R1
+LDD R2,R1
+INC R1
+LDD R2,R1
+POP r1
+push r1
