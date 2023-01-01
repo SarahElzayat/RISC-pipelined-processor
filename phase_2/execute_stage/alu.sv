@@ -56,7 +56,7 @@ module alu (
 
             4'b0011: {alu_carry, result} = Op1 + Op2;
 
-            4'b0100: {alu_carry, result} = Op1 - Op2;
+            4'b0100: {alu_carry, result} = Op2 - Op1;
 
             4'b0101: {alu_carry, result} = Op1 & Op2;
 
