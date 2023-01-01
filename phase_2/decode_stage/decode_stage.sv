@@ -19,7 +19,7 @@ module decode_stage(
     output  outport_enable_r,
     output  inport_sel_r, alu_srcsel_r,
     output  flagreg_enable_r,
-    output  clear_instruction_r,
+    output  clear_instruction,
     input reg_write_wb,
     input[15:0] reg_write_data_from_wb,
     input[2:0] reg_write_address_from_wb,
@@ -28,12 +28,15 @@ module decode_stage(
     output[15:0] reg_file_read_data2,
     output [31:0] pc_plus_one_dec,
     output pc_write_cu,
-    input [3:0] shamt_out
+    input [3:0] shamt_out,
+
+    input [15:0] ldm_value_fetch,
+    output [15:0] ldm_value_dec
+
 );
 
     wire [15:0] reg_file_read_data1_s;
     wire [15:0] reg_file_read_data2_s;
-
 
     wire reg_write, mem_read, mem_write, mem_pop,mem_push;
     wire flag_reg_select,pc_choose_memory;
@@ -53,6 +56,15 @@ module decode_stage(
     assign r_scr_fetch = r_scr;
     assign r_dst_fetch = r_dst;
 
+    var_reg #(
+    .size(16)
+    ) ldm_fetch(
+        .D(ldm_value_fetch),
+        .clk(clk),
+        .rst(reset),
+        .Q(ldm_value_dec)
+    );
+    
     var_reg #(
     .size(32)
     ) var_reg_instance123(
@@ -116,12 +128,12 @@ module decode_stage(
         .rst (reset)
     );
 
-    var_reg_with_mux #(.size(4))
+    var_reg_with_mux #(.size(3))
     var_reg_4 (
-        .D ({outport_enable,inport_sel,flagreg_enable,clear_instruction} ),
+        .D ({outport_enable,inport_sel,flagreg_enable} ),
         .clk (clk ),
         .mux_clear(flush_decode),
-        .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r, clear_instruction_r} ),
+        .Q  ({ outport_enable_r, inport_sel_r, flagreg_enable_r} ),
         .rst (reset)
     );
 

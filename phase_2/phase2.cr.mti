@@ -33,19 +33,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	sm
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/var_reg_with_mux.v {1 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module var_reg_with_mux
-
-Top level modules:
-	var_reg_with_mux
-
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module forwarding_unit
 
 Top level modules:
 	forwarding_unit
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/var_reg_with_mux.v {1 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module var_reg_with_mux
+
+Top level modules:
+	var_reg_with_mux
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -54,19 +54,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module memory_stage_tb
-
-Top level modules:
-	memory_stage_tb
-
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module mem_fetch
 
 Top level modules:
 	mem_fetch
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage_tb
+
+Top level modules:
+	memory_stage_tb
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v {0 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sign_extend.v
 ** Warning: (vlog-14) Failed to open "D:/arch_project/RISC-pipelined-processor/phase_2/phase2.mpf" specified by the MODELSIM environment variable.
@@ -81,13 +81,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	hazard_controller
 
-} {} {}} {D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v} {1 {vlog -work work -stats=none {D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module write_back_stage
-
-Top level modules:
-	write_back_stage
-
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/branch_controller.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module branch_controller
@@ -95,19 +88,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	branch_controller
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
+} {} {}} {D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v} {1 {vlog -work work -stats=none {D:/arch_project/RISC-pipelined-processor/phase_2/write back/write_back_stage.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module memory_stage_without_buffers_tb
+-- Compiling module write_back_stage
 
 Top level modules:
-	memory_stage_without_buffers_tb
-
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v {1 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module reg_file
-
-Top level modules:
-	reg_file
+	write_back_stage
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -116,12 +102,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	execute_stage_tb
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v {1 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/reg_file.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module processor
+-- Compiling module reg_file
 
 Top level modules:
-	processor
+	reg_file
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage_without_buffers_tb
+
+Top level modules:
+	memory_stage_without_buffers_tb
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -129,6 +122,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	execute_stage
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memory_stage_without_buffers
+
+Top level modules:
+	memory_stage_without_buffers
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v {1 {vlog -work work -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

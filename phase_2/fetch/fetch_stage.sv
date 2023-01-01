@@ -21,6 +21,15 @@ module fetch_stage (
     .rst (reset)
   );
 
+  // wire [15:0] immediate_value_s;
+  // var_reg #(.size(16))
+  // immediate_value_reg (
+  //   .D (immediate_value_s ),
+  //   .clk (clk ),
+  //   .Q  (immediate_value ),
+  //   .rst (reset)
+  // );
+
 
   var_reg_with_enable #(.size(32))
   pc_plus_one_reg (
