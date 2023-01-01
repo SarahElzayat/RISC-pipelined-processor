@@ -94,7 +94,7 @@ class Assembler:
         
         # org command
         else:
-            self.curr_location = int(arguments[0])
+            self.curr_location = int(arguments[0],16)
 
     def parse(self):
         for i in range (len(self.commands)):
