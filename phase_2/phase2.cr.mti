@@ -19,19 +19,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	decode_stage
 
-} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module fetch_stage
-
-Top level modules:
-	fetch_stage
-
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module sm
 
 Top level modules:
 	sm
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fetch_stage
+
+Top level modules:
+	fetch_stage
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -94,6 +94,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	write_back_stage
+
+} {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module processor
+
+Top level modules:
+	processor
 
 } {} {}} D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv {1 {vlog -work work -sv -stats=none D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
