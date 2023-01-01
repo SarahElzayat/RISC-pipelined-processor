@@ -76,6 +76,8 @@ module processor(
     wire [2:0] jump_selector_dec;
     wire [3:0] r_scr_dec,r_dst_dec,r_scr_ex,r_dst_ex,r_scr_fetch,r_dst_fetch,r_scr_mem,r_dst_mem;
     wire pc_choose_interrupt_dec, pc_choose_interrupt_ex, pc_choose_interrupt_mem;
+    
+    wire [15:0] ldm_value_dec;
     decode_stage
     decode_stage_dut (
         .clk (clk ),
@@ -90,7 +92,7 @@ module processor(
         .mem_write_r (mem_write_dec ),
         .mem_pop_r (mem_pop_dec ),
         .mem_push_r (mem_push_dec ),
-        .clear_instruction_r (clear_instruction_dec ),
+        .clear_instruction (clear_instruction_dec ),
         .flag_reg_select_r (flag_reg_select_dec ),
         .pc_choose_memory_r (pc_choose_memory_dec ),
         .jump_selector_r (jump_selector_dec ),
@@ -116,7 +118,9 @@ module processor(
         .reg_file_read_data2(reg_data2_from_dec),
         .shamt_out(shamt_dec),
         .pc_plus_one_dec(pc_plus_one_dec),
-        .fetch_stall_cu (fetch_stall_from_cu)
+        .fetch_stall_cu (fetch_stall_from_cu),
+        .ldm_value_fetch(LDM_value_fet),
+        .ldm_value_dec(ldm_value_dec)
     );
 
     wire [15:0] ALU_ex;
@@ -164,7 +168,7 @@ module processor(
         .flag_register_out (flag_register_ex),
         .PC (pc_plus_one_fetch_s),
         .PC_out (PC_ex),
-        .LDM_value (LDM_value_fet),
+        .LDM_value (ldm_value_dec),
         .LDM_value_out (LDM_value_ex),
         .mem_pop (mem_pop_dec),
         .mem_pop_out (mem_pop_ex),

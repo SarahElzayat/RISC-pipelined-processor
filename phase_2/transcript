@@ -21,14 +21,14 @@
 # 20 compiles, 0 failed with no errors.
 vsim -gui work.processor
 # vsim -gui work.processor 
-# Start time: 19:32:06 on Dec 30,2022
+# Start time: 13:47:09 on Jan 01,2023
 # Loading sv_std.std
 # Loading work.processor
 # Loading work.fetch_stage
 # Loading work.var_reg_with_enable
-# Loading work.var_reg
 # Loading work.mem_fetch
 # Loading work.decode_stage
+# Loading work.var_reg
 # Loading work.var_reg_with_mux
 # Loading work.sm
 # Loading work.reg_file
@@ -40,204 +40,147 @@ vsim -gui work.processor
 # Loading work.memory_stage_without_buffers
 # Loading work.write_back_stage
 # Loading work.hazard_controller
-do processor.do
-# Cannot open macro file: processor.do
-do processor.do
-# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
-# No such file or directory. (errno = ENOENT)
-# Error in macro ./processor.do line 1
-# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
-# No such file or directory. (errno = ENOENT)
-#     while executing
-# "mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_m..."
-run
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
 add wave -position insertpoint  \
-sim:/processor/clk
+sim:/processor/clk \
+sim:/processor/rst \
+sim:/processor/input_port
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Sarah  Hostname: SARAH  ProcessID: 24264
-#           Attempting to use alternate WLF file "./wlft8jgz5g".
+#           Attempting to use alternate WLF file "./wlftqx1kf2".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8jgz5g
+#           Using alternate file: ./wlftqx1kf2
 add wave -position insertpoint  \
-sim:/processor/rst
-add wave -position insertpoint  \
-sim:/processor/input_port
-add wave -position insertpoint  \
-sim:/processor/memory_write_src_select_ex \
-sim:/processor/memory_write_src_select_dec \
-sim:/processor/memory_address_select_ex \
-sim:/processor/memory_address_select_dec \
-sim:/processor/mem_write_ex \
-sim:/processor/mem_write_dec \
-sim:/processor/mem_read_ex \
-sim:/processor/mem_read_dec \
-sim:/processor/mem_push_ex \
-sim:/processor/mem_push_dec \
-sim:/processor/mem_pop_ex \
-sim:/processor/mem_pop_dec \
-sim:/processor/mem_data
-add wave -position insertpoint  \
-sim:/processor/PC_ex \
-sim:/processor/pc_choose_memory_ex \
-sim:/processor/pc_choose_memory_dec
-add wave -position insertpoint  \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/write_data \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_shift_reg \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_pc \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/sp \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_address \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/shift_reg \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_pc \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/std_address \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_from_mux_ex \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_choose_memory \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write_src_select \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write \
 sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_read \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write \
 sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_push \
 sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_pop \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_address_select \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/ldd_address \
 sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/interrupt \
-sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/flags
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-restart
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_choose_memory \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/std_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/ldd_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_address_select \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/memory_write_src_select \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_from_mux_ex \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/flags \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_pc \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/shift_reg \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/final_address \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/write_data \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_shift_reg \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/sp \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/temp_pc
+do processor
+# Cannot open macro file: processor
 do processor.do
-# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
-# No such file or directory. (errno = ENOENT)
-# Error in macro ./processor.do line 1
-# ** UI-Msg: (vsim-7) Failed to open mem file "D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem" in read mode.
-# No such file or directory. (errno = ENOENT)
-#     while executing
-# "mem load -i D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/assembler/output.mem /processor/fetch_stage_dut/mem_fetch_dut/instruction_m..."
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-restart
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-restart
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-force -freeze sim:/processor/clk 1 0, 0 {50 ps} -r 100
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-restart
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-do processor.do
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# Error in macro ./processor.do line 3
-# ** UI-Msg: (vsim-3464) Period of -repeat must not be less than the waveform length.
-# 
-#     while executing
-# "force -freeze sim:/processor/clk 1 0, 0 {50 ns} -r 100"
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
 add wave -position insertpoint  \
 sim:/processor/fetch_stage_dut/mem_fetch_dut/instruction
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-mem save -o DATA.mem -f mti -data symbolic -addr hex /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
+add wave -position insertpoint sim:/processor/decode_stage_dut/reg_file_dut/*
 add wave -position insertpoint  \
 sim:/processor/decode_stage_dut/reg_file_dut/reg_file
 restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
 do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_write_back_value
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_write
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+run
 run
 run
 restart
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-restart
-restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
 do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/pc_plus_one_out
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/pc_plus_one_r
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/pc_write_back_value
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/new_PC \
+sim:/processor/execute_stage_dut/PC \
+sim:/processor/execute_stage_dut/PC_out \
+sim:/processor/execute_stage_dut/pc_plus_one \
+sim:/processor/execute_stage_dut/pc_plus_one_out \
+sim:/processor/execute_stage_dut/pc_choose_memory \
+sim:/processor/execute_stage_dut/pc_choose_memory_out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/memory_stage_dut/memory_stage_without_buffers_dut/pc_choose_memory
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_write \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_write_back_value \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/clear_instruction \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc_plus_one \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/instruction \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/immediate_value \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/pc \
+sim:/processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+# (vsim-4077) Logging very large object: /processor/fetch_stage_dut/mem_fetch_dut/instruction_memory
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
 # Compile of processor.sv was successful.
 # Compile of decode_stage.sv was successful.
 # Compile of reg_file.v was successful.
@@ -246,15 +189,6 @@ do processor.do
 # Compile of branch_controller.sv was successful.
 # Compile of execute_stage.sv was successful.
 # Compile of execute_stage_tb.sv was successful.
-restart
-# Loading work.processor
-# Loading work.decode_stage
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
 # Compile of forwarding_unit.sv was successful.
 # Compile of fetch_stage.sv was successful.
 # Compile of mem_fetch.sv was successful.
@@ -270,424 +204,744 @@ restart
 # 20 compiles, 0 failed with no errors.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/memory_stage_dut/LDM_value \
+sim:/processor/memory_stage_dut/LDM_value_out
+add wave -position insertpoint  \
+sim:/processor/execute_stage_dut/LDM_value \
+sim:/processor/execute_stage_dut/LDM_value_out
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/write_back_stage_dut/immediate_value
+add wave -position insertpoint  \
+sim:/processor/write_back_stage_dut/sel
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/instruction_r
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
 # Loading work.fetch_stage
 # Loading work.var_reg_with_enable
 # Loading work.var_reg
 # Loading work.mem_fetch
+# Loading work.decode_stage
 # Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv failed with 1 errors.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 1 failed with 1 error.
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv failed with 1 errors.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 1 failed with 1 error.
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'D'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'Q'. The port definition is at: D:/arch_project/RISC-pipelined-processor/phase_2/var_reg.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/execute_stage_dut/buffer14 File: D:/arch_project/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv Line: 245
+# Error opening D:/arch_project/RISC-pipelined-processor/phase_2/(vsim-3015) [PCDPC] - Port size (2) does not match connection size 
+# Path name 'D:/arch_project/RISC-pipelined-processor/phase_2/(vsim-3015) [PCDPC] - Port size (2) does not match connection size ' doesn't exist.
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
 # Loading work.memory_stage
 # Loading work.memory_stage_without_buffers
 # Loading work.write_back_stage
 # Loading work.hazard_controller
 do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
+run
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+run
+restart
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+run
+do processor.do
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+restart
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.var_reg
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+run
+run
+run
+run
+run
+restart
+do processor.do
+add wave -position insertpoint  \
+sim:/processor/fetch_stage_dut/clear_instruction
+run
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+run
+run
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Error: (vsim-3063) Port 'clear_instruction_r' not found in the connected module (13th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /processor/decode_stage_dut File: D:/arch_project/RISC-pipelined-processor/phase_2/processor.sv Line: 82
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+vsim -gui work.processor
+# vsim -gui work.processor 
+# Start time: 13:47:09 on Jan 01,2023
+# Loading sv_std.std
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Sarah  Hostname: SARAH  ProcessID: 24264
+#           Attempting to use alternate WLF file "./wlftfvsby2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfvsby2
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+do processor.do
+restart
+do processor.do
+# Compile of processor.sv was successful.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of execute_stage_tb.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_tb.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of memory_stage_without_buffers_tb.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 20 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.processor
+# Loading work.fetch_stage
+# Loading work.var_reg_with_enable
+# Loading work.mem_fetch
+# Loading work.decode_stage
+# Loading work.var_reg
+# Loading work.var_reg_with_mux
+# Loading work.sm
+# Loading work.reg_file
+# Loading work.execute_stage
+# Loading work.forwarding_unit
+# Loading work.branch_controller
+# Loading work.alu
+# Loading work.memory_stage
+# Loading work.memory_stage_without_buffers
+# Loading work.write_back_stage
+# Loading work.hazard_controller
+do processor.do
 # WARNING: No extended dataflow license exists
-restart
 do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-mem save -o DATA.mem -f mti -data symbolic -addr hex /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
-mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 # Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-restart
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-# Load canceled
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 restart
 do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-run
-mem save -o DATA.mem -f mti -data symbolic -addr hex -wordsperline 1 /processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
-run
-run
-run
-run
-run
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-# Compile of processor.sv was successful.
-# Compile of decode_stage.sv was successful.
-# Compile of reg_file.v was successful.
-# Compile of sm.sv was successful.
-# Compile of alu.sv was successful.
-# Compile of branch_controller.sv was successful.
-# Compile of execute_stage.sv was successful.
-# Compile of execute_stage_tb.sv was successful.
-# Compile of forwarding_unit.sv was successful.
-# Compile of fetch_stage.sv was successful.
-# Compile of mem_fetch.sv was successful.
-# Compile of memory_stage.sv was successful.
-# Compile of memory_stage_tb.sv was successful.
-# Compile of memory_stage_without_buffers.sv was successful.
-# Compile of memory_stage_without_buffers_tb.sv was successful.
-# Compile of write_back_stage.v was successful.
-# Compile of hazard_controller.sv was successful.
-# Compile of var_reg.v was successful.
-# Compile of var_reg_with_enable.v was successful.
-# Compile of var_reg_with_mux.v was successful.
-# 20 compiles, 0 failed with no errors.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.processor
-# Loading work.fetch_stage
-# Loading work.var_reg_with_enable
-# Loading work.var_reg
-# Loading work.mem_fetch
-# Loading work.decode_stage
-# Loading work.var_reg_with_mux
-# Loading work.sm
-# Loading work.reg_file
-# Loading work.execute_stage
-# Loading work.forwarding_unit
-# Loading work.branch_controller
-# Loading work.alu
-# Loading work.memory_stage
-# Loading work.memory_stage_without_buffers
-# Loading work.write_back_stage
-# Loading work.hazard_controller
-run
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-restart
-do processor.do
-# GetModuleFileName: The specified module could not be found.
-# 
-# 
-run
-run
-run
-run
-run
-run
-run
-run
-# End time: 21:10:27 on Dec 30,2022, Elapsed time: 1:38:21
-# Errors: 0, Warnings: 1

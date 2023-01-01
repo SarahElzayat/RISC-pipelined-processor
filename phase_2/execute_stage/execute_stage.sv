@@ -241,7 +241,7 @@ module execute_stage (
         .Q ({mem_read_out, mem_write_out})
     );
     wire flag_regsel_r;
-    var_reg #(.size(2))
+    var_reg #(.size(1))
     buffer14 (
         .clk (clk),
         .rst (reset),
