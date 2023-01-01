@@ -94,7 +94,7 @@ class Assembler:
         
         # org command
         else:
-            self.curr_location = int(arguments[0])
+            self.curr_location = int(arguments[0],16)
 
     def parse(self):
         for i in range (len(self.commands)):
@@ -108,7 +108,7 @@ class Assembler:
 
 
 asm = Assembler()
-asm.read_file('./test.txt')
+asm.read_file(r'F:\RISC-pipelined-processor\assembler\test.txt')
 asm.sanitize()
 asm.parse()
 asm.write_file('./output.mem')
