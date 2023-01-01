@@ -34,10 +34,13 @@ module decode_stage(
     input [3:0] shamt_out,
 
     input [15:0] ldm_value_fetch,
-    output [15:0] ldm_value_dec
+    output [15:0] ldm_value_dec,
+    output  pc_plus_1_or_pc_minus_1_r
 
   );
 
+
+  wire pc_plus_1_or_pc_minus_1;
   wire [15:0] reg_file_read_data1_s;
   wire [15:0] reg_file_read_data2_s;
   wire pc_choose_PC;
@@ -90,13 +93,13 @@ module decode_stage(
           );
 
   var_reg_with_mux #(
-                     .size(6)
+                     .size(7)
                    ) var_reg_instance(
-                     .D({instruction[3:0], flag_reg_select, pc_choose_interrupt}),
+                     .D({instruction[3:0], flag_reg_select, pc_choose_interrupt,pc_plus_1_or_pc_minus_1}),
                      .clk(clk),
                      .rst(reset),
                      .mux_clear(flush_decode),
-                     .Q({shamt_out, flag_reg_select_r,pc_choose_interrupt_r})
+                     .Q({shamt_out, flag_reg_select_r,pc_choose_interrupt_r,pc_plus_1_or_pc_minus_1_r})
                    );
 
   var_reg #(
@@ -170,11 +173,15 @@ module decode_stage(
        .mem_addsel(mem_addsel),
        .carry_sel(carry_sel),
        .alu_srcsel(alu_srcsel),
+       .pc_plus_1_or_pc_minus_1(pc_plus_1_or_pc_minus_1),
        .outport_enable(outport_enable),
        .inport_sel(inport_sel),
        .flagreg_enable(flagreg_enable),
        .pc_write_cu(pc_write_cu)
      );
+
+
+
 
   reg_file
     #(

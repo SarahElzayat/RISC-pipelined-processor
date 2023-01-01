@@ -16,7 +16,7 @@ module alu (
     input [15:0] mem_inPortValue,
     input [2:0] conditions_from_memory_pop,
 
-    output reg [2:0] flag_register,
+    output reg [2:0] flags,
     output reg [15:0] result,
     output  [15:0] Op1,
     output  [15:0] Op2
@@ -81,7 +81,7 @@ module alu (
     assign alu_flags = {carry, negative, zero};
 
     always @(negedge clk) begin
-        flag_register =
+        flags =
         (flag_regsel === 1'b0) ? alu_flags :
         (flag_regsel === 1'b1) ? conditions_from_memory_pop : 'bz;
     end

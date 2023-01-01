@@ -19,12 +19,14 @@ module sm (
     output logic  flagreg_enable,
     output logic pc_write_cu,
     output logic pc_choose_interrupt,
-    output logic pc_choose_PC
+    output logic pc_choose_PC,
+    output logic  pc_plus_1_or_pc_minus_1
   );
 
   typedef enum int unsigned { IDLE,JUMP_1, PIPE_WAIT , PUSH_FLAGS , PUSH_PC1 ,PUSH_PC2, POP_PC1,POP_PC2,POP_FLAGS} State;
 
   State current_state;
+  State previos_state;
 
   logic [4:0] counter;
   wire [4:0] opcode;
@@ -64,9 +66,11 @@ module sm (
     r_dst = 4'bzzzz;
     r_scr = 4'bzzzz;
     pc_write_cu <= 1'b1;
+    pc_plus_1_or_pc_minus_1 <= 1'b1;
 
     case (current_state)
       IDLE,PIPE_WAIT :
+
       begin
         //NOTE - NORMAL EXECUTION
         if(current_state == PIPE_WAIT)
@@ -75,7 +79,7 @@ module sm (
           clear_instruction <= 1'b1;
           //   pc_choose_interrupt <= 1'b1;
           pc_choose_PC <= 1'b1; // choose same PC unless there is a jump
-          //   stall_fetch_from_cu <= 1'b1;
+
         end
         if(current_state == PIPE_WAIT && counter > 0)
         begin
@@ -392,6 +396,8 @@ module sm (
         mem_write = 1'b1;
         mem_addsel = 2'b10;
         jump_selector <= 3'b111;
+        // if (previos_state == PIPE_WAIT)
+        //   pc_choose_PC <= 1'b1;
       end
 
 
@@ -406,6 +412,8 @@ module sm (
         stall_fetch_from_cu <= 1'b1;
         mem_write <= 1'b1;
         pc_choose_PC <= 1'b1;
+        pc_plus_1_or_pc_minus_1 <= 1'b0;
+
       end
       PUSH_PC2:
       begin
@@ -417,7 +425,7 @@ module sm (
         // stall_fetch_from_cu <= 1'b1;
         mem_write <= 1'b1;
         pc_choose_PC <= 1'b1;
-
+        pc_plus_1_or_pc_minus_1 <= 1'b0;
 
       end
       PUSH_FLAGS :
@@ -480,6 +488,7 @@ module sm (
   // state ff and transition
   always_ff@(posedge clk or negedge reset)
   begin
+    previos_state <= current_state;
     if(reset)
     begin
       current_state <= IDLE;
@@ -489,13 +498,23 @@ module sm (
       counter <= 0;
       begin
         case (current_state)
-          IDLE:
+          IDLE, PIPE_WAIT:
             if(interrupt_signal == 1)
             begin
               current_state <= PIPE_WAIT;
             end
             else
             begin
+              if(current_state == PIPE_WAIT)
+              begin
+                counter <= counter +1;
+                // wait 5 cycles
+                if(counter  == 4)
+                begin
+                  current_state <= PUSH_PC1;
+                  counter <= 0;
+                end
+              end
               case (instruction[15:14])
                 //NOTE - NORMAL EXECUTION
                 2'b00:
@@ -518,10 +537,12 @@ module sm (
                     begin
                       // push pc1 and pc2
                       current_state <= JUMP_1;
+
                     end
                     3'b101: // ret
                     begin
                       // pop pc and continue
+                      counter <= 0;
                       current_state <= POP_PC2;
                     end
                     3'b110: // reti
@@ -540,24 +561,12 @@ module sm (
               endcase
 
             end
-
-          PIPE_WAIT:
-          begin
-            counter <= counter +1;
-            // wait 5 cycles
-            if(counter  == 4)
-            begin
-              current_state <= PUSH_PC1;
-              counter <= 0;
-            end
-          end
-
-
-
           //-----------------------------------------------------CALL
           JUMP_1:
           begin
-            current_state <= IDLE;
+            current_state <= previos_state;
+            // if(previos_state == PIPE_WAIT)
+            //   counter <= counter +1;
           end
 
           //-----------------------------------------------------INTERRUPT
@@ -586,11 +595,17 @@ module sm (
           end
           POP_PC2:
           begin
+            if(previos_state == PIPE_WAIT)
+              previos_state <= PIPE_WAIT;
+            else
+              previos_state <= IDLE;
+
             counter <= counter +1;
             // it waits till the value in mem is present
             if(counter  == 2)
             begin
-              current_state <= IDLE;
+              current_state <= previos_state;
+
               counter <= 0;
             end
           end
