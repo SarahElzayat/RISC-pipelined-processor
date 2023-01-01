@@ -1,8 +1,6 @@
 module forwarding_unit (
     input ex_inPortSelect,
     input mem_inPortSelect,
-    input [15:0] ex_inPortValue,
-    input [15:0] mem_inPortValue,
 
     input [2:0] ex_mem_rdest,
     input ex_mem_reg_write,

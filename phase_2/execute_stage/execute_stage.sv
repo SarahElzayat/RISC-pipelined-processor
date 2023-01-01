@@ -101,8 +101,6 @@ module execute_stage (
         .rdest (r_dst_buff),
         .ex_inPortSelect (ex_inPortSelect_buff),
         .mem_inPortSelect (mem_inPortSelect),
-        .ex_inPortValue (ex_inPortValue_buff),
-        .mem_inPortValue (mem_inPortValue),
         .alu_src1_select (alu_src1_select),
         .alu_src2_select (alu_src2_select)
     );
