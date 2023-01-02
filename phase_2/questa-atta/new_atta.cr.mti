@@ -40,13 +40,6 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	reg_file
 
-} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module execute_stage
-
-Top level modules:
-	execute_stage
-
 } {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/memory/memory_stage_without_buffers.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module memory_stage_without_buffers
@@ -82,6 +75,13 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	decode_stage
 
+} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sm.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/decode_stage/sm.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module sm
+
+Top level modules:
+	sm
+
 } {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/fetch_stage.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module fetch_stage
@@ -89,12 +89,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	fetch_stage
 
-} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
+} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module alu
+-- Compiling module var_reg_with_mux
 
 Top level modules:
-	alu
+	var_reg_with_mux
 
 } {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/forwarding_unit.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -103,12 +103,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	forwarding_unit
 
-} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v {1 {vlog -work work -vopt -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/var_reg_with_mux.v
+} {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/alu.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module var_reg_with_mux
+-- Compiling module alu
 
 Top level modules:
-	var_reg_with_mux
+	alu
 
 } {} {}} D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv {1 {vlog -work work -vopt -sv -stats=none D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/fetch/mem_fetch.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
