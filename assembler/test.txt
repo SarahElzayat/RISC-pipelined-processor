@@ -1,34 +1,38 @@
-# Carry Neg Zero
+#branch.asm
 #this is a comment 
 #all numbers are in hexadecimal
 #the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
-
-
 .ORG 0 #this is the interrupt code
-inc r3
-ADD R1,R4
-inc R1
-OUT R4
-reti
+LDM R7,15          #R7=00000015
+ADD R7,R4 
+STD R4,R7
+RTI
 
-.ORG 5 
-inc r6
-inc r6
-inc r6
-ret
 
 .ORG 20 #this is the instructions code
-IN R1                   #add 00000005 in R1
-IN R2                   #add 00000019 in R2
-IN R3                   #FFFFFFFF
-IN R4                   #FFFFF320
-MOV R3,R5               #R5= FFFFFFFF , flags no change
-ADD R1,R4               #R4= FFFFF325 , C-->0, N-->1, Z-->0
-#SUB R5,R4               #R4= 00000CDA , C-->0, N-->0,Z-->0 
-call r1 
-AND R7,R4               #R4= 00000000 , C-->no change, N-->0, Z-->1
-OR R2, R1               #R1= 0000001D , C-->0, N-->0,Z-->0
-SHL R1,4                #R1= 000001D0 , C-->0, N-->0,Z-->0
-SHR R1,2                #R1= 0000001D , C-->0, N-->0,Z-->0
+IN R6  #R6=300
+push R6    #SP=000007FE, M[000007FF]=300
+IN R1    #R1=40
+IN R2    #R2=500
+IN R3    #R3=100
+IN R4    #R4=07FE
+LDD R5,R4
+call R5
+INC R1   # this statement shouldn't be executed
+#check flag fowarding  
 
-
+.ORG 400
+AND R1,R5   #R5=0 , Z = 1
+JZ R2        #Jump taken, Z = 0
+SETC        # this statement shouldn't be executed, C-->1
+#check on flag updated on jump
+.ORG 300
+MOV R5,R3  #R5=100, flag no change
+JC R5      #shouldn't be taken
+#check destination forwarding
+NOT R7     #R5=FFFFFFFF, Z= 0, C--> not change, N=1
+           ## raise interrupt here
+IN  R6     #R6=700, flag no change
+MOV R5,R6  #R5=700, flag no change
+INC R1      
+ret

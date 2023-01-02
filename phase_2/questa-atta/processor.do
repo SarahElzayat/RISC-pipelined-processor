@@ -13,7 +13,7 @@ force -freeze sim:/processor/input_port 16'hFFFF 0
 run 100
 force -freeze sim:/processor/input_port 16'hF320 0
 run 100
-force -freeze sim:/processor/interrupt_signal 1
+# force -freeze sim:/processor/interrupt_signal 1
 run 100
 force -freeze sim:/processor/interrupt_signal 0
 run 1000

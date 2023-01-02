@@ -472,7 +472,7 @@ module sm (
         end
         if(counter  == 2)
         begin
-          clear_instruction <= 1'b0;
+          // clear_instruction <= 1'b0;
         end
 
       end
@@ -499,11 +499,13 @@ module sm (
       begin
         case (current_state)
           IDLE, PIPE_WAIT:
+          begin
             if(interrupt_signal == 1)
             begin
               current_state <= PIPE_WAIT;
+              previos_state <= PIPE_WAIT;
             end
-            else
+            // else
             begin
               if(current_state == PIPE_WAIT)
               begin
@@ -536,17 +538,31 @@ module sm (
                     3'b100: // call
                     begin
                       // push pc1 and pc2
+                      // if(previos_state == PIPE_WAIT)
+                      //   previos_state <= PIPE_WAIT;
+                      // else
+                      //   previos_state <= IDLE;
+
                       current_state <= JUMP_1;
 
                     end
                     3'b101: // ret
                     begin
                       // pop pc and continue
+                      // if(previos_state == PIPE_WAIT)
+                      //   previos_state <= PIPE_WAIT;
+                      // else
+                      //   previos_state <= IDLE;
                       counter <= 0;
                       current_state <= POP_PC2;
                     end
                     3'b110: // reti
                     begin
+                      // if(previos_state == PIPE_WAIT)
+                      //   previos_state <= PIPE_WAIT;
+                      // else
+                      //   previos_state <= IDLE;
+
                       current_state <= POP_FLAGS;
                     end
                     default :
@@ -561,6 +577,7 @@ module sm (
               endcase
 
             end
+          end
           //-----------------------------------------------------CALL
           JUMP_1:
           begin
@@ -572,25 +589,50 @@ module sm (
           //-----------------------------------------------------INTERRUPT
           PUSH_PC1:
           begin
+            if(previos_state == PIPE_WAIT)
+              previos_state <= PIPE_WAIT;
+            else
+              previos_state <= IDLE;
+
+
             current_state <= PUSH_PC2;
           end
           PUSH_PC2:
           begin
+            if(previos_state == PIPE_WAIT)
+              previos_state <= PIPE_WAIT;
+            else
+              previos_state <= IDLE;
+
+
             current_state <= PUSH_FLAGS;
           end
           PUSH_FLAGS :
           begin
+
             current_state <= IDLE;
           end
 
           //-----------------------------------------------------RET
           POP_FLAGS:
           begin
+            if(previos_state == PIPE_WAIT)
+              previos_state <= PIPE_WAIT;
+            else
+              previos_state <= IDLE;
+
+
             current_state <= POP_PC1;
 
           end
           POP_PC1:
           begin
+            if(previos_state == PIPE_WAIT)
+              previos_state <= PIPE_WAIT;
+            else
+              previos_state <= IDLE;
+
+
             current_state = POP_PC2;
           end
           POP_PC2:
