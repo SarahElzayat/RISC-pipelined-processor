@@ -1,6 +1,6 @@
 .org 20
 ldm r1,15
-ldm r2,8
-ldd r1,r2
-inc r2
+ldm r2,20
+ldd r2,r3
 inc r3
+dec r2
