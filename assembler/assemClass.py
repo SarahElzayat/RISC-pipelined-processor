@@ -108,7 +108,7 @@ class Assembler:
 
 
 asm = Assembler()
-asm.read_file('./test.txt')
+asm.read_file(r'D:/arch_project/RISC-pipelined-processor/assembler/test.txt')
 asm.sanitize()
 asm.parse()
-asm.write_file('./output.mem')
+asm.write_file(r'D:/arch_project/RISC-pipelined-processor/assembler/output.mem')
