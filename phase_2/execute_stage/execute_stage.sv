@@ -19,12 +19,11 @@ module execute_stage (
 
     output [15:0] result_out, // ALU Result
     output [31:0] new_PC, // ALU Result
-    output [2:0] flag_register_out, // Carry, negative, zero
+    output [2:0] flag_register, // Carry, negative, zero
+
+    input [31:0] PC,
 
     // inputs to just pass
-    input [31:0] PC,
-    output [31:0] PC_out,
-
     input [15:0] LDM_value,
     output [15:0] LDM_value_out,
 
@@ -63,6 +62,9 @@ module execute_stage (
 
     input pc_choose_memory,
     output pc_choose_memory_out,
+    
+    input pc_plus_1_or_pc_minus_1,
+    output pc_plus_1_or_pc_minus_1_out,
 
     input [2:0] reg_write_address,
     output [2:0] reg_write_address_out,
@@ -73,11 +75,11 @@ module execute_stage (
     input [15:0] ex_inPortValue,
     output [15:0] ex_inPortValue_buff,
 
-    input [15:0] mem_inPortValue,
-
     input ex_inPortSelect,
     input ex_inPortSelect_buff,
+
     input mem_inPortSelect,
+    input [15:0] mem_inPortValue,
 
     // FU
     input [3:0] mem_wb_rdest,
@@ -86,7 +88,7 @@ module execute_stage (
 );
 
     wire [15:0] result;
-    wire [2:0] flag_register;
+    wire [2:0] flags;
     wire [2:0] alu_src1_select;
     wire [2:0] alu_src2_select;
     wire [15:0] Op1, Op2;
@@ -101,8 +103,6 @@ module execute_stage (
         .rdest (r_dst_buff),
         .ex_inPortSelect (ex_inPortSelect_buff),
         .mem_inPortSelect (mem_inPortSelect),
-        .ex_inPortValue (ex_inPortValue_buff),
-        .mem_inPortValue (mem_inPortValue),
         .alu_src1_select (alu_src1_select),
         .alu_src2_select (alu_src2_select)
     );
@@ -110,7 +110,7 @@ module execute_stage (
     // BRANCHING
     branch_controller branching (
         .jump_selector (jump_selector),
-        .condition_signals (flag_register_out),
+        .condition_signals (flag_register),
         .result (branch_result)
     );
 
@@ -135,14 +135,14 @@ module execute_stage (
         .Q (ex_inPortValue_buff)
     );
 
-    var_reg_with_enable #(.size(3))
+    var_reg_with_mux #(.size(3))
     buffer2 (
         // NOTE : Flag Reg works on negedge of clk
         .clk (clk),
         .rst(reset),
-        .en (flagreg_enable),
-        .D (flag_register),
-        .Q (flag_register_out)
+        .mux_clear (~flagreg_enable),
+        .D (flags),
+        .Q (flag_register)
     );
 
     var_reg #(.size(1))
@@ -153,12 +153,12 @@ module execute_stage (
         .Q (reg_write_out)
     );
 
-    var_reg #(.size(1))
+    var_reg #(.size(2))
     buffer4 (
         .clk (clk),
         .rst(reset),
-        .D (outport_enable),
-        .Q (outport_enable_out)
+        .D ({outport_enable, pc_plus_1_or_pc_minus_1}),
+        .Q ({outport_enable_out, pc_plus_1_or_pc_minus_1_out})
     );
 
     var_reg #(.size(5))
@@ -175,14 +175,6 @@ module execute_stage (
         .rst(reset),
         .D ({wb_sel, reg_write_address}),
         .Q ({wb_sel_out, reg_write_address_out})
-    );
-
-    var_reg #(.size(32))
-    buffer7 (
-        .clk (clk),
-        .rst(reset),
-        .D (PC),
-        .Q (PC_out)
     );
 
     var_reg #(.size(33))
@@ -248,6 +240,7 @@ module execute_stage (
         .D ({flag_regsel}),
         .Q ({flag_regsel_r})
     );
+
     // ALU
     alu
     alu_dut (
@@ -269,7 +262,7 @@ module execute_stage (
         .flag_regsel (flag_regsel_r),
         .flagreg_enable (flagreg_enable),
         .conditions_from_memory_pop (conditions_from_memory_pop),
-        .flag_register (flag_register),
+        .flags (flags),
         .result (result)
     );
 

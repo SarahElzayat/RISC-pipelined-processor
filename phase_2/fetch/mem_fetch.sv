@@ -23,7 +23,6 @@ module mem_fetch (
 
 
   assign pc_plus_one = pc+1;
-  // assign pc_plus_one = pc+1;
 
   always @(posedge clk, posedge reset)
   begin
