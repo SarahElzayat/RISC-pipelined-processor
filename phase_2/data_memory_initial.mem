@@ -1,7 +1,7 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/processor/memory_stage_dut/memory_stage_without_buffers_dut/data_memory
 // format=mti addressradix=h dataradix=s version=1.0 wordsperline=1
-  0: 0000000000000000
+  0: 0000010000000000
   1: 0000000000000001
   2: 0000000000000010
   3: 0000000000000011

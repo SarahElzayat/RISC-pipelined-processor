@@ -396,6 +396,8 @@ module sm (
         mem_write = 1'b1;
         mem_addsel = 2'b10;
         jump_selector <= 3'b111;
+        // r_dst = {1'b0,instruction[10:8]};
+
         // if (previos_state == PIPE_WAIT)
         //   pc_choose_PC <= 1'b1;
       end

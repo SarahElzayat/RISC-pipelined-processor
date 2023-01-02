@@ -619,3 +619,872 @@ restart
 # Loading work.hazard_controller(fast)
 add wave -position end  sim:/processor/execute_stage_dut/flag_register
 do processor.do
+do processor.do
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+add wave -position 18  sim:/processor/branch_result
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# 18 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error: D:/academic_material/third_year/ARCH2/RISC-pipelined-processor/phase_2/execute_stage/execute_stage.sv(139): Module 'var_reg_flags' is not defined.
+#  For instance 'buffer2' at path 'processor.execute_stage_dut'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.processor
+# vsim -voptargs="+acc" work.processor 
+# Start time: 11:25:22 on Jan 02,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+add wave -position 1  sim:/processor/decode_stage_dut/control_unit/current_state
+add wave -position 18  sim:/processor/fetch_stage_dut/mem_fetch_dut/instruction
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+add wave -position 20  sim:/processor/execute_stage_dut/Op1
+add wave -position end  sim:/processor/execute_stage_dut/new_PC
+add wave -position end  sim:/processor/execute_stage_dut/PC
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 2 FSMs in module "sm(fast)".
+# Loading sv_std.std
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+add wave -position 20  sim:/processor/execute_stage_dut/flag_register
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Debug data file, vsim.dbg, does not exist.
+# 
+# Invoke vsim with -debugDB to create this file.
+# Debug data file, vsim.dbg, does not exist.
+# 
+# Invoke vsim with -debugDB to create this file.
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
+# Compile of decode_stage.sv was successful.
+# Compile of reg_file.v was successful.
+# Compile of sign_extend.v was successful.
+# Compile of sm.sv was successful.
+# Compile of alu.sv was successful.
+# Compile of branch_controller.sv was successful.
+# Compile of execute_stage.sv was successful.
+# Compile of forwarding_unit.sv was successful.
+# Compile of fetch_stage.sv was successful.
+# Compile of mem_fetch.sv was successful.
+# Compile of memory_stage.sv was successful.
+# Compile of memory_stage_without_buffers.sv was successful.
+# Compile of write_back_stage.v was successful.
+# Compile of hazard_controller.sv was successful.
+# Compile of processor.sv was successful.
+# Compile of var_reg.v was successful.
+# Compile of var_reg_with_enable.v was successful.
+# Compile of var_reg_with_mux.v was successful.
+# Compile of var_reg_flags.v was successful.
+# 19 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.processor(fast)
+# Loading work.fetch_stage(fast)
+# Loading work.var_reg_with_enable(fast)
+# Loading work.var_reg_with_enable(fast__1)
+# Loading work.mem_fetch(fast)
+# Loading work.decode_stage(fast)
+# Loading work.var_reg(fast)
+# Loading work.var_reg(fast__1)
+# Loading work.var_reg_with_mux(fast)
+# Loading work.var_reg(fast__2)
+# Loading work.var_reg_with_mux(fast__1)
+# Loading work.var_reg_with_mux(fast__2)
+# Loading work.var_reg_with_mux(fast__3)
+# Loading work.var_reg_with_mux(fast__4)
+# Loading work.sm(fast)
+# Loading work.reg_file(fast)
+# Loading work.execute_stage(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.branch_controller(fast)
+# Loading work.var_reg_flags(fast)
+# Loading work.var_reg(fast__3)
+# Loading work.var_reg(fast__4)
+# Loading work.var_reg(fast__5)
+# Loading work.var_reg(fast__6)
+# Loading work.var_reg(fast__7)
+# Loading work.alu(fast)
+# Loading work.memory_stage(fast)
+# Loading work.memory_stage_without_buffers(fast)
+# Loading work.write_back_stage(fast)
+# Loading work.hazard_controller(fast)
+do processor.do
