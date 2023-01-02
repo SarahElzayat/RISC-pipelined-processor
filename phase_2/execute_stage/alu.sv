@@ -15,6 +15,7 @@ module alu (
     input [15:0] ex_inPortValue,
     input [15:0] mem_inPortValue,
     input [2:0] conditions_from_memory_pop,
+    input [2:0] old_flags,
 
     output reg [2:0] flags,
     output reg [15:0] result,
@@ -70,8 +71,8 @@ module alu (
         endcase
     end
 
-    assign negative = result[15];
-    assign zero = (result === 0);
+    assign negative = (carry_sel !== 2'b00 ? old_flags[1] : (result[15]));
+    assign zero = (carry_sel !== 2'b00 ? old_flags[0] : (result === 0));
 
     assign carry =
     (carry_sel === 2'b00) ? alu_carry :

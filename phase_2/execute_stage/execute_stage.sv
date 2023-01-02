@@ -263,6 +263,7 @@ module execute_stage (
         .flagreg_enable (flagreg_enable),
         .conditions_from_memory_pop (conditions_from_memory_pop),
         .flags (flags),
+        .old_flags (flag_register),
         .result (result)
     );
 
