@@ -135,12 +135,12 @@ module execute_stage (
         .Q (ex_inPortValue_buff)
     );
 
-    var_reg_with_mux #(.size(3))
+    var_reg_flags #(.size(3))
     buffer2 (
         // NOTE : Flag Reg works on negedge of clk
         .clk (clk),
         .rst(reset),
-        .mux_clear (~flagreg_enable),
+        .en (flagreg_enable),
         .D (flags),
         .Q (flag_register)
     );
