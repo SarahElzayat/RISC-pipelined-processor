@@ -5,7 +5,7 @@ instruction_table = {
     'sub':['00100','Rscr','Rdst'],
     'and':['00101','Rscr','Rdst'],
     'or' :['00110','Rscr','Rdst'],
-    'mov':['10000','Rscr','Rdst'],
+    'mov':['10000','Rscr','Rdst'], # rsrc
     'ldd':['10010','Rscr','Rdst'],
     'std':['10011','Rscr','Rdst'],
 
@@ -20,7 +20,7 @@ instruction_table = {
     'not': ['00000','Rdst'],
     'inc':['00001','Rdst'],
     'dec':['00010','Rdst'],
-    'out': ['01011','Rdst'],
+    'out': ['01011','Rdst'], 
     'in':['01100','Rdst'],
     'push':['01101','Rdst'],
     'pop':['01110','Rdst'],
