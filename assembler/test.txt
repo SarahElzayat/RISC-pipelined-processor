@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #this is a comment 
 #all numbers are in hexadecimal
 #the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
@@ -18,3 +19,11 @@ AND R7,R4               #R4= 00000000 , C-->no change, N-->0, Z-->1
 OR R2, R1               #R1= 0000001D , C-->0, N-->0,Z-->0
 SHL R1,4                #R1= 000001D0 , C-->0, N-->0,Z-->0
 SHR R1,2                #R1= 0000001D , C-->0, N-->0,Z-->0
+=======
+.org 20
+ldm r1,15
+ldm r2,20
+ldd r2,r3
+inc r3
+dec r2
+>>>>>>> 4b1ca2b2a0151732d606fc106872ffe4d9696954
