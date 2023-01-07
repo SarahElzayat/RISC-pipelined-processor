@@ -1,6 +1,6 @@
 # RISC-Pipelined-Processor
 
-5 stages RISC pipelined processor with multiple instructions implemented including ALU Operations, Interrupts as a state machine, Jumps and branching instructions, Memory operations and more..
+5 stages RISC pipelined processor with multiple instructions implemented in verilog including ALU Operations, Interrupts as a state machine, Jumps and branching instructions, Memory operations and more.. following Harvard architecture.
 
 <hr>
 
