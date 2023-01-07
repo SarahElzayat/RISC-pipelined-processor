@@ -25,7 +25,7 @@
 
 ## Assembler
 
-Translates High-Level instructions such as "add r1,r2" to 16 bit binary digits consisting of an opcode, destination register, source register addresses, and extra bits necessary for other instructions like "1001001011110101" so that we can easily decode the given instruction and execute it accordingly.
+An assembler written in python that translates High-Level instructions such as "add r1,r2" to 16 bit binary digits consisting of an opcode, destination register, source register addresses, and extra bits necessary for other instructions like "1001001011110101" so that we can easily decode the given instruction and execute it accordingly.
 
 <hr>
 
