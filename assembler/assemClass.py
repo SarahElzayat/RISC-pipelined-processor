@@ -1,5 +1,6 @@
 from isa import *
 import re
+from compilersol import *
 
 class Assembler:
     curr_location = 0
@@ -40,7 +41,7 @@ class Assembler:
             line = line.strip()
             if line != '':
                 print(line)
-                line = re.split(r'[^a-z0-7.]+',line)
+                line = re.split(r'[^a-z0-9.]+',line)
                 command = line[0]
                 args = line[1:]
                 instructions.append(command)
@@ -48,6 +49,53 @@ class Assembler:
                 i += 1
         self.commands=instructions
         self.arguments = arguments
+        self.laod_use()
+    
+
+    def swapPositions(self, pos1, pos2):
+        self.commands[pos1], self.commands[pos2] = self.commands[pos2], self.commands[pos1]
+        self.arguments[pos1], self.arguments[pos2] = self.arguments[pos2], self.arguments[pos1]
+
+    def laod_use(self):
+        for i in range (len(self.commands)):
+            if self.commands[i] == 'ldd' or self.commands[i] == 'pop':
+                print(self.checkLoad(i))
+            else:
+                print(False) 
+
+    def checkLoad(self,index):
+        ldd_arg = self.arguments[index]
+        next_command = self.commands[index+1]
+        next_command_args = self.arguments[index+1]
+        issued_arg = compilersol[next_command]
+        after_next_command = self.commands[index+2]
+        # after_next_arg_num = compilersol[after_next_command]
+        after_next_command_args = self.arguments[index+2]
+        if issued_arg == '1':
+            if next_command_args[0] == ldd_arg[1] or next_command_args[1] == ldd_arg[1]:
+                    if after_next_command_args[0] == next_command_args[1]:
+                        # load use but cannot swap
+                        return False
+                    else:
+                        #swap
+                        self.swapPositions(index+1,index+2)
+                        return True
+            else:
+                # no load use
+                return False
+        else:
+            if next_command_args[0] == ldd_arg[1]:
+                if after_next_command_args[0] == next_command_args[0]:
+                    # cannot swap
+                    return False
+                else:
+                    #swap
+                    self.swapPositions(index+1,index+2)
+                    return True
+            else:
+                # no load use
+                return False
+        
 
     def machine_code (self,command,arguments):
         sudo_line = instruction_table[command].copy()
@@ -108,7 +156,7 @@ class Assembler:
 
 
 asm = Assembler()
-asm.read_file('./test.txt')
+asm.read_file(r'./test.txt')
 asm.sanitize()
 asm.parse()
-asm.write_file('./output.mem')
+asm.write_file(r'./output.mem')
